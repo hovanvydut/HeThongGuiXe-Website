@@ -6,7 +6,7 @@ We're hoping you find anything interesting you in our repository.
 ## GLIMPSE THE PROJECT
 
 ***
-[1]: https://lh3.googleusercontent.com/proxy/LLHs7th4-C13-fNAFlY8jfvT9u0VlVjUYidshb5Xi1nkGPnWyeGtCVjMAWsrn_SQliKlfTTYfzLY2rRsxdNJs0ez88jsVNlpcX4y3rYac8WX1w
+[1]: https://res.cloudinary.com/dgext7ewd/image/upload/v1617588331/unnamed_wpavzb.jpg
 
 - Page A
 ![Page A][1]
