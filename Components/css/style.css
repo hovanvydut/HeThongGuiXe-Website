@@ -1,0 +1,27 @@
+:root {
+  --theme-color-1: #127595;
+  --theme-color-2: #37b89a;
+  --main-color: #61a8df;
+  
+  --main-font: 'Roboto', sans-serif;
+  --main-header-font: 'Prompt', sans-serif;
+}
+* {
+  font-family: var(--main-font);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+i {
+  color: var(--main-color);
+  
+}
+a {
+  text-decoration: none  !important;
+}
+.header {
+  font-family: var(--main-header-font);
+}
+.far, .fas, .fab {
+  color: var(--main-color);
+}
