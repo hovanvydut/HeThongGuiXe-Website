@@ -18,7 +18,6 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
-   
   </head>
   <style>
     .btn-packet {
@@ -28,6 +27,11 @@
     .caption {
       border: 1px solid var(--main-color);
       color: var(--main-color);
+     
+    }
+    .carousel-item {
+      width: 100% !important;
+      border: none;
     }
     .carousel-item:hover {
       box-shadow: 2px 2px 4px #9c9999;
@@ -70,28 +74,34 @@
         <form
           class="form-inline my-2 my-lg-0 flex-grow-1 d-flex justify-content-start justify-content-lg-end"
         >
-          <a class="rounded-circle" height="40px" width="40px" href="/user_info.html">
+          <a
+            class="rounded-circle"
+            height="40px"
+            width="40px"
+            href="/user_info.html"
+          >
             <i class="fas fa-user"></i>
           </a>
         </form>
       </div>
     </nav>
     <div
-      class="vw-100 d-flex flex-column justify-content-center align-items-center main-container px-md-5 px-4 py-md-5 py-2"
+      class="container my-4 my-md-5 px-5 px-sm-0"
     >
       <div
-        class="card px-md-5 px-4 py-4 mb-5 bg-white d-flex flex-column flex-wrap justify-content-center align-items-center shadow-lg rounded"
+        class="col-12 col-xl-9 my-4 my-md-5 bg-white shadow-lg rounded m-auto"
       >
-        <h3 class="header px-2 px-lg-0 text-center">Các gói thịnh hành</h3>
+        <h3 class="header p-2 p-md-3 text-center border-bottom  border-info border-2">Các gói thịnh hành</h3>
+
         <div
-          id="carouselExampleCaptions"
-          class="carousel slide carousel-dark h-75"
+          id="carouselExampleInterval"
+          class="carousel slide col-12 "
           data-bs-ride="carousel"
         >
           <div class="carousel-inner">
-            <div class="carousel-item h-100 active" data-bs-interval="5000">
-              <div class="caption my-2 btn rounded px-lg-5 px-2 py-2">
-                <a href=""> <h5 class="px-4">GÓI THÁNG : SINHVIEN20K1</h5></a>
+            <div class="carousel-item active" data-bs-interval="2000">
+              <div class=" btn rounded px-lg-5 px-2 py-2 w-100">
+                <a href=""> <h5 class="px-4">GÓI THÁNG : SINHVIEN20K2</h5></a>
                 <p class="px-4 px-lg-5">
                   Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ
                   ngày đăng kí gói.
@@ -99,14 +109,9 @@
                 <button class="btn btn-danger my-3">Đăng kí</button>
               </div>
             </div>
-            <div class="carousel-item h-100" data-bs-interval="5000">
-              <div class="caption btn rounded px-lg-5 px-2 py-2">
-                <a
-                  href="
-               "
-                >
-                  <h5 class="px-4">GÓI THÁNG : SINHVIEN20K2</h5></a
-                >
+            <div class="carousel-item" data-bs-interval="2000">
+              <div class=" btn rounded px-lg-5 px-2 py-2 w-100">
+                <a href=""> <h5 class="px-4">GÓI THÁNG : SINHVIEN20K2</h5></a>
                 <p class="px-4 px-lg-5">
                   Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ
                   ngày đăng kí gói.
@@ -114,8 +119,8 @@
                 <button class="btn btn-danger my-3">Đăng kí</button>
               </div>
             </div>
-            <div class="carousel-item h-100" data-bs-interval="5000">
-              <div class="caption btn rounded px-lg-5 px-2 py-2">
+            <div class="carousel-item">
+              <div class=" btn rounded px-lg-5 px-2 py-2 w-100">
                 <a href=""> <h5 class="px-4">GÓI THÁNG : SINHVIEN20K2</h5></a>
                 <p class="px-4 px-lg-5">
                   Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ
@@ -128,7 +133,7 @@
           <button
             class="carousel-control-prev"
             type="button"
-            data-bs-target="#carouselExampleCaptions"
+            data-bs-target="#carouselExampleInterval"
             data-bs-slide="prev"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -137,69 +142,71 @@
           <button
             class="carousel-control-next"
             type="button"
-            data-bs-target="#carouselExampleCaptions"
+            data-bs-target="#carouselExampleInterval"
             data-bs-slide="next"
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-
-       
       </div>
-      <h3 class="header px-2 px-lg-0 text-center">Tất cả các gói</h3>
+      <h3 class="header col-12 px-3 text-center">Tất cả các gói</h3>
       <div class="d-flex justify-content-center flex-wrap">
-        
-        <div class="caption btn rounded  col-12 col-sm-5 col-xl-3 mx-2 my-3 shadow-lg">
+        <div
+          class="caption btn rounded col-12 col-sm-5 col-xl-3 py-md-4 py-3 mx-2 my-3 shadow-lg"
+        >
           <a
             href="
          "
           >
-            <h5 >GÓI THÁNG : SINHVIEN20K2</h5></a
+            <h5>GÓI THÁNG : SINHVIEN20K2</h5></a
           >
           <p>
-            Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ
-            ngày đăng kí gói.
+            Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ ngày
+            đăng kí gói.
           </p>
           <button class="btn btn-danger my-1">Đăng kí</button>
         </div>
-        <div class="caption btn rounded  col-12 col-sm-5 col-xl-3 mx-2 my-3 shadow-lg">
+        <div
+          class="caption btn rounded col-12 col-sm-5 col-xl-3 py-md-4 py-3 mx-2 my-3 shadow-lg"
+        >
           <a
             href="
          "
           >
-            <h5 >GÓI THÁNG : SINHVIEN20K2</h5></a
+            <h5>GÓI THÁNG : SINHVIEN20K2</h5></a
           >
           <p>
-            Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ
-            ngày đăng kí gói.
+            Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ ngày
+            đăng kí gói.
           </p>
           <button class="btn btn-danger my-1">Đăng kí</button>
         </div>
-        <div class="caption btn rounded  col-12 col-sm-5 col-xl-3 mx-2 my-3 shadow-lg ">
+        <div
+          class="caption btn rounded col-12 col-sm-5 col-xl-3 py-md-4 py-3 mx-2 my-3 shadow-lg"
+        >
           <a
             href="
          "
           >
-            <h5 >GÓI THÁNG : SINHVIEN20K2</h5></a
+            <h5>GÓI THÁNG : SINHVIEN20K2</h5></a
           >
           <p>
-            Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ
-            ngày đăng kí gói.
+            Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ ngày
+            đăng kí gói.
           </p>
           <button class="btn btn-danger my-1">Đăng kí</button>
         </div>
-        
       </div>
     </div>
   </body>
   <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"
-></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
     integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
