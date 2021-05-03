@@ -28,6 +28,7 @@ button:focus {
 }
 .header {
   font-family: var(--main-header-font);
+
 }
 .far, .fas, .fab {
   color: var(--main-color);
