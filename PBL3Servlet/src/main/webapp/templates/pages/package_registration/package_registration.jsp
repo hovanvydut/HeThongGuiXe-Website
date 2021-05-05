@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chi tiết gói gửi xe</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
@@ -47,34 +47,10 @@
 </style>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
-        <a class="navbar-brand  d-flex align-items-center" href="#">
-            <img src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png" width="30" height="30" alt="S-PBL" />
-            <b> S-PBL</b>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/tracuu_chitiet.html">Trang Chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/tracuu.html">Tra Cứu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/list_packet.html">Gói gửi xe</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 flex-grow-1 d-flex justify-content-start justify-content-lg-end">
-                <a class="rounded-circle" height="40px" width="40px" href="/user_info.html">
-                    <i class="fas fa-user"></i>
-                </a>
-            </form>
-        </div>
-    </nav>
+    
+    <!-- import navigation  -->
+    <%@include file="/templates/fragments/navigation.jspf" %>
+    
     <div
         class="vw-100 d-flex flex-column justify-content-center align-items-center main-container px-md-5 px-2 py-md-5 py-2">
         <div

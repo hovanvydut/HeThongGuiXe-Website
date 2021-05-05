@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tra cứu</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
@@ -49,7 +49,7 @@
 <body>
     
     <!-- import navigation fragment -->
-    <%@include file="/templates/fragments/navigation.jsp" %>
+    <%@include file="/templates/fragments/navigation.jspf" %>
     
     <div
         class="vw-100 d-flex flex-column justify-content-center align-items-center main-container px-md-5 px-2 py-md-5 py-2">

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author hovanvydut
  */
 
-@WebServlet(urlPatterns = {"/"}, name = "HomeServlet")
+@WebServlet(urlPatterns = {"/home"}, name = "HomeServlet")
 public class HomeServlet extends HttpServlet{
     
     private final String homeJsp = "/templates/pages/home/home.jsp";

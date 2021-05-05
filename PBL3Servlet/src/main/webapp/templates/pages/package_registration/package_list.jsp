@@ -40,7 +40,7 @@
 <body>
     
     <!-- import navigation  -->
-    <%@include file="/templates/fragments/navigation.jsp" %>
+    <%@include file="/templates/fragments/navigation.jspf" %>
     
     <div class="container my-4 my-md-5 px-5 px-sm-0">
         <div class="col-12 col-xl-9 my-4 my-md-5 bg-white shadow-lg rounded m-auto">
