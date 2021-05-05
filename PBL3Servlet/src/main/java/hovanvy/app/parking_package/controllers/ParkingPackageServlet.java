@@ -5,12 +5,11 @@
  */
 package hovanvy.app.parking_package.controllers;
 
+import hovanvy.app.parking_package.services.ParkingPackageService;
+import hovanvy.app.parking_package.services.ParkingPackageServiceImpl;
 import hovanvy.entity.ParkingPackage;
 import java.io.IOException;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,41 +25,21 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/package-list"}, name = "ParkingPackageServlet")
 public class ParkingPackageServlet extends HttpServlet {
     
-    private final String packageRegistrationJsp = "/templates/pages/package_registration/package_list.jsp";
+    private static final String PACKAGE_REGISTRATION_JSP = 
+            "/templates/pages/package_registration/package_list.jsp";
+    
+    private final ParkingPackageService parkingPackageService = new ParkingPackageServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PBL3_Unit");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        List<ParkingPackage> parkingPackages = this.parkingPackageService.findAllParkingPackages();
         
-        entityManager.getTransaction().begin();
-        
-        // persitent here
-//        ParkingPackage parkingPackage = new ParkingPackage();
-//        parkingPackage.setName("SV20K2");
-//        parkingPackage.setDesciption("Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ ngày đăng kí gói.");
-//        parkingPackage.setDuration(30);
-//        parkingPackage.setIs_visible(true);
-//        parkingPackage.setPrice(20000);
-//        
-//        entityManager.persist(parkingPackage);
-
-        List<ParkingPackage> list = entityManager.createQuery("SELECT u FROM ParkingPackage u", ParkingPackage.class).getResultList();
-        
-        for (ParkingPackage p : list) {
-            System.out.println(p);
-        }
-        
-        entityManager.getTransaction().commit();
-        entityManager.close();
-        entityManagerFactory.close();
-        
+        request.setAttribute("parkingPackages", parkingPackages);
         response.setContentType("text/html");
-        
         RequestDispatcher rd = 
-                request.getRequestDispatcher(packageRegistrationJsp);
+                request.getRequestDispatcher(PACKAGE_REGISTRATION_JSP);
         
         rd.forward(request, response);
     }
@@ -69,7 +48,6 @@ public class ParkingPackageServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
     }
 
 }
