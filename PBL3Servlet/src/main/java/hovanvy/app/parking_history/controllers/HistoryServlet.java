@@ -1,4 +1,4 @@
-package hovanvy.app.history.controllers;
+package hovanvy.app.parking_history.controllers;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
