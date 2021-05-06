@@ -32,14 +32,17 @@ public class SecurityFilter implements Filter{
         
         UserDetails loggedInUser = (UserDetails) request.getSession().getAttribute("loggedInUser");
         
+        // get full URL to redirecting back a page after login successfully
+        String uri = request.getRequestURI();
+        String queryString = request.getQueryString();
+        String fullUrl = (queryString != null) ? (uri + "?" + queryString) : (uri);
+        
         // if user has not logged in, redirect to Login Page
         if (loggedInUser == null) {
-            response.sendRedirect(request.getContextPath() + "/login");
+            response.sendRedirect(request.getContextPath() + "/login?from=" + fullUrl);
             return;
         }
         
-        String servletPath = request.getServletPath();
-        System.out.println("Servlet path1 " + servletPath);
         chain.doFilter(request, response);
     }
 

@@ -7,6 +7,7 @@ package hovanvy.app.parking_package.controllers;
 
 import hovanvy.app.parking_package.services.ParkingPackageService;
 import hovanvy.app.parking_package.services.ParkingPackageServiceImpl;
+import hovanvy.common.enums.PathJsp;
 import hovanvy.entity.ParkingPackage;
 import java.io.IOException;
 import java.util.List;
@@ -25,9 +26,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/package-list"}, name = "ParkingPackageServlet")
 public class ParkingPackageServlet extends HttpServlet {
     
-    private static final String PACKAGE_REGISTRATION_JSP = 
-            "/templates/pages/package_registration/package_list.jsp";
-    
     private final ParkingPackageService parkingPackageService = new ParkingPackageServiceImpl();
 
     @Override
@@ -39,7 +37,7 @@ public class ParkingPackageServlet extends HttpServlet {
         request.setAttribute("parkingPackages", parkingPackages);
         response.setContentType("text/html");
         RequestDispatcher rd = 
-                request.getRequestDispatcher(PACKAGE_REGISTRATION_JSP);
+                request.getRequestDispatcher(PathJsp.PACKAGE_LIST.getPath());
         
         rd.forward(request, response);
     }

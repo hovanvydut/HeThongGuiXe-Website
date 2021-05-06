@@ -48,10 +48,10 @@
                         <c:forEach items="${parkingPackages}" var="parkingPackage" varStatus="loop">
                             <c:if test="${loop.index == 0}">
                                 <div class="carousel-item active" data-bs-interval="2000">
-                                </c:if>
-                                <c:if test="${loop.index != 0}">
-                                    <div class="carousel-item" data-bs-interval="2000">
-                                    </c:if>
+                            </c:if>
+                            <c:if test="${loop.index != 0}">
+                                <div class="carousel-item" data-bs-interval="2000">
+                            </c:if>
 
                                     <div class=" btn rounded px-lg-5 px-2 py-2 w-100">
                                         <a href="">
@@ -99,6 +99,10 @@
 
                 </div>
             </div>
+
+            <!-- Welcome Toast after login successfully -->
+            <%@include file="/templates/fragments/welcome_login_toast.jspf" %>
+
     </body>
 
     <%@include file="/templates/fragments/script_bootstrap5.jspf" %>

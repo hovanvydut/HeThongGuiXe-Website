@@ -87,6 +87,10 @@
                 </div>
             </div>
         </div>
+
+        <!-- Welcome Toast after login successfully -->
+        <%@include file="/templates/fragments/welcome_login_toast.jspf" %>
+
     </body>
 
     <%@include file="/templates/fragments/script_bootstrap5.jspf" %>

@@ -73,7 +73,16 @@
 
             <form action="${pageContext.request.contextPath}/login" method="POST" name="loginForm" id="loginForm"
                   class="px-sm-5 px-4 py-5 col-sm-8 col-11 mx-2 bg-white flex-md-row flex-column d-flex justify-content-center align-items-center shadow-lg rounded">
-
+                
+                
+                <c:if test="${param.from != null}">
+                    <input name="from" type="hidden" value="${param.from}"/>
+                </c:if>
+                    
+                <c:if test="${from != null}">
+                    <input name="from" type="hidden" value="${from}"/>
+                </c:if>
+                
                 <img class="col-6 img-fluid m-3 d-none d-md-block" src="${pageContext.request.contextPath}/static/img/search.jpg" alt="" srcset="" />
 
                 <div class="col-12 col-md-6 m-3">
@@ -94,7 +103,7 @@
                     <div class="mb-3 w-100">
                         <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
                         <input name="password" type="password" class="form-control" id="exampleDropdownFormPassword1"
-                               placeholder="Password" />
+                               placeholder="Password" required/>
                     </div>
 
                     <div class="mb-3 w-100">
