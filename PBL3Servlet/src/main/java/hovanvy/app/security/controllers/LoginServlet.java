@@ -50,7 +50,8 @@ public class LoginServlet extends HttpServlet{
             }
             
             request.getSession().setAttribute("loggedInUser", userInDB);
-            response.sendRedirect(request.getContextPath() + "/home");
+            
+            response.sendRedirect(request.getContextPath() + "/home?loginSuccessfulMsg=" + "true");
             
             return;
         } catch (UsernameNotFoundException ex) {
