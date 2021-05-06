@@ -1,7 +1,6 @@
 package hovanvy.app.customers.controllers;
 
-import hovanvy.app.customers.services.CustomerService;
-import hovanvy.app.customers.services.CustomerServiceImpl;
+import hovanvy.app.customers.services.CustomerDetailsServiceImpl;
 import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingHistory;
 import java.io.IOError;
@@ -13,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import hovanvy.app.customers.services.CustomerDetailsService;
 
 /**
  *
@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CustomerInfoServlet extends HttpServlet{
     
     private final String customerInfoJsp = "/templates/pages/customers/customer_info.jsp";
-    private CustomerService customerService = new CustomerServiceImpl();
+    private CustomerDetailsService customerService = new CustomerDetailsServiceImpl();
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
