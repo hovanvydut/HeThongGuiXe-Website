@@ -1,5 +1,6 @@
 package hovanvy.app.history.controllers;
 
+import hovanvy.common.enums.PathJsp;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,13 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/history"}, name = "HistoryServlet")
 public class HistoryServlet extends HttpServlet {
     
-    private final String historyJsp = "/templates/pages/history/history.jsp";
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        RequestDispatcher rd = request.getRequestDispatcher(historyJsp);
+        RequestDispatcher rd = request.getRequestDispatcher(PathJsp.HISTORY.getPath());
         rd.forward(request, response);
     }
     
