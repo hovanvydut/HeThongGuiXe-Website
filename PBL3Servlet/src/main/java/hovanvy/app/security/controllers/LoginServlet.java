@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import hovanvy.app.customers.services.CustomerDetailsService;
-import hovanvy.app.security.customeruserdetails.CustomerUserDetails;
 import hovanvy.common.enums.MessageEnum;
 import hovanvy.common.enums.PathJsp;
 import hovanvy.common.exceptions.UsernameNotFoundException;
@@ -18,6 +17,7 @@ import hovanvy.common.userdetails.UserDetails;
  *
  * @author hovanvydut
  */
+
 @WebServlet(urlPatterns = {"/login"}, name = "LoginServlet")
 public class LoginServlet extends HttpServlet {
 

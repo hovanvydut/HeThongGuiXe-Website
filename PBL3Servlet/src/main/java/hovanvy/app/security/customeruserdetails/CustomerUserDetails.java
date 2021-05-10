@@ -31,4 +31,8 @@ public class CustomerUserDetails implements UserDetails {
         return true;
     }
     
+    @Override
+    public Customer getUser() {
+        return this.customer;
+    }
 }

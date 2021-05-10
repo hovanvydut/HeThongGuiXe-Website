@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import hovanvy.app.customers.services.CustomerDetailsService;
 import hovanvy.common.enums.PathJsp;
+import hovanvy.common.userdetails.UserDetails;
 
 /**
  *
@@ -38,6 +39,9 @@ public class CustomerInfoServlet extends HttpServlet{
             }
         }
         
+        UserDetails loggedInUserDetails = (UserDetails) request.getSession().getAttribute("loggedInUser");
+        Customer loggedInCustomer = loggedInUserDetails.getUser();
+        request.setAttribute("loggedInCustomer", loggedInCustomer);
         
         RequestDispatcher rd = request.getRequestDispatcher(PathJsp.CUSTOMER_INFO.getPath());
         

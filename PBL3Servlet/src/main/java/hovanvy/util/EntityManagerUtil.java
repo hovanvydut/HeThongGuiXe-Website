@@ -11,7 +11,8 @@ import javax.persistence.Persistence;
 public class EntityManagerUtil {
     private static final String PERSISTENCE_UNIT_NAME = "PBL3_Unit";
     private static EntityManagerUtil _instance;
-    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+    private static EntityManagerFactory emf = 
+            Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
     
     private EntityManagerUtil() {
         
