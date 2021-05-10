@@ -79,7 +79,7 @@
                     <input name="from" type="hidden" value="${param.from}"/>
                 </c:if>
                     
-                <c:if test="${from != null}">
+                <c:if test="${param.from != null}">
                     <input name="from" type="hidden" value="${from}"/>
                 </c:if>
                 
