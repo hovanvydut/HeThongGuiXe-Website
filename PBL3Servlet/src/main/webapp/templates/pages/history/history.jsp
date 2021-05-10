@@ -57,11 +57,11 @@
                     <div class="px-2">
                         <h3 class="text-left header">Tra cứu chi tiết</h3>
 
-                        <form class="needs-validation w-100 " novalidate>
+                        <form action="${pageContext.request.contextPath}/history/details" method="GET" class="needs-validation w-100 " novalidate>
                             <div class="form-row m-auto">
                                 <div class=" col-12 mb-3 ">
-                                    <label for="validationCustom01">Từ ngày</label>
-                                    <input class="form-control" id="validationCustom01" type="date" value="2011-08-19"
+                                    <label for="fromDate">Từ ngày</label>
+                                    <input name="fromDate" class="form-control" id="fromDate" type="date" value="2011-08-19"
                                            id="example-date-input" required>
                                     <div class="valid-feedback">
                                         Looks good!
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class=" col-12 mb-3">
                                     <label for="validationCustom02">Đến ngày</label>
-                                    <input class="form-control" id="validationCustom02" type="date" value="2011-08-19"
+                                    <input name="toDate" class="form-control" id="toDate" type="date" value="2011-08-19"
                                            id="example-date-input" required>
                                     <div class="valid-feedback">
                                         Looks good!
@@ -111,4 +111,5 @@
     </body>
 
     <%@include file="/templates/fragments/script_bootstrap5.jspf" %>
+    <script src="${pageContext.request.contextPath}/static/js/setCurrentDateForDateTimePicker.js"></script>
 </html>

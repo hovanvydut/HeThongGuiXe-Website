@@ -32,6 +32,31 @@ public class ParkingPackageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+//        ParkingPackage p1 = new ParkingPackage();
+//        p1.setName("SV30");
+//        p1.setDescription("Giá 30k dùng trong 30 ngày dành riêng cho sinh viên BK");
+//        p1.setDuration(30);
+//        p1.setPrice(30000);
+//        p1.setVisible(true);
+//        
+//        ParkingPackage p2 = new ParkingPackage();
+//        p2.setName("SV20");
+//        p2.setDescription("Giá 20k dùng trong 20 ngày dành riêng cho sinh viên BK");
+//        p2.setDuration(20);
+//        p2.setPrice(20000);
+//        p2.setVisible(true);
+//        
+//        ParkingPackage p3 = new ParkingPackage();
+//        p3.setName("SV10");
+//        p3.setDescription("Giá 10k dùng trong 10 ngày dành riêng cho sinh viên BK");
+//        p3.setDuration(10);
+//        p3.setPrice(10000);
+//        p3.setVisible(true);
+//        
+//        this.parkingPackageService.saveParkingPackage(p1);
+//        this.parkingPackageService.saveParkingPackage(p2);
+//        this.parkingPackageService.saveParkingPackage(p3);
+        
         List<ParkingPackage> parkingPackages = this.parkingPackageService.findAllParkingPackages();
         
         request.setAttribute("parkingPackages", parkingPackages);

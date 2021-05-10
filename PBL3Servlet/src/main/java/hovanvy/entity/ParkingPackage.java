@@ -20,10 +20,10 @@ public class ParkingPackage {
     private Integer ID_package;
     
     private String name;
-    private String desciption;
+    private String description;
     private Integer price;
     private Integer duration;
-    private Boolean is_visible;
+    private Boolean visible;
 
     public ParkingPackage() {
     }
@@ -44,12 +44,12 @@ public class ParkingPackage {
         this.name = name;
     }
 
-    public String getDesciption() {
-        return desciption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesciption(String desciption) {
-        this.desciption = desciption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getPrice() {
@@ -68,17 +68,17 @@ public class ParkingPackage {
         this.duration = duration;
     }
 
-    public Boolean getIs_visible() {
-        return is_visible;
+    public Boolean getVisible() {
+        return visible;
     }
 
-    public void setIs_visible(Boolean is_visible) {
-        this.is_visible = is_visible;
+    public void setVisible(Boolean visible) {
+        this.visible = visible;
     }
 
     @Override
     public String toString() {
-        return "ParkingPackage{" + "ID_package=" + ID_package + ", name=" + name + ", desciption=" + desciption + ", price=" + price + ", duration=" + duration + ", is_visible=" + is_visible + '}';
+        return "ParkingPackage{" + "ID_package=" + ID_package + ", name=" + name + ", desciption=" + description + ", price=" + price + ", duration=" + duration + ", is_visible=" + visible + '}';
     }
 
 }

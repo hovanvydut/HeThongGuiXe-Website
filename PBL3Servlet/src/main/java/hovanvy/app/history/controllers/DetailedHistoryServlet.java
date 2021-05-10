@@ -19,29 +19,28 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author hovanvydut
  */
-
-@WebServlet(urlPatterns = {"/history"}, name = "HistoryServlet")
-public class HistoryServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/history/details"}, name = "DetailedHistoryServlet")
+public class DetailedHistoryServlet extends HttpServlet {
     
     private final HistoryService historyService = new HistoryServiceImpl();
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        
+        String fromDate = (String) request.getParameter("fromDate");
+        String toDate = (String) request.getParameter("toDate");
         
         Customer loggedInCustomer = CustomerUtil.getLoggedInUser(request);
         
-        List<ParkingHistory> history = this.historyService.getAllHistory(loggedInCustomer.getID_customer());
-        
-        System.out.println("==========");
-        for(ParkingHistory h : history) {
-            System.out.println(history);
-        }
-        
+        List<ParkingHistory> history = 
+                this.historyService.filterHistory(loggedInCustomer.getID_customer(), fromDate, toDate);
+
         request.setAttribute("history", history);
+        request.setAttribute("toDate", toDate);
+        request.setAttribute("fromDate", fromDate);
         
-        RequestDispatcher rd = request.getRequestDispatcher(PathJsp.HISTORY.getPath());
-        rd.forward(request, response);
+        RequestDispatcher dp = request.getRequestDispatcher(PathJsp.DETAILED_HISTORY.getPath());
+        dp.forward(request, response);
     }
-    
 }

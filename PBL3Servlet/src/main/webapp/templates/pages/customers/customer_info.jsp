@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +59,14 @@
                                     <div class="col-sm-10">
                                         <input disabled type="text" class="form-control" id="inputPhonenumber"
                                                value="${loggedInCustomer.phone}">
+                                    </div>
+                                </div>
+                                   <div class="row mb-3">
+                                    <label for="inputCreatedAt" class="col-sm-2 col-form-label">Created at</label>
+                                    <div class="col-sm-10">
+                                        <fmt:parseDate value="${ loggedInCustomer.created_at }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTimeCreatedAt" type="both" />
+                                        <input disabled type="text" class="form-control" id="inputCreatedAt"
+                                               value="<fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeCreatedAt }" />">
                                     </div>
                                 </div>
                             </form>

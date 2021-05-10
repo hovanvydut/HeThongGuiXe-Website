@@ -58,7 +58,7 @@
                                             <h5 class="px-4  text-wraps">${parkingPackage.name}</h5>
                                         </a>
                                         <p class="px-4 px-lg-5  text-wrap">
-                                            ${parkingPackage.desciption}
+                                            ${parkingPackage.description}
                                         </p>
                                         <button class="btn btn-danger my-3">Đăng kí</button>
                                     </div>
@@ -91,7 +91,7 @@
                                 <h5 class=" text-wrap">${parkingPackage.name}</h5>
                             </a>
                             <p class=" text-wrap">
-                                ${parkingPackage.desciption}
+                                ${parkingPackage.description}
                             </p>
                             <button class="btn btn-danger my-1">Đăng kí</button>
                         </div>

@@ -9,7 +9,8 @@ public enum PathJsp {
     CUSTOMER_INFO("/templates/pages/customers/customer_info.jsp"),
     HISTORY("/templates/pages/history/history.jsp"),
     PACKAGE_LIST("/templates/pages/package_registration/package_list.jsp"),
-    LOGIN("/templates/pages/login/login.jsp");
+    LOGIN("/templates/pages/login/login.jsp"),
+    DETAILED_HISTORY("/templates/pages/history/detailed_history.jsp");
     
     private String path;
     

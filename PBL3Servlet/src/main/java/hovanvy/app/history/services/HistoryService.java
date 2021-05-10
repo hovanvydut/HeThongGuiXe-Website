@@ -10,5 +10,7 @@ import java.util.List;
 
 public interface HistoryService {
     
-    List<ParkingHistory> getAllHistory(Integer userId);
+    List<ParkingHistory> getAllHistory(Integer customerId);
+    
+    List<ParkingHistory> filterHistory(Integer customerId, String fromDateStr, String toDateStr);
 }

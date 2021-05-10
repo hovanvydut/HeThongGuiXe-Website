@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,18 +57,26 @@
                     <form class="needs-validation w-100 " novalidate>
                         <div class="form-row m-auto">
                             <div class=" col-12 mb-3 ">
-                                <label for="validationCustom01">Ngày Gửi Xe</label>
-                                <input class="form-control" id="validationCustom01" type="date" value="2011-08-19"
-                                       id="example-date-input" required>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
+                                <label for="fromDate">Ngày Gửi Xe</label>
+                                <c:if test="${requestScope.fromDate != null}">
+                                    <input id="fromDate" class="form-control" type="date" value="${fromDate}"
+                                           required>
+                                </c:if>
+                                <c:if test="${requestScope.fromDate == null}">
+                                    <input id="fromDate" class="form-control" type="date" value=""
+                                           required>
+                                </c:if>
                             </div>
                             <div class=" col-12 mb-3">
-                                <label for="validationCustom02">Ngày Lấy Xe</label>
-                                <input class="form-control" id="validationCustom02" type="date" value="2011-08-19"
-                                       id="example-date-input" required>
-
+                                <label for="toDate">Ngày Lấy Xe</label>
+                                <c:if test="${requestScope.toDate != null}">
+                                    <input id="toDate" class="form-control" value="${toDate}" type="date" 
+                                           required>
+                                </c:if>
+                                <c:if test="${requestScope.toDate == null}">
+                                    <input id="toDate" class="form-control" value="" type="date" 
+                                           required>
+                                </c:if>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -92,28 +101,23 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Plate number</th>
-                                <th scope="col">Check in</th>
                                 <th scope="col">Check out</th>
+                                <th scope="col">Check in</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+                            <c:forEach items="${history}" var="item" varStatus="loop">
+                                <fmt:parseDate value="${ item.check_out_at }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTimeCheckOut" type="both" />
+                                <fmt:parseDate value="${ item.check_in_at }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTimeCheckIn" type="both" />
+                                <tr>
+                                    <th scope="row">${loop.index}</th>
+                                    <td>${item.license_plate}</td>
+
+                                    <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeCheckOut }" /></td>
+                                    <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeCheckIn }" /></td>
+                                </tr>
+                            </c:forEach>
+
                         </tbody>
                     </table>
                 </div>
@@ -166,5 +170,4 @@
             }, false);
         })();
     </script>
-
 </html>
