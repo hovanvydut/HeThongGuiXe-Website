@@ -78,6 +78,7 @@
               rounded-3
               needs-validation
             "
+            id="resetPwdForm"
             novalidate
           >
             <h2 class="font-weight-bold text-center">Đặt lại mật khẩu</h2>
@@ -117,7 +118,7 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-custom w-100">Đặt lại</button>
+            <button id="btnReset"   type="submit" class="btn btn-custom w-100">Đặt lại</button>
           </form>
         </div>
       </div>
@@ -128,6 +129,12 @@
     const password = document.getElementById('password');
     const confirm_password = document.getElementById('confirm_password');
     const error = document.getElementById('passwordFeedback');
+    const resetForm = document.getElementById('resetPwdForm');
+    const resetBtn =  document.getElementById('btnReset');
+    resetForm.onsubmit = () => {
+      // validatePassword();
+      resetBtn.disabled  = true;
+    }
     function validatePassword() {
       if (password.value != confirm_password.value) {
         //   show err
@@ -136,7 +143,6 @@
         error.style.display = none;
       }
     }
-
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
     (function () {
