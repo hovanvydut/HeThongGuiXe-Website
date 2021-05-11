@@ -89,6 +89,9 @@ public class Payment {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Payment{" + "ID_payment=" + ID_payment + ", description=" + description + ", paid_at=" + paid_at + ", start_date=" + start_date + ", end_date=" + end_date + ", price=" + price + '}';
+    }
 }

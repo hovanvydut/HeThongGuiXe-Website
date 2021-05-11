@@ -3,6 +3,7 @@ package hovanvy.app.customers.dao;
 import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.entity.Customer;
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -10,6 +11,8 @@ import java.util.List;
  */
 
 public interface CustomerDAO {
+    
+    Optional<Customer> findById(Integer id);
     
     List<Customer> getAllCustomers();
     

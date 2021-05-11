@@ -78,10 +78,6 @@
                 <c:if test="${param.from != null}">
                     <input name="from" type="hidden" value="${param.from}"/>
                 </c:if>
-                    
-                <c:if test="${param.from != null}">
-                    <input name="from" type="hidden" value="${from}"/>
-                </c:if>
                 
                 <img class="col-6 img-fluid m-3 d-none d-md-block" src="${pageContext.request.contextPath}/static/img/search.jpg" alt="" srcset="" />
 

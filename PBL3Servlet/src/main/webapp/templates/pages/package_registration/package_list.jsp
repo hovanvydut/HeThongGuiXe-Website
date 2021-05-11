@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,73 +36,107 @@
         <!-- import navigation  -->
         <%@include file="/templates/fragments/navigation.jspf" %>
 
-        <div class="container my-4 my-md-5 px-5 px-sm-0">
-
-            <div class="col-12 col-xl-9 my-4 my-md-5 bg-white shadow-lg rounded m-auto">
-                <h3 class="header p-2 p-md-3 text-center border-bottom  border-info border-2  text-wrap">Các gói thịnh hành
-                </h3>
-
-                <div id="carouselExampleInterval" class="carousel slide col-12 " data-bs-ride="carousel">
-                    <div class="carousel-inner">
-
+        <div class="container my-4 my-md-5 px-md-5 px-sm-0">
+            <div class="row">
+                <div class="col-12 col-xl-9 my-4 my-md-5 m-auto">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <h3 class="header col-12 px-3 text-center  text-wrap">Tất cả các gói</h3>
                         <!-- Loop through all objects of List<ParkingPackage> -->
-                        <c:forEach items="${parkingPackages}" var="parkingPackage" varStatus="loop">
-                            <c:if test="${loop.index == 0}">
-                                <div class="carousel-item active" data-bs-interval="2000">
-                            </c:if>
-                            <c:if test="${loop.index != 0}">
-                                <div class="carousel-item" data-bs-interval="2000">
-                            </c:if>
+                        <c:forEach items="${parkingPackages}" var="parkingPackage">
+                            <div class="caption btn rounded col-12 col-sm-5 col-xl-3 py-md-4 py-3 mx-2 my-3 shadow-lg">
+                                <a href="">
+                                    <h5 class=" text-wrap">${parkingPackage.name}</h5>
+                                </a>
+                                <p class=" text-wrap">
+                                    ${parkingPackage.description}
+                                </p>
+                                <button type="button" data-packageName="${parkingPackage.name}" data-parkingpackageid="${parkingPackage.ID_package}" onclick="showModal(this)" class="btn btn-danger my-1">Đăng kí</button>
+                            </div>
+                        </c:forEach>
 
-                                    <div class=" btn rounded px-lg-5 px-2 py-2 w-100">
-                                        <a href="">
-                                            <h5 class="px-4  text-wraps">${parkingPackage.name}</h5>
-                                        </a>
-                                        <p class="px-4 px-lg-5  text-wrap">
-                                            ${parkingPackage.description}
-                                        </p>
-                                        <button class="btn btn-danger my-3">Đăng kí</button>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-12 col-xl-9 my-4 my-md-5 bg-white shadow-lg rounded m-auto">
+                    <h3 class="header p-2 p-md-3 text-center border-bottom  border-info border-2  text-wrap">
+                        Các gói đã đăng kí
+                    </h3>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Start</th>
+                                <th scope="col">End</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Paid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${payments}" var="item" varStatus="loop">
+                                <fmt:parseDate value="${ item.start_date }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTimeStartDate" type="both" />
+                                <fmt:parseDate value="${ item.end_date }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTimeEndDate" type="both" />
+
+                                <tr>
+                                    <th scope="row">${loop.index + 1}</th>
+
+                                    <td>
+                                        <fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeStartDate }" />
+                                    </td>
+
+                                    <td>
+                                        <fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeEndDate }" />
+                                    </td>
+
+                                    <td>${item.price}</td>
+
+                                    <c:if test="${ item.paid_at != null }">
+                                        <td><i class="fas fa-check" style="color: #37b89a;"></i></td>
+                                        </c:if>
+
+                                    <c:if test="${ item.paid_at == null }">
+                                        <td><i class="far fa-question-circle" style="color: orange;"></i></td>
+                                        </c:if>
+
+                                </tr>
                             </c:forEach>
 
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                                data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                                data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-
+                        </tbody>
+                    </table> 
                 </div>
 
-                <h3 class="header col-12 px-3 text-center  text-wrap">Tất cả các gói</h3>
+            </div>
+        </div>
 
-                <div class="d-flex justify-content-center flex-wrap">
 
-                    <!-- Loop through all objects of List<ParkingPackage> -->
-                    <c:forEach items="${parkingPackages}" var="parkingPackage">
-                        <div class="caption btn rounded col-12 col-sm-5 col-xl-3 py-md-4 py-3 mx-2 my-3 shadow-lg">
-                            <a href="">
-                                <h5 class=" text-wrap">${parkingPackage.name}</h5>
-                            </a>
-                            <p class=" text-wrap">
-                                ${parkingPackage.description}
-                            </p>
-                            <button class="btn btn-danger my-1">Đăng kí</button>
-                        </div>
-                    </c:forEach>
+        <div id="confirmModal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Notify</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalTitle"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="submitForm(this)" id="submitBtn" type="button" class="btn btn-primary">Yes, I want</button>
 
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Welcome Toast after login successfully -->
-            <%@include file="/templates/fragments/welcome_login_toast.jspf" %>
+        <form id="registerForm" action="${pageContext.request.contextPath}/parking-package/register" method="POST">
+            <input id="parkingPackageIdInput" name="parkingPackageId" type="hidden" value=""/>
+        </form>
+        <!-- Welcome Toast after login successfully -->
+        <%@include file="/templates/fragments/welcome_login_toast.jspf" %>
 
     </body>
 
@@ -136,4 +171,24 @@
         })();
     </script>
 
+    <script>
+        function showModal(event) {
+            let parkingPackageId = event.dataset.parkingpackageid;
+            let myModal = new bootstrap.Modal(document.getElementById('confirmModal'))
+            let modalTitle = document.getElementById("modalTitle");
+            
+            document.getElementById("parkingPackageIdInput").value = parkingPackageId;
+            modalTitle.innerText = "Do you want to register this package: " + event.dataset.packagename;
+            myModal.show();
+
+            return;
+        }
+
+        function submitForm() {
+            let myModal = new bootstrap.Modal(document.getElementById('confirmModal'))
+            myModal.hide();
+            let form = document.getElementById("registerForm");
+            form.submit();
+        }
+    </script>
 </html>

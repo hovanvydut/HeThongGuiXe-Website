@@ -54,32 +54,29 @@
 
             <div class="row bg-white shadow-lg rounded px-md-5 px-2 py-3 py-md-5 mb-5">
                 <div class="col-12">
-                    <form class="needs-validation w-100 " novalidate>
+                    <form action="${pageContext.request.contextPath}/history/details" method="GET" class="needs-validation w-100 " novalidate>
                         <div class="form-row m-auto">
                             <div class=" col-12 mb-3 ">
                                 <label for="fromDate">Ngày Gửi Xe</label>
                                 <c:if test="${requestScope.fromDate != null}">
-                                    <input id="fromDate" class="form-control" type="date" value="${fromDate}"
+                                    <input name="fromDate" id="fromDate" class="form-control" type="date" value="${fromDate}"
                                            required>
                                 </c:if>
                                 <c:if test="${requestScope.fromDate == null}">
-                                    <input id="fromDate" class="form-control" type="date" value=""
+                                    <input name="fromDate" id="fromDate" class="form-control" type="date" value=""
                                            required>
                                 </c:if>
                             </div>
                             <div class=" col-12 mb-3">
                                 <label for="toDate">Ngày Lấy Xe</label>
                                 <c:if test="${requestScope.toDate != null}">
-                                    <input id="toDate" class="form-control" value="${toDate}" type="date" 
+                                    <input name="toDate" id="toDate" class="form-control" value="${toDate}" type="date" 
                                            required>
                                 </c:if>
                                 <c:if test="${requestScope.toDate == null}">
-                                    <input id="toDate" class="form-control" value="" type="date" 
+                                    <input name="toDate" id="toDate" class="form-control" value="" type="date" 
                                            required>
                                 </c:if>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
                             </div>
 
                         </div>
@@ -96,13 +93,14 @@
             </div>
             <div class="row bg-white shadow-lg rounded px-md-5 px-2 py-3 py-md-5 mb-5">
                 <div class="col-12">
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Plate number</th>
                                 <th scope="col">Check out</th>
                                 <th scope="col">Check in</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -110,11 +108,19 @@
                                 <fmt:parseDate value="${ item.check_out_at }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTimeCheckOut" type="both" />
                                 <fmt:parseDate value="${ item.check_in_at }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTimeCheckIn" type="both" />
                                 <tr>
-                                    <th scope="row">${loop.index}</th>
+                                    <th scope="row">${loop.index + 1}</th>
                                     <td>${item.license_plate}</td>
 
                                     <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeCheckOut }" /></td>
                                     <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeCheckIn }" /></td>
+                                    
+                                    <c:if test="${ item.check_out_at != null }">
+                                        <td><i class="fas fa-check" style="color: #37b89a;"></i></td>
+                                    </c:if>
+                                        
+                                    <c:if test="${ item.check_out_at == null }">
+                                        <td><i class="far fa-question-circle" style="color: orange;"></i></td>
+                                    </c:if>
                                 </tr>
                             </c:forEach>
 

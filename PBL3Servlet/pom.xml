@@ -63,6 +63,7 @@
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
+                    
                     <annotationProcessorPaths>
                         <annotationProcessorPath>
                             <groupId>org.hibernate</groupId>
@@ -70,6 +71,7 @@
                             <version>${hibernate.version}</version>
                         </annotationProcessorPath>
                     </annotationProcessorPaths>
+                    
                 </configuration>
             </plugin>
             

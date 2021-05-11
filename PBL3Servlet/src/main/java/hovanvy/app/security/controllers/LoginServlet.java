@@ -12,6 +12,9 @@ import hovanvy.common.enums.MessageEnum;
 import hovanvy.common.enums.PathJsp;
 import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.common.userdetails.UserDetails;
+import hovanvy.entity.Customer;
+import hovanvy.util.CustomerUtil;
+import hovanvy.util.URLUtil;
 
 /**
  *
@@ -26,7 +29,15 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
+        Customer customer = CustomerUtil.getLoggedInUser(request);
+        
+        // if has logged in, redirect to previous page
+        if (customer != null) {
+            response.sendRedirect(request.getContextPath() + "/home");
+            return;
+        }
+        
         request.getRequestDispatcher(PathJsp.LOGIN.getPath()).forward(request, response);
     }
 
@@ -41,6 +52,7 @@ public class LoginServlet extends HttpServlet {
         String from = request.getParameter("from");
         from = processFromString(from);
         
+        System.out.println("FULLL URLLLLLLLL " + from);
         
         // validate username, password here
         

@@ -71,7 +71,7 @@ public class HistoryDAOImpl implements HistoryDAO{
             cq.where(cb.and(
                     cb.equal(root.get(ParkingHistory_.customer), customer),
                     cb.greaterThan(root.get(ParkingHistory_.check_in_at), fromDate),
-                    cb.lessThan(root.get(ParkingHistory_.check_out_at), toDate)
+                    cb.lessThan(root.get(ParkingHistory_.check_in_at), toDate)
                 ));
             
             TypedQuery<ParkingHistory> query = em.createQuery(cq);

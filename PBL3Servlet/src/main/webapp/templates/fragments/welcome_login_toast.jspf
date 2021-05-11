@@ -6,10 +6,10 @@
             <div class="d-flex">
                 <div class="toast-body">
                     <c:if test="${(sessionScope != null && sessionScope.loggedInUser != null)}">
-                        Welcome <c:out value="${sessionScope.loggedInUser.username}" />!
+                        Welcome <c:out value="${sessionScope.loggedInUser.username}" /> 😎😎😎
                     </c:if>
                     <c:if test="${(sessionScope == null || sessionScope.loggedInUser == null)}">
-                        Welcome <c:out value="${sessionScope.loggedInUser.username}" />!
+                        Welcome <c:out value="${sessionScope.loggedInUser.username}" /> 😎😎😎
                     </c:if>
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
