@@ -18,7 +18,7 @@
                 <a class="nav-link" href="${pageContext.request.contextPath}/history">Tra Cứu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/package-list">Gói gửi xe</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/parking-package/list">Gói gửi xe</a>
             </li>
         </ul>
         <form class="form-inline my-2 flex-grow-1 d-flex justify-content-start justify-content-lg-end">

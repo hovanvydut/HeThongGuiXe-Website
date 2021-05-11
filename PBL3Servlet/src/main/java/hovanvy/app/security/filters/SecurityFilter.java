@@ -1,6 +1,7 @@
 package hovanvy.app.security.filters;
 
 import hovanvy.common.userdetails.UserDetails;
+import hovanvy.util.URLUtil;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author hovanvydut
  */
 
-@WebFilter(urlPatterns = {"/home/*", "/package-list/*", "/customers/*", "/history/*"})
+@WebFilter(urlPatterns = {"/home/*", "/parking-package/*", "/customers/*", "/history/*"})
 public class SecurityFilter implements Filter{
 
     @Override
@@ -33,9 +34,8 @@ public class SecurityFilter implements Filter{
         UserDetails loggedInUser = (UserDetails) request.getSession().getAttribute("loggedInUser");
         
         // get full URL to redirecting back a page after login successfully
-        String uri = request.getRequestURI();
-        String queryString = request.getQueryString();
-        String fullUrl = (queryString != null) ? (uri + "?" + queryString) : (uri);
+        String fullUrl = URLUtil.getFullURL(request);
+        System.out.println("FULL URL ---------------> " + fullUrl);
         
         // if user has not logged in, redirect to Login Page
         if (loggedInUser == null) {
