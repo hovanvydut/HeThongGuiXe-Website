@@ -78,18 +78,18 @@
                         </thead>
                         <tbody>
                             <c:forEach items="${payments}" var="item" varStatus="loop">
-                                <fmt:parseDate value="${ item.start_date }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTimeStartDate" type="both" />
-                                <fmt:parseDate value="${ item.end_date }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTimeEndDate" type="both" />
+                                <fmt:parseDate value="${ item.start_date }" pattern="yyyy-MM-dd" var="parsedDateTimeStartDate" type="both" />
+                                <fmt:parseDate value="${ item.end_date }" pattern="yyyy-MM-dd" var="parsedDateTimeEndDate" type="both" />
 
                                 <tr>
                                     <th scope="row">${loop.index + 1}</th>
 
                                     <td>
-                                        <fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeStartDate }" />
+                                        <fmt:formatDate pattern="dd/MM/yyyy" value="${ parsedDateTimeStartDate }" />
                                     </td>
 
                                     <td>
-                                        <fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeEndDate }" />
+                                        <fmt:formatDate pattern="dd/MM/yyyy" value="${ parsedDateTimeEndDate }" />
                                     </td>
 
                                     <td>${item.price}</td>

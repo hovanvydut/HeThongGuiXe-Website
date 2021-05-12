@@ -10,6 +10,8 @@ import hovanvy.entity.ParkingPackage;
 import hovanvy.entity.ParkingPackage_;
 import hovanvy.entity.Payment;
 import hovanvy.util.EntityManagerUtil;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -88,7 +90,7 @@ public class ParkingPackageDAOImpl implements ParkingPackageDAO {
     public Payment register(Customer customer, ParkingPackage parkingPackage) {
 
         EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
-        LocalDateTime now = LocalDateTime.now();
+        LocalDate now = LocalDate.now();
 
         // create new payment
         Payment payment = null;

@@ -4,6 +4,8 @@ import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingHistory;
 import hovanvy.entity.ParkingHistory_;
 import hovanvy.util.EntityManagerUtil;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ public class HistoryDAOImpl implements HistoryDAO{
 
     @Override
     public List<ParkingHistory> getAllHistory(Integer userId) {
+    	
         EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
         List<ParkingHistory> history = new ArrayList<>();
         
@@ -57,7 +60,9 @@ public class HistoryDAOImpl implements HistoryDAO{
     }
 
     @Override
-    public List<ParkingHistory> filterHistory(Customer customer, LocalDateTime fromDate, LocalDateTime toDate) {
+    public List<ParkingHistory> filterHistory(Customer customer, 
+    		LocalDateTime fromDate, LocalDateTime toDate) {
+    	
         EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
         List<ParkingHistory> history = new ArrayList<>();
         
