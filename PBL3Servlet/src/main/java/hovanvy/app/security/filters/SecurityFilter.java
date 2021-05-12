@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author hovanvydut
  */
 
-@WebFilter(urlPatterns = {"/home/*", "/parking-package/*", "/customers/*", "/history/*"})
+@WebFilter(urlPatterns = {"/parking-package/*", "/customers/*", "/history/*"})
 public class SecurityFilter implements Filter{
 
     @Override
