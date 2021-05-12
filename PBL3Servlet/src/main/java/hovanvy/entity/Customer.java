@@ -16,6 +16,7 @@ import javax.persistence.Table;
  *
  * @author hovanvydut
  */
+
 @Entity
 @Table(name = "Customer")
 public class Customer {
