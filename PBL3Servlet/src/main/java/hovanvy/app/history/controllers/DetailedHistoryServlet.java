@@ -1,13 +1,9 @@
 package hovanvy.app.history.controllers;
 
-import hovanvy.app.history.services.HistoryService;
-import hovanvy.app.history.services.HistoryServiceImpl;
-import hovanvy.common.enums.PathJsp;
-import hovanvy.entity.Customer;
-import hovanvy.entity.ParkingHistory;
-import hovanvy.util.CustomerUtil;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,9 +11,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import hovanvy.app.history.services.HistoryService;
+import hovanvy.app.history.services.HistoryServiceImpl;
+import hovanvy.common.enums.PathJsp;
+import hovanvy.entity.Customer;
+import hovanvy.entity.ParkingHistory;
+import hovanvy.util.CustomerUtil;
+
 /**
  *
  * @author hovanvydut
+ */
+
+/**
+ * 
+ * @see HistoryValidationFilter helps validate request params
+ *
  */
 @WebServlet(urlPatterns = {"/history/details"}, name = "DetailedHistoryServlet")
 public class DetailedHistoryServlet extends HttpServlet {
@@ -28,8 +37,8 @@ public class DetailedHistoryServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
-        String fromDate = (String) request.getParameter("fromDate");
-        String toDate = (String) request.getParameter("toDate");
+        String fromDate = parseStringDate(request, "fromDate");
+        String toDate = parseStringDate(request, "toDate");
         
         Customer loggedInCustomer = CustomerUtil.getLoggedInUser(request);
         
@@ -42,5 +51,15 @@ public class DetailedHistoryServlet extends HttpServlet {
         
         RequestDispatcher dp = request.getRequestDispatcher(PathJsp.DETAILED_HISTORY.getPath());
         dp.forward(request, response);
+    }
+    
+    private static String parseStringDate(HttpServletRequest request, String parameter) {
+    	String date = (String) request.getParameter(parameter);
+    	
+    	if (date == null) {
+        	date = LocalDate.now().toString();
+        }
+    	
+    	return date;
     }
 }

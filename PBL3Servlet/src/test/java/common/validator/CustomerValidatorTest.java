@@ -17,6 +17,7 @@ import org.junit.jupiter.api.TestInstance;
  * @author hovanvydut
  */
 
+@DisplayName("Test CustomerValidator")
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
 public class CustomerValidatorTest {
 

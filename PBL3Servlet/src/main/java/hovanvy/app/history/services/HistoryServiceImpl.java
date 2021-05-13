@@ -28,6 +28,7 @@ public class HistoryServiceImpl implements HistoryService {
 
     @Override
     public List<ParkingHistory> filterHistory(Integer customerId, String fromDateStr, String toDateStr) {
+    	
         Customer customer = new Customer();
         customer.setID_customer(customerId);
         

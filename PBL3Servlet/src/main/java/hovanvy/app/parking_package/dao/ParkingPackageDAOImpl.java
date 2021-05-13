@@ -29,6 +29,11 @@ import javax.persistence.criteria.Root;
 
 public class ParkingPackageDAOImpl implements ParkingPackageDAO {
 
+	/**
+	 * Get all package available
+	 * @param
+	 * @return List<ParkingPackage>
+	 */
     @Override
     public List<ParkingPackage> getAllParkingPackages() {
         EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
@@ -37,8 +42,6 @@ public class ParkingPackageDAOImpl implements ParkingPackageDAO {
         try {
             em.getTransaction().begin();
 
-//            result = em.createQuery("SELECT u FROM ParkingPackage u", ParkingPackage.class)
-//                        .getResultList();
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery<ParkingPackage> cq = cb.createQuery(ParkingPackage.class);
             Root<ParkingPackage> root = cq.from(ParkingPackage.class);
