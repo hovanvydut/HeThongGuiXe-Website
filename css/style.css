@@ -3,9 +3,13 @@
   --theme-color-1: #127595;
   --theme-color-2: #37b89a;
   --main-color: #61a8df;
-  
+  --main-color-2: white;
   --main-font: 'Roboto', sans-serif;
   --main-header-font: 'Prompt', sans-serif;
+  --warning : #ffcc29;
+  --danger : #f05945;
+  --success : #00af91 ;
+  --primary : #5eaaa8;
 }
 * {
   font-family: var(--main-font);
@@ -20,8 +24,15 @@ i {
 a {
   text-decoration: none  !important;
 }
+label {
+  color: var(--main-color);
+}
+input {
+  border: 1px solid var(--main-color) !important;
+}
 input:focus {
   box-shadow: none !important;
+  border: 1px solid var(--main-color);
 }
 button:focus {
   box-shadow: none !important;
@@ -33,4 +44,20 @@ button:focus {
 .far, .fas, .fab {
   color: var(--main-color);
 }
+.btn-success{
+background-color: var(--success) !important;
+border-color: var(--success) !important;
+}
+.btn-danger {
+  background-color:var(--danger) !important;
+  border-color:var(--danger) !important;
+}
+.btn-warning {
+background-color: var(--warning) !important;
+border-color: var(--warning) !important;
+}
 
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  }
