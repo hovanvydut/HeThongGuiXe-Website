@@ -30,9 +30,11 @@ a {
 }
 label {
   color: var(--main-color);
+  font-size: 85% !important;
 }
 input {
   border: 1px solid var(--main-color) !important;
+  font-size: 85% !important;
 }
 input:focus {
   box-shadow: none !important;
