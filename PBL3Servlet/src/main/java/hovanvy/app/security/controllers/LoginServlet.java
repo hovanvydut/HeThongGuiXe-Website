@@ -52,10 +52,6 @@ public class LoginServlet extends HttpServlet {
         String from = request.getParameter("from");
         from = processFromString(from);
         
-        System.out.println("FULLL URLLLLLLLL " + from);
-        
-        // validate username, password here
-        
         try {
 
             UserDetails userInDB = this.customerService.loadUserByUsername(username);

@@ -32,6 +32,7 @@ public interface CustomerValidator extends Function<Customer, CustomerValidation
 			return ok ? SUCCESS : PHONE_NOT_VALID;
 		};
 	}
+	
 
 	default CustomerValidator and(CustomerValidator other) {
 		return (customer) -> {

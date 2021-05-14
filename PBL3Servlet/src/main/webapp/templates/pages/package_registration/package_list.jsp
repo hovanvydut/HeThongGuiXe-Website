@@ -28,6 +28,49 @@
 .carousel-item:hover {
 	box-shadow: 2px 2px 4px #9c9999;
 }
+
+.list-packet:hover .title::before {
+	width: 100%;
+}
+
+.history {
+	background: rgb(35, 144, 136);
+	background: linear-gradient(90deg, rgba(35, 144, 136, 1) 4%,
+		rgba(49, 180, 170, 1) 59%, rgba(33, 212, 212, 1) 89%);
+	border-radius: 15px !important;
+	color: white;
+	padding: 5%;
+}
+
+.btn-packet {
+	background-color: var(- -main-color);
+	color: white;
+}
+
+.carousel-item {
+	width: 100% !important;
+	border: none;
+}
+
+.carousel-item:hover {
+	box-shadow: 2px 2px 4px #9c9999;
+}
+
+.packet {
+	border-radius: 15px !important;
+}
+
+.packet-name {
+	color: var(- -main-color);
+	font-size: 150%;
+	font-weight: 300;
+}
+
+.packet-price {
+	color: var(- -main-color-bolder);
+	font-size: 180%;
+	font-weight: 900;
+}
 </style>
 
 <body>
@@ -35,51 +78,76 @@
 	<!-- import navigation  -->
 	<%@include file="/templates/fragments/navigation.jspf"%>
 
-	<div class="container my-4 my-md-5 px-md-5 px-sm-0">
-		<div class="row">
-			<div class="col-12 col-xl-9 my-4 my-md-5 m-auto">
-				<div class="d-flex justify-content-center flex-wrap">
-					<h3 class="header col-12 px-3 text-center  text-wrap">Tất cả
-						các gói</h3>
-					<!-- Loop through all objects of List<ParkingPackage> -->
-					<c:forEach items="${parkingPackages}" var="parkingPackage">
-						<div
-							class="caption btn rounded col-12 col-sm-5 col-xl-3 py-md-4 py-3 mx-2 my-3 shadow-lg">
-							<a href="">
-								<h5 class=" text-wrap">${parkingPackage.name}</h5>
-							</a>
-							<p class=" text-wrap">${parkingPackage.description}</p>
-							<button type="button" data-packageName="${parkingPackage.name}"
-								data-parkingpackageid="${parkingPackage.ID_package}"
-								onclick="showModal(this)" class="btn btn-danger my-1">Đăng
-								kí</button>
-						</div>
-					</c:forEach>
-
-				</div>
+	<div class="container my-4 my-md-5 px-md-5  px-2">
+		<div class="row list-packet">
+			<div class="col-12 mb-5">
+				<h3 class="text-center text-wrap title m-auto">Tất cả các gói</h3>
 			</div>
+			<div class=" d-flex justify-content-center flex-wrap row m-auto gx-5">
+
+				<!-- Loop through all objects of List<ParkingPackage> -->
+				<c:forEach items="${parkingPackages}" var="parkingPackage">
+					<div
+						class="
+              packet
+              text-secondary
+              btn
+              rounded
+             col-11 col-sm-8 col-md-5 col-xl-3
+              pb-2
+              px-4
+              mx-2 mx-md-4
+              my-5
+              shadow-lg
+              position-relative
+            ">
+						<div style="transform: translateY(-50%)">
+							<img class="rounded-circle" width="35%" height="35%"
+								src="${ pageContext.request.contextPath }/static/img/xemay.jpg"
+								alt="" srcset="" />
+						</div>
+						<div style="transform: translateY(-10%)">
+							<h3 class="text-wrap packet-name border-bottom pb-2 pt-3">
+								${parkingPackage.name}</h3>
+							<div class="py-2 border-bottom">
+								<p class="text-wrap">${parkingPackage.description}</p>
+								<p class="text-wrap">
+									HSD : <b> ${parkingPackage.duration} ngày </b>
+								</p>
+								<p class="font-weight-bold mb-0 packet-color packet-price">
+									${parkingPackage.price} VND</p>
+							</div>
+
+							<div class="d-flex flex-wrap justify-content-around pt-3">
+								<button class="btn btn-success my-1 px-4 "
+									data-packageName="${parkingPackage.name}"
+									data-parkingpackageid="${parkingPackage.ID_package}"
+									onclick="showModal(this)">Đăng kí</button>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
 
 
-
-
-
-			<div
-				class="col-12 col-xl-9 my-4 my-md-5 bg-white shadow-lg rounded m-auto">
-				<h3
-					class="header p-2 p-md-3 text-center border-bottom  border-info border-2  text-wrap">
-					Các gói đã đăng kí</h3>
-
-				<table class="table table-hover">
-					<thead>
+			</div>
+		</div>
+		<div class="row list-packet mt-5 mx-2  history">
+			<div class="col-12 mb-5">
+				<h3 class="text-center text-wrap title m-auto">Lịch sử các gói
+					đã đăng kí</h3>
+			</div>
+			<div class="col-12 table-responsive">
+				<table class="table  table-borderless table-hover">
+					<thead class="table text-white text-center">
 						<tr>
 							<th scope="col">#</th>
-							<th scope="col">Start</th>
-							<th scope="col">End</th>
-							<th scope="col">Price</th>
-							<th scope="col">Paid</th>
+							<th scope="col">Ngày bắt đầu</th>
+							<th scope="col">Ngày kết thúc</th>
+							<th scope="col">Giá gói</th>
+							<th scope="col">Đã thanh toán</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody class="text-center text-white">
 						<c:forEach items="${payments}" var="item" varStatus="loop">
 							<fmt:parseDate value="${ item.start_date }" pattern="yyyy-MM-dd"
 								var="parsedDateTimeStartDate" type="both" />
@@ -108,14 +176,11 @@
 
 							</tr>
 						</c:forEach>
-
 					</tbody>
 				</table>
 			</div>
-
 		</div>
 	</div>
-
 
 	<div id="confirmModal" class="modal fade" tabindex="-1">
 		<div class="modal-dialog">

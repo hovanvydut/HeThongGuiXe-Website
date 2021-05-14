@@ -28,7 +28,11 @@ public class CustomerUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+    	if ((customer.getCard_id() == null) || customer.getCard_id().equals("")) {
+    		return false;
+    	}
+        
+    	return true;
     }
     
     @Override
