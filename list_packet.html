@@ -20,14 +20,24 @@
     />
   </head>
   <style>
+    .list-packet:hover .title::before {
+      width: 100%;
+    }
+    .history {
+      background: rgb(35, 144, 136);
+      background: linear-gradient(
+        90deg,
+        rgba(35, 144, 136, 1) 4%,
+        rgba(49, 180, 170, 1) 59%,
+        rgba(33, 212, 212, 1) 89%
+      );
+      border-radius: 15px !important;
+      color: white;
+      padding: 5%;
+    }
     .btn-packet {
       background-color: var(--main-color);
       color: white;
-    }
-    .caption {
-      border: 1px solid var(--main-color);
-      color: var(--main-color);
-     
     }
     .carousel-item {
       width: 100% !important;
@@ -36,8 +46,21 @@
     .carousel-item:hover {
       box-shadow: 2px 2px 4px #9c9999;
     }
+    .packet {
+      border-radius: 15px !important;
+    }
+    .packet-name {
+      color: var(--main-color);
+      font-size: 150%;
+      font-weight: 300;
+    }
+    .packet-price {
+      color: var(--main-color-bolder);
+      font-size: 180%;
+      font-weight: 900;
+    }
   </style>
-  <body>
+  <body class="">
     <nav class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img
@@ -72,7 +95,13 @@
           </li>
         </ul>
         <form
-          class="form-inline my-2 my-lg-0 flex-grow-1 d-flex justify-content-start justify-content-lg-end"
+          class="
+            form-inline
+            my-2 my-lg-0
+            flex-grow-1
+            d-flex
+            justify-content-start justify-content-lg-end
+          "
         >
           <a
             class="rounded-circle"
@@ -85,118 +114,200 @@
         </form>
       </div>
     </nav>
-    <div
-      class="container my-4 my-md-5 px-5 px-sm-0"
-    >
-      <div
-        class="col-12 col-xl-9 my-4 my-md-5 bg-white shadow-lg rounded m-auto"
-      >
-        <h3 class="header p-2 p-md-3 text-center border-bottom  border-info border-2  text-wrap">Các gói thịnh hành</h3>
-
-        <div
-          id="carouselExampleInterval"
-          class="carousel slide col-12 "
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="2000">
-              <div class=" btn rounded px-lg-5 px-2 py-2 w-100">
-                <a href=""> <h5 class="px-4  text-wraps">GÓI THÁNG : SV20K2</h5></a>
-                <p class="px-4 px-lg-5  text-wrap">
-                  Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ
-                  ngày đăng kí gói.
-                </p>
-                <button class="btn btn-danger my-3">Đăng kí</button>
-              </div>
+    <div class="container my-4 my-md-5 px-md-5  px-2">
+      <div class="row list-packet">
+        <div class="col-12 mb-5">
+          <h3 class="text-center text-wrap title m-auto">Tất cả các gói</h3>
+        </div>
+        <div class=" d-flex justify-content-center flex-wrap row m-auto gx-5">
+          <div
+            class="
+              packet
+              text-secondary
+              btn
+              rounded
+             col-11 col-sm-8 col-md-5 col-xl-3
+              pb-2
+              px-4
+              mx-2 mx-md-4
+              my-5
+              shadow-lg
+              position-relative
+            "
+          >
+            <div style="transform: translateY(-50%)">
+              <img
+                class="rounded-circle"
+                width="35%"
+                height="35%"
+                src="./img/xemay.jpg"
+                alt=""
+                srcset=""
+              />
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <div class=" btn rounded px-lg-5 px-2 py-2 w-100">
-                <a href=""> <h5 class="px-4  text-wrap">GÓI THÁNG : SV20K2</h5></a>
-                <p class="px-4 px-lg-5  text-wrap">
-                  Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ
-                  ngày đăng kí gói.
+            <div style="transform: translateY(-10%)">
+              <h3 class="text-wrap packet-name border-bottom pb-2 pt-3">
+                GÓI SV20K2
+              </h3>
+              <div class="py-2 border-bottom">
+                <p class="text-wrap">Đối tượng : <b> SV Bách Khoa </b></p>
+                <p class="text-wrap">HSD : <b> 30 ngày </b></p>
+                <p class="font-weight-bold mb-0 packet-color packet-price">
+                  20.000 VND
                 </p>
-                <button class="btn btn-danger my-3">Đăng kí</button>
               </div>
-            </div>
-            <div class="carousel-item">
-              <div class=" btn rounded px-lg-5 px-2 py-2 w-100">
-                <a href=""> <h5 class="px-4  text-wrap">GÓI THÁNG : SV20K2</h5></a>
-                <p class="px-4 px-lg-5  text-wrap">
-                  Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ
-                  ngày đăng kí gói.
-                </p>
-                <button class="btn btn-danger my-3">Đăng kí</button>
+             
+              <div class="d-flex flex-wrap justify-content-around pt-3">
+                <button class="btn btn-primary my-1 px-3">Xem chi tiết</button>
+                <button class="btn btn-success my-1 px-4 " >Đăng kí</button>
               </div>
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleInterval"
-            data-bs-slide="prev"
+          <div
+          class="
+            packet
+            text-secondary
+            btn
+            rounded
+            col-12 col-sm-8 col-md-5 col-xl-3
+            pb-2
+            px-4
+            mx-2 mx-md-4
+            my-5
+            shadow-lg
+            position-relative
+          "
+        >
+          <div style="transform: translateY(-50%)">
+            <img
+              class="rounded-circle"
+              width="35%"
+              height="35%"
+              src="./img/xemay.jpg"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div style="transform: translateY(-10%)">
+            <h3 class="text-wrap packet-name border-bottom pb-2 pt-3">
+              GÓI SV20K2
+            </h3>
+            <div class="py-2 border-bottom">
+              <p class="text-wrap">Đối tượng : <b> SV Bách Khoa </b></p>
+              <p class="text-wrap">HSD : <b> 30 ngày </b></p>
+              <p class="font-weight-bold mb-0 packet-color packet-price">
+                20.000 VND
+              </p>
+            </div>
+           
+            <div class="d-flex flex-wrap justify-content-around pt-3">
+              <button class="btn btn-primary my-1 px-3">Xem chi tiết</button>
+              <button class="btn btn-success my-1 px-4 " >Đăng kí</button>
+            </div>
+          </div>
+        </div>
+          <div
+            class="
+              packet
+              text-secondary
+              btn
+              rounded
+              col-12 col-sm-8 col-md-5 col-xl-3
+              pb-2
+              px-4
+              mx-2 mx-md-4
+              my-5
+              shadow-lg
+              position-relative
+            "
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleInterval"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+            <div style="transform: translateY(-50%)">
+              <img
+                class="rounded-circle"
+                width="35%"
+                height="35%"
+                src="./img/xemay.jpg"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div style="transform: translateY(-10%)">
+              <h3 class="text-wrap packet-name border-bottom pb-2 pt-3">
+                OOPS, SORRY !
+              </h3>
+              <div class="py-2 border-bottom">
+                <p class="font-weight-bold mb-0 packet-color packet-price">
+                  Chưa có gói khả dụng
+                </p>
+              </div>
+              <p class="my-3">
+                <i>
+                  Chúng tôi sẽ mở gói trong thời gian sớm nhất !
+                </i>
+              </p>
+              <div class="d-flex flex-wrap justify-content-around">
+                <button class="btn btn-success my-1 px-4">Về trang chủ</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <h3 class="header col-12 px-3 text-center  text-wrap">Tất cả các gói</h3>
-      <div class="d-flex justify-content-center flex-wrap">
-        <div
-          class="caption btn rounded col-12 col-sm-5 col-xl-3 py-md-4 py-3 mx-2 my-3 shadow-lg"
-        >
-          <a
-            href="
-         "
-          >
-            <h5 class=" text-wrap">GÓI THÁNG : SV20K2</h5></a
-          >
-          <p class=" text-wrap">
-            Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ ngày
-            đăng kí gói.
-          </p>
-          <button class="btn btn-danger my-1">Đăng kí</button>
+      <div class="row list-packet mt-5 mx-2  history">
+        <div class="col-12 mb-5">
+          <h3 class="text-center text-wrap title m-auto">
+            Lịch sử các gói đã đăng kí
+          </h3>
         </div>
-        <div
-          class="caption btn rounded col-12 col-sm-5 col-xl-3 py-md-4 py-3 mx-2 my-3 shadow-lg"
-        >
-          <a
-            href="
-         "
-          >
-            <h5 class=" text-wrap">GÓI THÁNG : SV20K2</h5></a
-          >
-          <p class=" text-wrap">
-            Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ ngày
-            đăng kí gói.
-          </p>
-          <button class="btn btn-danger my-1">Đăng kí</button>
-        </div>
-        <div
-          class="caption btn rounded col-12 col-sm-5 col-xl-3 py-md-4 py-3 mx-2 my-3 shadow-lg"
-        >
-          <a
-            href="
-         "
-          >
-            <h5 class=" text-wrap">GÓI THÁNG : SV20K2</h5></a
-          >
-          <p class=" text-wrap">
-            Giá gói 20k áp dụng cho các bạn SV Bách Khoa, 30 ngày kể từ ngày
-            đăng kí gói.
-          </p>
-          <button class="btn btn-danger my-1">Đăng kí</button>
-        </div>
+      <div class="col-12 table-responsive">
+        <table class="table  table-borderless table-hover">
+          <thead class="table text-white text-center">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Ngày bắt đầu</th>
+              <th scope="col">Ngày kết thúc</th>
+              <th scope="col">Tên gói</th>
+              <th scope="col">Giá gói</th>
+              <th scope="col">Đã thanh toán</th>
+            </tr>
+          </thead>
+          <tbody class="text-center text-white">
+            <tr>
+              <th scope="row">1</th>
+              <td>22/3/2021</td>
+              <td>22/4/2021</td>
+              <td>SV20</td>
+              <td>20000 VND</td>
+              <td class="">
+                <i class="fas fa-question-circle text-warning"></i>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>22/3/2021</td>
+              <td>22/4/2021</td>
+              <td>SV20</td>
+              <td>20000 VND</td>
+              <td><i class="fas fa-check-circle text-success"></i></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>22/3/2021</td>
+              <td>22/4/2021</td>
+              <td>SV20</td>
+              <td>20000 VND</td>
+              <td><i class="fas fa-check-circle text-success"></i></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>22/3/2021</td>
+              <td>22/4/2021</td>
+              <td>SV20</td>
+              <td>20000 VND</td>
+              <td><i class="fas fa-question-circle text-warning"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       </div>
     </div>
   </body>
