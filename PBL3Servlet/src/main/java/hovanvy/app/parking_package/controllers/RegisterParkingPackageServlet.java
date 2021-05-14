@@ -45,8 +45,7 @@ public class RegisterParkingPackageServlet extends HttpServlet{
 			currentPaymentOpt = this.paymentService.getCurrentPayment(loggedInUser.getID_customer());
 			
 			if (currentPaymentOpt.isPresent()) {
-				System.out.println("xxx " + currentPaymentOpt.get());
-				response.sendError(500);
+				response.sendRedirect(request.getContextPath() + "/parking-package/list?currentPayment=true");
 	        	return;
 	        }
 			
