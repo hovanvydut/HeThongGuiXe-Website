@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tra cứu thông tin </title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+</head>
+<style>
+    i {
+        color: white !important;
+    }
+
+    .list-packet:hover .title::before {
+        width: 100%;
+    }
+
+    .history {
+        background: rgb(35, 144, 136);
+        background: linear-gradient(90deg,
+                rgba(35, 144, 136, 1) 4%,
+                rgba(49, 180, 170, 1) 59%,
+                rgba(33, 212, 212, 1) 89%);
+        border-radius: 15px !important;
+        color: white;
+        padding: 5%;
+    }
+
+    .btn-packet {
+        background-color: var(--main-color);
+        color: white;
+    }
+
+    .carousel-item {
+        width: 100% !important;
+        border: none;
+    }
+
+    .carousel-item:hover {
+        box-shadow: 2px 2px 4px #9c9999;
+    }
+
+    .packet {
+        border-radius: 15px !important;
+    }
+
+    .packet-name {
+        color: var(--main-color);
+        font-size: 150%;
+        font-weight: 300;
+    }
+
+    .packet-price {
+        color: var(--main-color-bolder);
+        font-size: 180%;
+        font-weight: 900;
+    }
+</style>
+
+<body class="">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png" width="30" height="30" alt="S-PBL" />
+            <b> S-PBL</b>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/tracuu_chitiet.html">Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tracuu.html">Tra Cứu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/list_packet.html">Gói gửi xe</a>
+                </li>
+            </ul>
+            <form class="
+            form-inline
+            my-2 my-lg-0
+            flex-grow-1
+            d-flex
+            justify-content-start justify-content-lg-end
+          ">
+                <a class="rounded-circle" height="40px" width="40px" href="/user_info.html">
+                    <i class="fas fa-user"></i>
+                </a>
+            </form>
+        </div>
+    </nav>
+    <div class="container my-4 my-md-5 px-md-5  px-2">
+        <div class="row list-packet gy-5">
+            <div class="col-12 mb-5">
+                <h3 class="text-center text-wrap title m-auto">Tra cứu thông tin lịch sử gửi xe</h3>
+            </div>
+           
+            <div class="col-12 d-flex justify-content-center flex-wrap row m-auto ">
+                <div class="
+                  packet
+                  text-primary
+                  btn
+                  rounded
+                  col-11 col-sm-8 col-md-4
+                  pb-md-4 pb-2
+                  px-4
+                  mx-2 mx-md-4
+                  my-5
+                  shadow-lg
+                  position-relative
+                ">
+                    <div style="transform: translateY(-50%)">
+                        <img class="rounded-circle" width="35%" height="35%" src="./img/xemay.jpg" alt="" srcset="" />
+                    </div>
+
+                    <form class="needs-validation w-100 " novalidate style="transform: translateY(-10%)">
+                        <h3 class="text-wrap packet-name pb-3">
+                            Nhập thông tin tra cứu
+                        </h3>
+                        <div class="form m-auto my-4">
+                            <div class="mb-3 ">
+                                <label for="validationCustom01">Ngày Gửi Xe</label>
+                                <input class="form-control" id="validationCustom01" type="date" value="2011-08-19"
+                                    id="example-date-input" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="validationCustom02">Ngày Lấy Xe</label>
+                                <input class="form-control" id="validationCustom02" type="date" value="2011-08-19"
+                                    id="example-date-input" required>
+
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <button class="btn btn-success mt-2" type="submit">Tra cứu</button>
+                    </form>
+                </div>
+                <b class="col-12 col-md-1 align-self-center text-center " style="transform: translateY(-100%);"> Hoặc</b>
+                <div class="
+                packet
+                text-primary
+                btn
+                rounded
+                col-11 col-sm-8 col-md-4
+                pb-md-4 pb-2
+                px-4
+                mx-2 mx-md-4
+                my-5
+                shadow-lg
+                position-relative
+              ">
+                  <div style="transform: translateY(-50%)">
+                      <img class="rounded-circle" width="35%" height="35%" src="./img/xemay.jpg" alt="" srcset="" />
+                  </div>
+
+                  <form class="needs-validation w-100 " novalidate style="transform: translateY(-10%)">
+                      <h3 class="text-wrap packet-name pb-3">
+                          Tra cứu theo tháng 
+                      </h3>
+                      <div class="form m-auto my-4">
+                        <ul class=" d-flex flex-wrap justify-content-around p-0 my-3">
+                            <li class="btn btn-primary rounded-pill m-1 ">12/2020</li>
+                            <li class="btn btn-primary rounded-pill m-1">01/2021</li>
+                            <li class="btn btn-primary rounded-pill m-1">02/2021</li>
+                            <li class="btn btn-primary rounded-pill m-1">03/2021</li>
+                            <li class="btn btn-primary rounded-pill m-1">04/2021</li>
+                            <li class="btn btn-primary rounded-pill m-1">05/2021</li>
+                          </ul>
+                      </div>
+
+                      <button class="btn btn-success mt-2" type="submit">Tra cứu</button>
+                  </form>
+              </div>
+            </div>
+        </div>
+        <div class="row list-packet mt-5 mx-2  history">
+            <div class="col-12 mb-5">
+                <h3 class="text-center text-wrap title m-auto">
+                    Lịch sử thời gian gửi xe
+                </h3>
+            </div>
+            <div class="col-12 table-responsive">
+                <table class="table  table-borderless table-hover">
+                    <thead class="table text-white text-center">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Giờ gửi xe <i class="far fa-clock"> </i> </th>
+                            <th scope="col">Giờ lấy xe <i class="far fa-clock"> </th>
+                            <th scope="col">Biển số xe <i class="fas fa-barcode"></i></th>
+                            <th scope="col">Giá lần gửi <i class="fas fa-money-check-alt"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center text-white">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>22/3/2021</td>
+                            <td>22/4/2021</td>
+                            <td>92F1 0705</td>
+                            <td>1000 VND</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>22/3/2021</td>
+                            <td>22/4/2021</td>
+                            <td>92F1 0705</td>
+                            <td>1000 VND</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>22/3/2021</td>
+                            <td>22/4/2021</td>
+                            <td>92F1 0705</td>
+                            <td>1000 VND</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>22/3/2021</td>
+                            <td>22/4/2021</td>
+                            <td>92F1 0705</td>
+                            <td>1000 VND</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+</script>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener(
+            'load',
+            function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener(
+                        'submit',
+                        function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        },
+                        false
+                    );
+                });
+            },
+            false
+        );
+    })();
+</script>
+
+</html>
