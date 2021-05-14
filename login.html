@@ -12,105 +12,183 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" />
-   
   </head>
   <style>
-    * {
-      font-family: var(--main-font);
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .header {
+      font-size: 3vw;
+      color: var(--main-color);
     }
-    a {
-      text-decoration: none;
+    .registered-packet .header {
+      font-size: 2vw;
     }
-    .main-container {
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    .form-control {
-      width: 100%;
-      display: block;
-      margin-bottom: 10px;
-      z-index: 1;
-      position: relative;
-    }
-    .form-control:focus {
-      border-color: rgb(104, 145, 162);
-      outline: 0;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-        0 0 8px rgb(104, 145, 162);
-      animation: anim-shadow 0.5s ease-in-out forwards;
-    }
-    @keyframes anim-shadow {
-      from {
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-      }
-      to {
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-      }
-    }
-    .txt1 {
-      font-size: 13px;
-      line-height: 1.5;
-      color: #999999;
-    }
+    .registered-packet {
+      background: #007991; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #78ffd6,
+        #007991
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #78ffd6,
+        #007991
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    .txt2 {
-      font-size: 13px;
-      line-height: 1.5;
-      color: #666666;
+      border-top-left-radius: 15px !important;
+      border-bottom-left-radius: 15px !important;
     }
-    .btn-login {
+    .btn-custom {
       background-color: var(--main-color);
+      font-size: 125%;
+    }
+    .btn-custom-2 {
+      border: 1px solid var(--main-color-2);
+    }
+    .fa-gift {
+      font-size: 9vw;
+    }
+    @media (max-width: 768px) {
+      .registered-packet {
+        border-radius: 15px !important;
+      }
+      .fa-gift {
+        font-size: 18vw;
+      }
+      .header {
+        font-size: 5vw;
+      }
+      .registered-packet .header {
+        font-size: 5vw;
+      }
     }
   </style>
   <body>
     <div
-      class="vh-100 vw-100 d-flex justify-content-center align-items-center main-container"
+      class="
+        container
+        my-5
+        vw-100
+        vh-100
+        d-flex
+        justify-content-center
+        align-items-center
+      "
     >
-      <form
-        class="px-sm-5 px-4 py-5 col-sm-8 col-11 mx-2 bg-white flex-md-row flex-column d-flex justify-content-center align-items-center shadow-lg rounded"
-      >
-        <img
-          class="col-6 img-fluid m-3 d-none d-md-block"
-          src="/img/search.jpg"
-          alt=""
-          srcset=""
-        />
-        <div class="col-12 col-md-6 m-3">
-          <h2 class="font-weight-bold">LOGIN</h2>
-          <div class="mb-3 w-100">
-            <label for="exampleDropdownFormEmail1" class="form-label"
-              >Email address</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleDropdownFormEmail1"
-              placeholder="email@example.com"
-            />
+      <div class="row w-75 h-100 border position-relative mx-3" style="border-radius: 15px">
+        <a class="navbar-brand  d-flex align-items-center position-absolute" href="#">
+          <img
+            src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png"
+            width="30"
+            height="30"
+            alt="S-PBL"
+          />
+          <b class="text-white"> S-PBL</b>
+        </a>
+        <div
+          class="
+            registered-packet
+            col-md-6 col-xl-4
+            p-4
+            border-end
+            rounded-0
+            d-flex
+            flex-column
+            align-items-center
+            justify-content-center
+          "
+        >
+          <i class="fas fa-gift text-white"></i>
+          <div class="header my-2 border-0 bg-transparent text-white">
+            XIN CHÀO,
           </div>
-          <div class="mb-3 w-100">
-            <label for="exampleDropdownFormPassword1" class="form-label"
-              >Password</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="exampleDropdownFormPassword1"
-              placeholder="Password"
-            />
-          </div>
-          <div class="mb-3 w-100">
-            <div class="text-center p-t-12">
-              <span class="txt1"> Forgot </span>
-              <a class="txt2" href="#"> Username / Password? </a>
+          <p class="text-white text-center">
+            Đăng nhập để tra cứu lịch sử gửi xe !
+          </p>
+        </div>
+        <div class="col-md-6 col-xl-8">
+          <div class="card pt-4 border-0">
+            <div class="card-header header border-0 bg-white m-auto">
+              Đăng nhập
+            </div>
+            <div class="card-body">
+              <form id="form" class="needs-validation" novalidate>
+                <div class="row mb-3">
+                  <div class="col-10 form-floating offset-1 mb-3 px-0">
+                    <input
+                      type="email"
+                      class="form-control bg-white"
+                      id="inputEmail"
+                      value="example@gmail.com"
+                      required
+                    />
+                    <div id="inputEmailFeedback" class="invalid-feedback">
+                      Email không hợp lệ !
+                    </div>
+                    <label for="inputEmail">Email</label>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-10 form-floating offset-1 mb-3 px-0">
+                    <input
+                      type="password"
+                      class="form-control bg-white"
+                      id="inputPwd"
+                      required
+                      minlength="6"
+                      maxlength="20"
+                      disable
+                    />
+                    <div id="inputPwdFeedback" class="invalid-feedback">
+                      Mật khẩu không hợp lệ !
+                    </div>
+                    <label for="inputPwd">Mật Khẩu</label>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div
+                    class="
+                      action
+                      col-10
+                      offset-1
+                      d-flex
+                      flex-wrap
+                      justify-content-around
+                    "
+                  >
+                    <div class="mb-3 w-100">
+                      <div class="text-center p-t-12">
+                        <small class="txt1">Bạn chưa có tài khoản ?</small>
+                        <br />
+                        <small class="txt1">
+                          Chuyển sang
+                          <a class="txt2" href="/sign_up.html">
+                            Đăng kí
+                          </a></small
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="
+                        btn
+                        px-5
+                        w-100
+                        btn-custom
+                        my-3
+                        rounded-pill
+                        text-white
+                      "
+                      id="btnLogin"
+                      type="submit"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
-          <button type="submit" class="btn btn-login w-100">Sign in</button>
         </div>
-      </form>
+      </div>
     </div>
   </body>
   <script
@@ -123,4 +201,28 @@
     integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
     crossorigin="anonymous"
   ></script>
+  <script>
+    (function () {
+      'use strict';
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation');
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener(
+          'submit',
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+          },
+          false
+        );
+      });
+    })();
+  </script>
 </html>
