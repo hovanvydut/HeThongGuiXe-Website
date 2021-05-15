@@ -17,4 +17,6 @@ public interface CustomerDetailsService extends UserDetailsService {
     List<Customer> getAllCustomers();
     
     Customer save(Customer customer) throws CustomerExistingException, NullCustomerException;
+    
+    void update(Customer customer);
 }

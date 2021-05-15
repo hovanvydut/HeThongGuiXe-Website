@@ -11,8 +11,8 @@
    
   <style>
   .enableEdit {
-   		    border-width: 2px;
-    border-color: green;
+   		    border-width: 2px !important;
+    border-color: rgb(89, 196, 192) !important;
    	}
     .header {
       font-size: 3vw;
@@ -129,12 +129,12 @@
                      Thông tin tài khoản
                   </div>
                   <div class="card-body">
-                     <form id="form" class="needs-validation" novalidate>
+                     <form id="form" class="needs-validation" method="POST" action="${ pageContext.request.contextPath }/customers/update" novalidate>
                         <div class="row mb-3">
                            <div class="col-10 form-floating offset-1 mb-3 px-0">
-                              <input type="text" class="form-control bg-white" 
+                              <input name="fullname" type="text" class="form-control bg-white" 
                               		data-originvalue="${loggedInCustomer.fullname}"
-                                 id="inputFullname" value="${loggedInCustomer.fullname}"
+                                 id="inputFullname" value="${loggedInCustomer.fullname}" minlength=2 maxlength=40
                                  disabled required />
                               <div id="inputFullnameFeedback" class="invalid-feedback">
                                  Tên tài khoản không hợp lệ !
@@ -159,10 +159,11 @@
                         </div>
                         <div class="row mb-3">
                            <div class="col-10 form-floating offset-1 mb-3 px-0">
-                              <input type="email" class="form-control bg-white"
+                              <input name="email" type="email" class="form-control bg-white"
                               	data-originvalue="${loggedInCustomer.email}"
                                  id="inputEmail" value="${loggedInCustomer.email}" disabled
-                                 required />
+                                 pattern="^[\w][a-z0-9_\.]{4,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,10}$"
+                                  />
                               <div id="inputEmailFeedback" class="invalid-feedback">
                                  Email không hợp lệ !
                               </div>
@@ -171,11 +172,11 @@
                         </div>
                         <div class="row mb-3">
                            <div class="col-10 form-floating offset-1 mb-3 px-0">
-                              <input type="text" class="form-control bg-white"
+                              <input name="phone" type="text" class="form-control bg-white"
                               	data-originvalue="${loggedInCustomer.phone}"
                                  id="inputPhonenumber" value="${loggedInCustomer.phone}"
                                  pattern="^((\+84|84|0)[35789])\d{8}$" minlength="10"
-                                 maxlength="12" required disabled />
+                                 maxlength="12" disabled />
                               <div id="inputPhonenumberFeedback" class="invalid-feedback">
                                  Số điện thoại không hợp lệ !
                               </div>
@@ -295,6 +296,7 @@
       const btnEdit = document.getElementById('btnEdit');
       const btnCancel = document.getElementById('btnCancel');
       const btnSave = document.getElementById('btnSave');
+      const form = document.getElementById('form');
       
       function edit() {
       	inputEmail.disabled = false;
@@ -309,6 +311,7 @@
       	btnEdit.classList.add('d-none');
       	btnSave.classList.remove('d-none');
       	btnCancel.classList.remove('d-none');
+      	
       }
       
       function cancel() {
@@ -324,6 +327,11 @@
     	  	btnEdit.classList.remove('d-none');
     	  	btnSave.classList.add('d-none');
           	btnCancel.classList.add('d-none');
+          	form.classList.remove('was-validated')
+      }
+      
+      function save() {
+    	  
       }
       
       (function() {

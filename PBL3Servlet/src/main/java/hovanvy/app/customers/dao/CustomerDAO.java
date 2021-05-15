@@ -20,4 +20,6 @@ public interface CustomerDAO {
     
     Customer save(Customer customer);
     
+    void update(Customer customer);
+    
 }

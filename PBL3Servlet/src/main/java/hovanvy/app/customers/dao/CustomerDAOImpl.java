@@ -121,4 +121,24 @@ public class CustomerDAOImpl implements CustomerDAO {
         return customer;
 	}
 
+	@Override
+	public void update(Customer customer) {
+		
+		EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
+
+        try {
+            em.getTransaction().begin();
+
+            em.merge(customer);
+
+            em.getTransaction().commit();
+
+        } catch (Exception ex) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+        
+	}
+
 }

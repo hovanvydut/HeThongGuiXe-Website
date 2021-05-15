@@ -23,6 +23,18 @@ public interface CustomerValidator extends Function<Customer, CustomerValidation
 		};
 	}
 
+	static CustomerValidator isFullnameValid() {
+		return (customer) -> {
+			String vietnamese = "ÁÀÃẢẠĂẮẰẲẴẶÂẤẦẨẪẬĐÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒÕỎỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴ";
+			Pattern pattern = Pattern.compile("^[a-zA-Z" + vietnamese + "]+(\\s[a-zA-Z" + vietnamese + "]+)*$",
+					Pattern.CANON_EQ | Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+
+			boolean ok = pattern.matcher(customer.getFullname()).matches();
+
+			return ok ? SUCCESS : FULLNAME_NOT_VALID;
+		};
+	}
+
 	static CustomerValidator isPhoneValid() {
 		return (customer) -> {
 			Pattern pattern = Pattern.compile("^((\\+84|84|0)[35789])\\d{8}$");
@@ -32,7 +44,25 @@ public interface CustomerValidator extends Function<Customer, CustomerValidation
 			return ok ? SUCCESS : PHONE_NOT_VALID;
 		};
 	}
-	
+
+	static CustomerValidator isPasswordValid() {
+		return (customer) -> {
+			int size = customer.getPassword().length();
+			boolean ok = (size >= 6 && size <= 20);
+
+			return ok ? SUCCESS : PASSWORD_NOT_VALID;
+		};
+	}
+
+	static CustomerValidator isUsernameValid() {
+		return (customer) -> {
+			Pattern pattern = Pattern.compile("^[a-zA-Z0-9]{3,20}$");
+
+			boolean ok = pattern.matcher(customer.getUsername()).matches();
+
+			return ok ? SUCCESS : USERNAME_NOT_VALID;
+		};
+	}
 
 	default CustomerValidator and(CustomerValidator other) {
 		return (customer) -> {
@@ -43,7 +73,7 @@ public interface CustomerValidator extends Function<Customer, CustomerValidation
 	}
 
 	enum CustomerValidationResult {
-		SUCCESS, PHONE_NOT_VALID, EMAIL_NOT_VALID
+		SUCCESS, PHONE_NOT_VALID, EMAIL_NOT_VALID, FULLNAME_NOT_VALID, PASSWORD_NOT_VALID, USERNAME_NOT_VALID
 	}
 
 }

@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"> 
-    <welcome-file-list>
-    	<welcome-file>templates/pages/home/home.jsp</welcome-file>
-    </welcome-file-list>
-    
-    <!-- 14 days -->
-    <session-config>
-        <session-timeout>
-            20160
-        </session-timeout>
-    </session-config>
-    
-    <error-page>
-    	<error-code>404</error-code>
-    	<location>/templates/pages/error/404.jsp</location>
-    </error-page>
-    
-    <error-page>
-    	<error-code>500</error-code>
-    	<location>/templates/pages/error/500.jsp</location>
-    </error-page>
-    
-    <error-page>
-    	<exception-type>javax.servlet.ServletException</exception-type>
-    	<location>/error</location>
-    </error-page>
-    
-    <error-page>
-    	<exception-type>java.io.Exception</exception-type>
-    	<location>/error</location>
-    </error-page>
+<web-app version="3.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+	<welcome-file-list>
+		<welcome-file>templates/pages/home/home.jsp</welcome-file>
+	</welcome-file-list>
+
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<page-encoding>UTF-8</page-encoding>
+		</jsp-property-group>
+	</jsp-config>
+
+	<!-- 14 days -->
+	<session-config>
+		<session-timeout>20160</session-timeout>
+	</session-config>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/templates/pages/error/404.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/templates/pages/error/500.jsp</location>
+	</error-page>
+
+	<error-page>
+		<exception-type>javax.servlet.ServletException</exception-type>
+		<location>/error</location>
+	</error-page>
+
+	<error-page>
+		<exception-type>java.io.Exception</exception-type>
+		<location>/error</location>
+	</error-page>
 </web-app>

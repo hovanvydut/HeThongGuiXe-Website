@@ -29,5 +29,9 @@ public class EntityManagerUtil {
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
+    
+    public void closeEntityManagerFactory() {
+    	emf.close();
+    }
    
 }

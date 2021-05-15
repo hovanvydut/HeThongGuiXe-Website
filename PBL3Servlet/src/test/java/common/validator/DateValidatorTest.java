@@ -20,6 +20,7 @@ import hovanvy.common.validator.DateValidator.DateValidationResult;
 @TestInstance(Lifecycle.PER_METHOD)
 public class DateValidatorTest {
 	
+	@DisplayName("Test valid date")
 	@ParameterizedTest(name = "#{index} - Run test with date = {0}")
 	@MethodSource("validDateProvider")
 	public void testValidDate(String date) {
@@ -27,6 +28,7 @@ public class DateValidatorTest {
 		assertEquals(SUCCESS, result);
 	}
 	
+	@DisplayName("Test invalid date")
 	@ParameterizedTest(name = "#{index} - Run test with date = {0}")
 	@MethodSource("invalidDateProvider")
 	public void testInValidDate(String date) {

@@ -7,10 +7,15 @@ import static hovanvy.common.validator.CustomerValidator.*;
 import hovanvy.entity.Customer;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.stream.Stream;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 /**
  *
@@ -75,7 +80,7 @@ public class CustomerValidatorTest {
 	}
 
 	@Test
-	@DisplayName("Test invalid phone number")
+	@DisplayName("Test invalid mobile phone number")
 	public void testInvalidPhone() {
 		String[] phoneNumbers = new String[] { 
 				"0123456789",
@@ -109,9 +114,93 @@ public class CustomerValidatorTest {
 		assertEquals(PHONE_NOT_VALID, result);
 	}
 	
+	@DisplayName("Test invalid username")
+	@ParameterizedTest(name = "#{index} - Run test with username = {0}")
+	@MethodSource("invalidUsernameProvider")
+	public void testInvalidUsername(String username) {
+		Customer customer = new Customer();
+		customer.setUsername(username);
+		
+		CustomerValidationResult result = isUsernameValid().apply(customer);
+		assertEquals(USERNAME_NOT_VALID, result);
+	}
+	
+	@DisplayName("Test valid username")
+	@ParameterizedTest(name = "#{index} - Run test with username = {0}")
+	@MethodSource("validUsernameProvider")
+	public void testValidUsername(String username) {
+		Customer customer = new Customer();
+		customer.setUsername(username);
+		
+		CustomerValidationResult result = isUsernameValid().apply(customer);
+		assertEquals(SUCCESS, result);
+	}
+	
+	@DisplayName("Test invalid fullname")
+	@ParameterizedTest(name = "#{index} - Run test with username = {0}")
+	@MethodSource("invalidFullnameProvider")
+	public void testInvalidFullname(String fullname) {
+		Customer customer = new Customer();
+		customer.setFullname(fullname);
+		
+		CustomerValidationResult result = isFullnameValid().apply(customer);
+		assertEquals(FULLNAME_NOT_VALID, result);
+	}
+	
+	@DisplayName("Test valid fullname")
+	@ParameterizedTest(name = "#{index} - Run test with username = {0}")
+	@MethodSource("validFullnameProvider")
+	public void testValidFullname(String fullname) {
+		Customer customer = new Customer();
+		customer.setFullname(fullname);
+		
+		CustomerValidationResult result = isFullnameValid().apply(customer);
+		assertEquals(SUCCESS, result);
+	}
+	
+	
 	@AfterEach
 	public void tearDown() {
 
 	}
-
+	
+	static Stream<String> invalidUsernameProvider() {
+		return Stream.of(
+				"a",
+				"az",
+				"       ",
+				"abcdef123!",
+				"123456789012345678901"
+				);
+	}
+	
+	static Stream<String> validUsernameProvider() {
+		return Stream.of(
+				"abc",
+				"abcd123",
+				"123abc",
+				"123",
+				"12345678901234567890",
+				"usernameusername1"
+				);
+	}
+	
+	static Stream<String> invalidFullnameProvider() {
+		return Stream.of(
+				"An 1"
+				);
+	}
+	
+	static Stream<String> validFullnameProvider() {
+		return Stream.of(
+				"Ho Van Vy",
+				"ho van vy ho van vy",
+				"a",
+				"a b" ,
+				" aa bb ",
+				"aa b    ",
+				"   a      b   ",
+				"Hồ Văn Vy"
+				);
+	}
 }

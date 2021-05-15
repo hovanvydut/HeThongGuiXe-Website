@@ -56,7 +56,7 @@ public class Customer {
     }
 
     public void setFullname(String fullname) {
-        this.fullname = fullname;
+        this.fullname = fullname.trim().replaceAll("\\s+", " ");
     }
 
     public String getStudent_id() {

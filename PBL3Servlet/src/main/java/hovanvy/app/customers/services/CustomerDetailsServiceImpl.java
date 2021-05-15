@@ -58,5 +58,11 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 		// store in db
 		return this.customerDAO.save(customer);
 	}
+
+	@Override
+	public void update(Customer customer) {
+		
+		this.customerDAO.update(customer);
+	}
     
 }
