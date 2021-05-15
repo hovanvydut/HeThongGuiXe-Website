@@ -33,11 +33,6 @@ public class HistoryServlet extends HttpServlet {
         
         List<ParkingHistory> history = this.historyService.getAllHistory(loggedInCustomer.getID_customer());
         
-        System.out.println("==========");
-        for(ParkingHistory h : history) {
-            System.out.println(history);
-        }
-        
         request.setAttribute("history", history);
         
         RequestDispatcher rd = request.getRequestDispatcher(PathJsp.HISTORY.getPath());

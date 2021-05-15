@@ -1,5 +1,6 @@
 package hovanvy.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,8 +24,8 @@ public class Payment {
     private Integer ID_payment;
     private String description;
     private LocalDateTime paid_at;
-    private LocalDateTime start_date;
-    private LocalDateTime end_date;
+    private LocalDate start_date;
+    private LocalDate end_date;
     private Integer price;
     
     @ManyToOne
@@ -58,19 +59,19 @@ public class Payment {
         this.paid_at = paid_at;
     }
 
-    public LocalDateTime getStart_date() {
+    public LocalDate getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(LocalDateTime start_date) {
+    public void setStart_date(LocalDate start_date) {
         this.start_date = start_date;
     }
 
-    public LocalDateTime getEnd_date() {
+    public LocalDate getEnd_date() {
         return end_date;
     }
 
-    public void setEnd_date(LocalDateTime end_date) {
+    public void setEnd_date(LocalDate end_date) {
         this.end_date = end_date;
     }
 

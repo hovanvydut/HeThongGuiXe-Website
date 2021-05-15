@@ -2,6 +2,8 @@ package hovanvy.app.history.dao;
 
 import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingHistory;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 

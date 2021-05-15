@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author hovanvydut
  */
 
-@WebFilter(urlPatterns = {"/home/*", "/parking-package/*", "/customers/*", "/history/*"})
+@WebFilter(urlPatterns = {"/parking-package/*", "/customers/*", "/history/*"})
 public class SecurityFilter implements Filter{
 
     @Override
@@ -35,12 +35,16 @@ public class SecurityFilter implements Filter{
         
         // get full URL to redirecting back a page after login successfully
         String fullUrl = URLUtil.getFullURL(request);
-        System.out.println("FULL URL ---------------> " + fullUrl);
         
         // if user has not logged in, redirect to Login Page
         if (loggedInUser == null) {
             response.sendRedirect(request.getContextPath() + "/login?from=" + fullUrl);
             return;
+        }
+        
+        if (loggedInUser.isEnabled() == false) {
+        	response.sendRedirect(request.getContextPath() + "/home?enable=false");
+        	return;
         }
         
         chain.doFilter(request, response);

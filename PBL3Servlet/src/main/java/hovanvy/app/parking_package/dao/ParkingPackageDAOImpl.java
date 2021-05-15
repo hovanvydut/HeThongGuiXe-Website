@@ -10,6 +10,8 @@ import hovanvy.entity.ParkingPackage;
 import hovanvy.entity.ParkingPackage_;
 import hovanvy.entity.Payment;
 import hovanvy.util.EntityManagerUtil;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,11 @@ import javax.persistence.criteria.Root;
 
 public class ParkingPackageDAOImpl implements ParkingPackageDAO {
 
+	/**
+	 * Get all package available
+	 * @param
+	 * @return List<ParkingPackage>
+	 */
     @Override
     public List<ParkingPackage> getAllParkingPackages() {
         EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
@@ -35,8 +42,6 @@ public class ParkingPackageDAOImpl implements ParkingPackageDAO {
         try {
             em.getTransaction().begin();
 
-//            result = em.createQuery("SELECT u FROM ParkingPackage u", ParkingPackage.class)
-//                        .getResultList();
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery<ParkingPackage> cq = cb.createQuery(ParkingPackage.class);
             Root<ParkingPackage> root = cq.from(ParkingPackage.class);
@@ -88,7 +93,7 @@ public class ParkingPackageDAOImpl implements ParkingPackageDAO {
     public Payment register(Customer customer, ParkingPackage parkingPackage) {
 
         EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
-        LocalDateTime now = LocalDateTime.now();
+        LocalDate now = LocalDate.now();
 
         // create new payment
         Payment payment = null;

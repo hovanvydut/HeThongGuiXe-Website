@@ -1,8 +1,8 @@
 <%@ page pageEncoding="UTF-8" %>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
-    <a class="navbar-brand  d-flex align-items-center" href="#">
-        <img src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png" width="30" height="30" alt="S-PBL" />
+<nav style="z-index: 10;" class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
+    <a class="navbar-brand  d-flex align-items-center" href="${pageContext.request.contextPath}/home">
+        <img src="${pageContext.request.contextPath}/static/img/logo.png" width="30" height="30" alt="S-PBL" />
         <b> S-PBL</b>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"

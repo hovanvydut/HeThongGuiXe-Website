@@ -1,7 +1,9 @@
 package hovanvy.app.payment.dao;
 
+import hovanvy.entity.Customer;
 import hovanvy.entity.Payment;
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -12,4 +14,5 @@ public interface PaymentDAO {
     
     List<Payment> getAllPayments(Integer customerId);
     
+    Optional<Payment> getCurrentPayment(Customer customer);
 }

@@ -1,124 +1,196 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <title>Login</title>
-        <%@include file="/templates/fragments/header.jspf" %>
+        <%@include file="/templates/fragments/header.jspf"%>
     </head>
     <style>
-        * {
-            font-family: var(--main-font);
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .header {
+        font-size: 3vw;
+        color: var(--main-color);
         }
-
-        a {
-            text-decoration: none;
+        .registered-packet .header {
+        font-size: 2vw;
         }
-
-        .main-container {
-            background-repeat: no-repeat;
-            background-size: cover;
+        .registered-packet {
+        background: #007991; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+        to right,
+        #78ffd6,
+        #007991
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+        to right,
+        #78ffd6,
+        #007991
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        border-top-left-radius: 15px !important;
+        border-bottom-left-radius: 15px !important;
         }
-
-        .form-control {
-            width: 100%;
-            display: block;
-            margin-bottom: 10px;
-            z-index: 1;
-            position: relative;
+        .btn-custom {
+        background-color: var(--main-color);
+        font-size: 125%;
         }
-
-        .form-control:focus {
-            border-color: rgb(104, 145, 162);
-            outline: 0;
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-                0 0 8px rgb(104, 145, 162);
-            animation: anim-shadow 0.5s ease-in-out forwards;
+        .btn-custom-2 {
+        border: 1px solid var(--main-color-2);
         }
-
-        @keyframes anim-shadow {
-            from {
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-            }
-
-            to {
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-            }
+        .fa-gift {
+        font-size: 9vw;
         }
-
-        .txt1 {
-            font-size: 13px;
-            line-height: 1.5;
-            color: #999999;
+        @media (max-width: 768px) {
+        .registered-packet {
+        border-radius: 15px !important;
         }
-
-        .txt2 {
-            font-size: 13px;
-            line-height: 1.5;
-            color: #666666;
+        .fa-gift {
+        font-size: 18vw;
         }
-
-        .btn-login {
-            background-color: var(--main-color);
+        .header {
+        font-size: 5vw;
+        }
+        .registered-packet .header {
+        font-size: 5vw;
+        }
         }
     </style>
-
     <body>
-        <div class="vh-100 vw-100 d-flex justify-content-center align-items-center main-container">
-
-            <form action="${pageContext.request.contextPath}/login" method="POST" name="loginForm" id="loginForm"
-                  class="px-sm-5 px-4 py-5 col-sm-8 col-11 mx-2 bg-white flex-md-row flex-column d-flex justify-content-center align-items-center shadow-lg rounded">
-                
-                
-                <c:if test="${param.from != null}">
-                    <input name="from" type="hidden" value="${param.from}"/>
-                </c:if>
-                
-                <img class="col-6 img-fluid m-3 d-none d-md-block" src="${pageContext.request.contextPath}/static/img/search.jpg" alt="" srcset="" />
-
-                <div class="col-12 col-md-6 m-3">
-                    <h2 class="font-weight-bold">LOGIN</h2>
-
-                    <div class="mb-3 w-100">
-                        <label for="exampleDropdownFormEmail1" class="form-label">Username</label>
-                        <input name="username" type="text" class="${errorMessage != null ? 'form-control is-invalid' : 'form-control'}" id="exampleDropdownFormEmail1"
-                               placeholder="vy12345" required value="${username}"/>
-                        <c:if test="${errorMessage != null}">
-                            <div class="invalid-feedback">
-                                ${errorMessage}
-                            </div>
-                        </c:if>
-
+        <div
+            class="
+            container
+            my-5
+            d-flex
+            justify-content-center
+            align-items-center
+            px-0
+            ">
+            <div class="row w-100 h-100 border position-relative mx-3"
+                style="border-radius: 15px">
+                <a class=" navbar-brand d-flex align-items-center position-absolute"
+                    href="#"> <img
+                    src="${pageContext.request.contextPath}/static/img/logo.png"
+                    width="30" height="30" alt="S-PBL" /> <b
+                    class="text-white"> S-PBL</b>
+                </a>
+                <div
+                    class="
+                    registered-packet
+                    col-md-6 col-xl-4
+                    p-4
+                    border-end
+                    rounded-0
+                    d-flex
+                    flex-column
+                    align-items-center
+                    justify-content-center
+                    ">
+                    <i class="fas fa-motorcycle fa-7x mt-2 text-white"></i>
+                    <div class="header my-2 border-0 bg-transparent text-white">
+                        XIN CHÀO,
                     </div>
-
-                    <div class="mb-3 w-100">
-                        <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-                        <input name="password" type="password" class="form-control" id="exampleDropdownFormPassword1"
-                               placeholder="Password" required/>
-                    </div>
-
-                    <div class="mb-3 w-100">
-                        <div class="text-center p-t-12">
-                            <span class="txt1"> Forgot </span>
-                            <a class="txt2" href="#"> Username / Password? </a>
+                    <p class="text-white text-center">Đăng nhập để tra cứu !</p>
+                </div>
+                <div class="col-md-6 col-xl-8 align-self-center">
+                    <div class="card pt-4 border-0">
+                        <div class="card-header header border-0 bg-white m-auto">
+                            Đăng nhập
+                        </div>
+                        <div class="">
+                            <form name="loginForm" id="loginForm" class="needs-validation" novalidate action="${pageContext.request.contextPath}/login" method="POST">
+                                <c:if test="${param.from != null}">
+                                    <input name="from" type="hidden" value="${param.from}" />
+                                </c:if>
+                                <div class="row mb-3">
+                                    <div class="col-10 form-floating offset-1 mb-3 px-0">
+                                        <input name="username" type="text" class="${errorMessage != null ? 'form-control is-invalid bg-white' : 'form-control bg-white'}"
+                                            id="inputUsername" value="${ username }" required />
+                                        <c:if test="${errorMessage != null}">
+                                            <div id="inputEmailFeedback" class="invalid-feedback">${errorMessage}</div>
+                                        </c:if>
+                                        <c:if test="${ empty errorMessage}">
+                                            <div id="inputEmailFeedback" class="invalid-feedback">Username không hợp lệ !</div>
+                                        </c:if>
+                                        <label for="inputUsername">Username</label>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-10 form-floating offset-1 mb-3 px-0">
+                                        <input name="password" type="password" class="${errorMessage != null ? 'form-control is-invalid bg-white' : 'form-control bg-white'}"
+                                            id="inputPwd" required minlength="6" maxlength="20" disable />
+                                        <c:if test="${errorMessage != null}">
+                                            <div id="inputPasswordFeedback" class="invalid-feedback">${errorMessage}</div>
+                                        </c:if>
+                                        <c:if test="${ empty errorMessage}">
+                                            <div id="inputPasswordFeedback" class="invalid-feedback">Mật
+                                                khẩu không hợp lệ !
+                                            </div>
+                                        </c:if>
+                                        <label for="inputPwd">Mật Khẩu</label>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div
+                                        class="
+                                        action
+                                        col-10
+                                        offset-1
+                                        d-flex
+                                        flex-wrap
+                                        justify-content-around
+                                        ">
+                                        <div class="mb-3 w-100">
+                                            <div class="text-center p-t-12">
+                                                <small class="txt1">Bạn chưa có tài khoản ?</small> <br /> <small
+                                                    class="txt1"> Chuyển sang <a class="txt2"
+                                                    href="${ pageContext.request.contextPath }/sign-up"> Đăng kí </a></small>
+                                            </div>
+                                        </div>
+                                        <button
+                                            class="
+                                            btn
+                                            w-100
+                                            btn-custom
+                                            my-3
+                                            rounded-pill
+                                            text-white
+                                            "
+                                            id="btnSubmit" type="submit">
+                                        Đăng nhập</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-
-                    <button id="btnSubmit" type="submit" class="btn btn-login w-100">Sign in</button>
-
                 </div>
-
-            </form>
-
+            </div>
         </div>
     </body>
-    <%@include file="/templates/fragments/script_bootstrap5.jspf" %>
+    <%@include file="/templates/fragments/script_bootstrap5.jspf"%>
     <script>
+        (function () {
+            'use strict';
+        
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+        
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms).forEach(function (form) {
+              form.addEventListener(
+                'submit',
+                function (event) {
+                  if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+        
+                  form.classList.add('was-validated');
+                },
+                false
+              );
+            });
+          })();
+        
+        
         document.getElementById("loginForm").addEventListener("submit", function (event) {
             document.getElementById("btnSubmit").disabled = true;
         });

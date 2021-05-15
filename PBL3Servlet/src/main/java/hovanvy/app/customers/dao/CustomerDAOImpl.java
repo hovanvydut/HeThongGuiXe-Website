@@ -101,4 +101,44 @@ public class CustomerDAOImpl implements CustomerDAO {
         return Optional.ofNullable(customerInDB);
     }
 
+	@Override
+	public Customer save(Customer customer) {
+		EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
+
+        try {
+            em.getTransaction().begin();
+
+            em.persist(customer);
+
+            em.getTransaction().commit();
+
+        } catch (Exception ex) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+        
+        return customer;
+	}
+
+	@Override
+	public void update(Customer customer) {
+		
+		EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
+
+        try {
+            em.getTransaction().begin();
+
+            em.merge(customer);
+
+            em.getTransaction().commit();
+
+        } catch (Exception ex) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+        
+	}
+
 }
