@@ -46,13 +46,14 @@ public class SignupServlet extends HttpServlet {
 		Customer customer = (Customer) request.getAttribute("customer");
 		
 		try {
-			this.customerService.save(customer);
-		} catch (CustomerExistingException e) {
 			
+			// sign up customer
+			this.customerService.save(customer);
+			
+		} catch (CustomerExistingException e) {
 			request.setAttribute("customer", customer);
 			request.setAttribute("errorMessage", e.getMessage());
 			dp.forward(request, response);
-			
 			return;
 		} catch (NullCustomerException e) {
 			response.sendError(500);

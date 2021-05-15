@@ -14,6 +14,7 @@ import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.common.userdetails.UserDetails;
 import hovanvy.entity.Customer;
 import hovanvy.util.CustomerUtil;
+import hovanvy.util.PasswordEncoder;
 import hovanvy.util.URLUtil;
 
 /**
@@ -55,13 +56,16 @@ public class LoginServlet extends HttpServlet {
         try {
 
             UserDetails userInDB = this.customerService.loadUserByUsername(username);
-
+            
+//            password = PasswordEncoder.encode(password);
             if (!userInDB.getPassword().equals(password)) {
                 throw new UsernameNotFoundException(MessageEnum.USERNAME_PASSWORD_WRONG.get());
             }
-
+            
+            // create new session
             request.getSession().setAttribute("loggedInUser", userInDB);
-
+            
+            // business relative to handle redirect url
             if (isValidFrom(from)) {
                 response.sendRedirect(from);
             } else {
