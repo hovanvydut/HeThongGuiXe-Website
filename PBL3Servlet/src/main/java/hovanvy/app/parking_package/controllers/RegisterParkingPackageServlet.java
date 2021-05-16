@@ -1,12 +1,12 @@
 package hovanvy.app.parking_package.controllers;
 
-import hovanvy.app.parking_package.services.ParkingPackageService;
-import hovanvy.app.parking_package.services.ParkingPackageServiceImpl;
-import hovanvy.app.payment.service.PaymentService;
-import hovanvy.app.payment.service.PaymentServiceImpl;
 import hovanvy.common.enums.PathJsp;
 import hovanvy.common.exceptions.CustomerNotFoundException;
 import hovanvy.common.exceptions.ParkingPackageNotFoundException;
+import hovanvy.core.parking_package.services.ParkingPackageService;
+import hovanvy.core.parking_package.services.ParkingPackageServiceImpl;
+import hovanvy.core.payment.service.PaymentService;
+import hovanvy.core.payment.service.PaymentServiceImpl;
 import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingPackage;
 import hovanvy.entity.Payment;

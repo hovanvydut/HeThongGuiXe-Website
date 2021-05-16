@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import hovanvy.app.customers.services.CustomerDetailsService;
-import hovanvy.app.customers.services.CustomerDetailsServiceImpl;
 import hovanvy.common.enums.PathJsp;
 import hovanvy.common.exceptions.CustomerExistingException;
 import hovanvy.common.exceptions.NullCustomerException;
 import hovanvy.common.exceptions.UsernameNotFoundException;
+import hovanvy.core.customers.services.CustomerDetailsService;
+import hovanvy.core.customers.services.CustomerDetailsServiceImpl;
 import hovanvy.entity.Customer;
+import hovanvy.util.CustomerUtil;
 
 /**
  * 
@@ -33,6 +34,15 @@ public class SignupServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
+
+        Customer customer = CustomerUtil.getLoggedInUser(request);
+        
+        // if has logged in, redirect to previous page
+        if (customer != null) {
+            response.sendRedirect(request.getContextPath() + "/home");
+            return;
+        }
+        
 		request.getRequestDispatcher(PathJsp.SIGN_UP.getPath()).forward(request, response);
 	}
 	

@@ -21,6 +21,8 @@
 
 	<dependencies>
 
+		<!-- App is using servlet version 4 -->
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
@@ -58,12 +60,19 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-
+	
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.5.0-b01</version>
 		</dependency>
+		
+		<!-- Template engine, in this project it's used for create email template -->	
+		<dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.14</version>
+        </dependency>
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -81,6 +90,27 @@
 			<version>2.7</version>
 		</dependency>
 
+
+		<!-- Servlet 3.0 API -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<!-- Jersey is implementation of JAX-RS -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<!-- if your container implements Servlet API older than 3.0, use "jersey-container-servlet-core" -->
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.34</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>2.34</version>
+		</dependency>
 	</dependencies>
 
 	<build>
