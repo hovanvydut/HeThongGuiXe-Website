@@ -1,4 +1,4 @@
-package hovanvy.app.payment.dao;
+package hovanvy.core.payment.dao;
 
 import hovanvy.entity.Customer;
 import hovanvy.entity.Payment;

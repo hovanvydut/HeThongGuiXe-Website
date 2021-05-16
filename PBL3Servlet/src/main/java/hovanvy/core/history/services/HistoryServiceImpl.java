@@ -1,7 +1,7 @@
-package hovanvy.app.history.services;
+package hovanvy.core.history.services;
 
-import hovanvy.app.history.dao.HistoryDAO;
-import hovanvy.app.history.dao.HistoryDAOImpl;
+import hovanvy.core.history.dao.HistoryDAO;
+import hovanvy.core.history.dao.HistoryDAOImpl;
 import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingHistory;
 import java.time.LocalDate;

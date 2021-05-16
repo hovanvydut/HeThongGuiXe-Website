@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import hovanvy.app.customers.services.CustomerDetailsService;
-import hovanvy.app.customers.services.CustomerDetailsServiceImpl;
 import hovanvy.common.enums.MessageEnum;
 import hovanvy.common.enums.PathJsp;
 import hovanvy.common.userdetails.UserDetails;
+import hovanvy.core.customers.services.CustomerDetailsService;
+import hovanvy.core.customers.services.CustomerDetailsServiceImpl;
 import hovanvy.entity.Customer;
 import hovanvy.util.CustomerUtil;
 import hovanvy.util.PasswordEncoder;

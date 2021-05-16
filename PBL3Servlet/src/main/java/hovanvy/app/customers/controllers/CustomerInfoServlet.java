@@ -1,8 +1,5 @@
 package hovanvy.app.customers.controllers;
 
-import hovanvy.app.customers.services.CustomerDetailsServiceImpl;
-import hovanvy.app.payment.service.PaymentService;
-import hovanvy.app.payment.service.PaymentServiceImpl;
 import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingHistory;
 import hovanvy.entity.Payment;
@@ -18,10 +15,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import hovanvy.app.customers.services.CustomerDetailsService;
+
 import hovanvy.common.enums.PathJsp;
 import hovanvy.common.exceptions.CustomerNotFoundException;
 import hovanvy.common.userdetails.UserDetails;
+import hovanvy.core.customers.services.CustomerDetailsService;
+import hovanvy.core.customers.services.CustomerDetailsServiceImpl;
+import hovanvy.core.payment.service.PaymentService;
+import hovanvy.core.payment.service.PaymentServiceImpl;
 import hovanvy.util.CustomerUtil;
 
 /**

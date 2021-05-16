@@ -1,4 +1,4 @@
-package hovanvy.app.parking_package.services;
+package hovanvy.core.parking_package.services;
 
 import hovanvy.common.exceptions.CustomerNotFoundException;
 import hovanvy.common.exceptions.ParkingPackageNotFoundException;

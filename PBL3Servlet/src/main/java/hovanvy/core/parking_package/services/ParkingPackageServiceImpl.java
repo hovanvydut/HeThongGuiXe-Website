@@ -1,11 +1,11 @@
-package hovanvy.app.parking_package.services;
+package hovanvy.core.parking_package.services;
 
-import hovanvy.app.customers.dao.CustomerDAO;
-import hovanvy.app.customers.dao.CustomerDAOImpl;
-import hovanvy.app.parking_package.dao.ParkingPackageDAO;
-import hovanvy.app.parking_package.dao.ParkingPackageDAOImpl;
 import hovanvy.common.exceptions.CustomerNotFoundException;
 import hovanvy.common.exceptions.ParkingPackageNotFoundException;
+import hovanvy.core.customers.dao.CustomerDAO;
+import hovanvy.core.customers.dao.CustomerDAOImpl;
+import hovanvy.core.parking_package.dao.ParkingPackageDAO;
+import hovanvy.core.parking_package.dao.ParkingPackageDAOImpl;
 import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingPackage;
 import hovanvy.entity.Payment;

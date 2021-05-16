@@ -1,4 +1,4 @@
-package hovanvy.app.payment.service;
+package hovanvy.core.payment.service;
 
 import hovanvy.common.exceptions.CustomerNotFoundException;
 import hovanvy.entity.Customer;

@@ -1,4 +1,4 @@
-package hovanvy.app.history.dao;
+package hovanvy.core.history.dao;
 
 import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingHistory;

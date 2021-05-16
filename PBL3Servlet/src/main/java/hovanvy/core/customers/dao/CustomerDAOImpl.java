@@ -1,4 +1,4 @@
-package hovanvy.app.customers.dao;
+package hovanvy.core.customers.dao;
 
 import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.entity.Customer;

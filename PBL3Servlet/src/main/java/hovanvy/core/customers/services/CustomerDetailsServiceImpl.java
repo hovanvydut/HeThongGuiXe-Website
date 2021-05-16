@@ -1,13 +1,13 @@
-package hovanvy.app.customers.services;
+package hovanvy.core.customers.services;
 
-import hovanvy.app.customers.dao.CustomerDAO;
-import hovanvy.app.customers.dao.CustomerDAOImpl;
-import hovanvy.app.security.customeruserdetails.CustomerUserDetails;
 import hovanvy.common.enums.MessageEnum;
 import hovanvy.common.exceptions.CustomerExistingException;
 import hovanvy.common.exceptions.NullCustomerException;
 import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.common.userdetails.UserDetails;
+import hovanvy.core.customers.dao.CustomerDAO;
+import hovanvy.core.customers.dao.CustomerDAOImpl;
+import hovanvy.core.security.customeruserdetails.CustomerUserDetails;
 import hovanvy.entity.Customer;
 import hovanvy.util.PasswordEncoder;
 

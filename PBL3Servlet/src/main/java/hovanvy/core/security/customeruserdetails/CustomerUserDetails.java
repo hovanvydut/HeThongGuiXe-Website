@@ -1,4 +1,4 @@
-package hovanvy.app.security.customeruserdetails;
+package hovanvy.core.security.customeruserdetails;
 
 import hovanvy.common.userdetails.UserDetails;
 import hovanvy.entity.Customer;

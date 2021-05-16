@@ -1,4 +1,4 @@
-package hovanvy.app.customers.services;
+package hovanvy.core.customers.services;
 
 import hovanvy.common.exceptions.CustomerExistingException;
 import hovanvy.common.exceptions.NullCustomerException;

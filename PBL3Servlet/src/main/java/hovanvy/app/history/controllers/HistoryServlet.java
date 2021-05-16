@@ -1,8 +1,8 @@
 package hovanvy.app.history.controllers;
 
-import hovanvy.app.history.services.HistoryService;
-import hovanvy.app.history.services.HistoryServiceImpl;
 import hovanvy.common.enums.PathJsp;
+import hovanvy.core.history.services.HistoryService;
+import hovanvy.core.history.services.HistoryServiceImpl;
 import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingHistory;
 import hovanvy.util.CustomerUtil;

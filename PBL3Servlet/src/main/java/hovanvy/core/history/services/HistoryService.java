@@ -1,4 +1,4 @@
-package hovanvy.app.history.services;
+package hovanvy.core.history.services;
 
 import hovanvy.entity.ParkingHistory;
 import java.util.List;

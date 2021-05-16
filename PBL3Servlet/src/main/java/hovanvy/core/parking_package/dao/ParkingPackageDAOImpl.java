@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hovanvy.app.parking_package.dao;
+package hovanvy.core.parking_package.dao;
 
 import hovanvy.entity.Customer;
 import hovanvy.entity.ParkingPackage;
