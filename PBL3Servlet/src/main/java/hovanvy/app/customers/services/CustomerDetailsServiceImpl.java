@@ -9,6 +9,8 @@ import hovanvy.common.exceptions.NullCustomerException;
 import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.common.userdetails.UserDetails;
 import hovanvy.entity.Customer;
+import hovanvy.util.PasswordEncoder;
+
 import java.util.List;
 
 /**
@@ -53,6 +55,12 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 		
 		if (customerInDb != null) {
 			throw new CustomerExistingException();
+		}
+		
+		// hash password
+		if (customer.getPassword() != null) {
+			String encodedPassword = PasswordEncoder.encode(customer.getPassword());
+			customer.setPassword(encodedPassword);
 		}
 		
 		// store in db

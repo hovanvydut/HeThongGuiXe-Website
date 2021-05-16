@@ -46,7 +46,7 @@ public class SignupValidatorFilter implements Filter {
 			
 			Customer customer = parseCustomerFrom(request);
 			
-			CustomerValidationResult result = isEmailValid().and(isPhoneValid()).apply(customer);
+			CustomerValidationResult result = isEmailValid().and(isPhoneValid()).and(isFullnameValid()).and(isUsernameValid()).and(isPasswordValid()).apply(customer);
 			
 			if (result == CustomerValidationResult.SUCCESS) {
 				// if data is valid, then execute SignupServlet
@@ -72,7 +72,6 @@ public class SignupValidatorFilter implements Filter {
 	
 	private Customer parseCustomerFrom(HttpServletRequest request) {
 		String fullname = request.getParameter("fullname");
-		String studentId = request.getParameter("studentId");
 		String username = request.getParameter("username");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
