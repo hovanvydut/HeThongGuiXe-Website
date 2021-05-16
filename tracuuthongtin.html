@@ -13,59 +13,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
 </head>
-<style>
-    i {
-        color: white !important;
-    }
 
-    .list-packet:hover .title::before {
-        width: 100%;
-    }
-
-    .history {
-        background: rgb(35, 144, 136);
-        background: linear-gradient(90deg,
-                rgba(35, 144, 136, 1) 4%,
-                rgba(49, 180, 170, 1) 59%,
-                rgba(33, 212, 212, 1) 89%);
-        border-radius: 15px !important;
-        color: white;
-        padding: 5%;
-    }
-
-    .btn-packet {
-        background-color: var(--main-color);
-        color: white;
-    }
-
-    .carousel-item {
-        width: 100% !important;
-        border: none;
-    }
-
-    .carousel-item:hover {
-        box-shadow: 2px 2px 4px #9c9999;
-    }
-
-    .packet {
-        border-radius: 15px !important;
-    }
-
-    .packet-name {
-        color: var(--main-color);
-        font-size: 150%;
-        font-weight: 300;
-    }
-
-    .packet-price {
-        color: var(--main-color-bolder);
-        font-size: 180%;
-        font-weight: 900;
-    }
-</style>
-
-<body class="">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
+<body >
+    <nav class="navbar vw-100 navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png" width="30" height="30" alt="S-PBL" />
             <b> S-PBL</b>
@@ -99,9 +49,9 @@
             </form>
         </div>
     </nav>
-    <div class="container my-4 my-md-5 px-md-5  px-2">
-        <div class="row list-packet gy-5">
-            <div class="col-12 mb-5">
+    <div class="container vw-100 my-4 my-md-5 px-md-5  px-2">
+        <div class="row list gy-5">
+            <div class="col-12 mb-3 mb-sm-5">
                 <h3 class="text-center text-wrap title m-auto">Tra cứu thông tin lịch sử gửi xe</h3>
             </div>
            
@@ -190,8 +140,8 @@
               </div>
             </div>
         </div>
-        <div class="row list-packet mt-5 mx-2  history">
-            <div class="col-12 mb-5">
+        <div class="row list mt-5 mx-2  bg-history">
+            <div class="col-12 mb-3 mb-sm-5">
                 <h3 class="text-center text-wrap title m-auto">
                     Lịch sử thời gian gửi xe
                 </h3>
@@ -209,34 +159,34 @@
                     </thead>
                     <tbody class="text-center text-white">
                         <tr>
-                            <th scope="row">1</th>
-                            <td>22/3/2021</td>
-                            <td>22/4/2021</td>
-                            <td>92F1 0705</td>
-                            <td>1000 VND</td>
+                            <th scope="row">#1</th>
+                            <td data-label="Giờ gửi xe">22/3/2021</td>
+                            <td data-label="Giờ lấy xe">22/4/2021</td>
+                            <td data-label="Biển số xe">92F1 0705</td>
+                            <td data-label="Giá lần gửi">1000 VND</td>
 
                         </tr>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>22/3/2021</td>
-                            <td>22/4/2021</td>
-                            <td>92F1 0705</td>
-                            <td>1000 VND</td>
+                            <th scope="row">#2</th>
+                            <td data-label="Giờ gửi xe">22/3/2021</td>
+                            <td data-label="Giờ lấy xe">22/4/2021</td>
+                            <td data-label="Biển số xe">92F1 0705</td>
+                            <td data-label="Giá lần gửi">1000 VND</td>
                         </tr>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>22/3/2021</td>
-                            <td>22/4/2021</td>
-                            <td>92F1 0705</td>
-                            <td>1000 VND</td>
+                            <th scope="row">#3</th>
+                            <td data-label="Giờ gửi xe">22/3/2021</td>
+                            <td data-label="Giờ lấy xe">22/4/2021</td>
+                            <td data-label="Biển số xe">92F1 0705</td>
+                            <td data-label="Giá lần gửi">1000 VND</td>
 
                         </tr>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>22/3/2021</td>
-                            <td>22/4/2021</td>
-                            <td>92F1 0705</td>
-                            <td>1000 VND</td>
+                            <th scope="row">#4</th>
+                            <td data-label="Giờ gửi xe">22/3/2021</td>
+                            <td data-label="Giờ lấy xe">22/4/2021</td>
+                            <td data-label="Biển số xe">92F1 0705</td>
+                            <td data-label="Giá lần gửi">1000 VND</td>
                         </tr>
                     </tbody>
                 </table>

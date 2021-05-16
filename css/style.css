@@ -18,9 +18,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
-html {
-  overflow-x: hidden;
+html{
+  overflow-x: hidden !important;
 }
 
 /* custom css bootstrap */
@@ -83,8 +84,9 @@ button:focus {
   position: relative;
   width: fit-content;
   font-weight: 900;
-  font-size: 250%;
+  font-size: 200%;
   margin: auto;
+  overflow-x: hidden;
 }
 .title::before {
   content: '';
@@ -111,7 +113,6 @@ button:focus {
   transition: 0.2s all ease-in-out !important;
 }
 
-
 /* form card */
 .form-card {
   border-radius: 15px;
@@ -121,4 +122,84 @@ button:focus {
   font-weight: 900;
   font-size: 180%;
   margin: auto;
+}
+
+/* tra cuu thong tin  */
+.packet {
+  border-radius: 15px !important;
+}
+
+.packet-name {
+  color: var(--main-color);
+  font-size: 150%;
+  font-weight: 300;
+}
+
+.packet-price {
+  color: var(--main-color-bolder);
+  font-size: 180%;
+  font-weight: 900;
+}
+/* history table */
+.bg-history {
+  background: rgb(35, 144, 136);
+  background: linear-gradient(90deg,
+          rgba(35, 144, 136, 1) 4%,
+          rgba(49, 180, 170, 1) 59%,
+          rgba(33, 212, 212, 1) 89%);
+  border-radius: 15px !important;
+  color: white;
+  padding: 5%;
+}
+.bg-history i {
+  color: var(--main-color-2);
+}
+/* responsive table */
+@media screen and (max-width: 576px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
 }
