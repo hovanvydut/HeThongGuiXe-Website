@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quên mật khẩu</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animate.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -18,9 +19,6 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <style>
-      
-    </style>
   </head>
   <body>
     <!-- quên mật khẩu -->
@@ -111,7 +109,7 @@
               <label for="password" class="form-label">Nhập lại mật khẩu</label>
               <input
                 type="password"
-                class="bg-light rounded-pill form-control"
+                class="bg-light rounded-pill form-control "
                 id="confirm_password"
                 placeholder="Password"
                 required
@@ -142,7 +140,7 @@
     const resetBtn = document.getElementById('btnReset');
 
     function validatePassword() {
-      if (password.value !== confirm_password.value) {
+      if (password.value !== confirm_password.value ) {
         //   show err
         console.warn('err');
         error.classList.remove('d-none');
@@ -152,7 +150,7 @@
         resetBtn.disabled = true;
         return false;
       }
-      if (password.value == confirm_password.value) {
+      if (password.value == confirm_password.value ) {
         console.log('OK');
         error.classList.add('d-none');
         confirm_password.classList.add('is-valid');
