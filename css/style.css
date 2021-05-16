@@ -56,7 +56,7 @@ button:focus {
 .far,
 .fas,
 .fab {
-  color: var(--main-color-2);
+  color: var(--main-color);
 }
 .btn-success {
   background-color: var(--success) !important;
