@@ -57,10 +57,11 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 			throw new CustomerExistingException();
 		}
 		
-//		if (customer.getPassword() != null) {
-//			String encodedPassword = PasswordEncoder.encode(customer.getPassword());
-//			customer.setPassword(encodedPassword);
-//		}
+		// hash password
+		if (customer.getPassword() != null) {
+			String encodedPassword = PasswordEncoder.encode(customer.getPassword());
+			customer.setPassword(encodedPassword);
+		}
 		
 		// store in db
 		return this.customerDAO.save(customer);

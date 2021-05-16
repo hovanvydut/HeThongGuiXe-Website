@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 public class PasswordEncoder {
 
 	public static String encode(String password) {
-		return password;
+		return getMd5(password);
 	}
 
 	private static String getMd5(String input) {
