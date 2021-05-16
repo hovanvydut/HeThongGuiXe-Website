@@ -15,7 +15,7 @@
 </head>
 
 <body >
-    <nav class="navbar vw-100 navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
+    <nav class="navbar w-100  navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png" width="30" height="30" alt="S-PBL" />
             <b> S-PBL</b>
@@ -49,7 +49,7 @@
             </form>
         </div>
     </nav>
-    <div class="container vw-100 my-4 my-md-5 px-md-5  px-2">
+    <div class="container  my-4 my-md-5 px-md-5  px-2">
         <div class="row list gy-5">
             <div class="col-12 mb-3 mb-sm-5">
                 <h3 class="text-center text-wrap title m-auto">Tra cứu thông tin lịch sử gửi xe</h3>
@@ -73,7 +73,7 @@
                         <img class="rounded-circle" width="35%" height="35%" src="./img/xemay.jpg" alt="" srcset="" />
                     </div>
 
-                    <form class="needs-validation w-100 " novalidate style="transform: translateY(-10%)">
+                    <form class="w-100 needs-validation" novalidate style="transform: translateY(-10%)">
                         <h3 class="text-wrap packet-name pb-3">
                             Nhập thông tin tra cứu
                         </h3>
@@ -120,23 +120,16 @@
                       <img class="rounded-circle" width="35%" height="35%" src="./img/xemay.jpg" alt="" srcset="" />
                   </div>
 
-                  <form class="needs-validation w-100 " novalidate style="transform: translateY(-10%)">
+                  <div class=" w-100 "  style="transform: translateY(-10%)">
                       <h3 class="text-wrap packet-name pb-3">
                           Tra cứu theo tháng 
                       </h3>
                       <div class="form m-auto my-4">
-                        <ul class=" d-flex flex-wrap justify-content-around p-0 my-3">
-                            <li class="btn btn-primary rounded-pill m-1 ">12/2020</li>
-                            <li class="btn btn-primary rounded-pill m-1">01/2021</li>
-                            <li class="btn btn-primary rounded-pill m-1">02/2021</li>
-                            <li class="btn btn-primary rounded-pill m-1">03/2021</li>
-                            <li class="btn btn-primary rounded-pill m-1">04/2021</li>
-                            <li class="btn btn-primary rounded-pill m-1">05/2021</li>
+                        <ul id="list_month" class=" d-flex flex-wrap justify-content-around p-0 my-3">
+                            
                           </ul>
                       </div>
-
-                      <button class="btn btn-success mt-2" type="submit">Tra cứu</button>
-                  </form>
+                  </div>
               </div>
             </div>
         </div>
@@ -193,6 +186,9 @@
             </div>
         </div>
     </div>
+    <ul id="list_form" hidden >
+                            
+    </ul>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -206,6 +202,7 @@
     integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
 </script>
 <script>
+    // validate
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
         'use strict';
@@ -232,6 +229,39 @@
             false
         );
     })();
+
+    // genring month
+    let ul_list_month = document.getElementById("list_month");
+    let ul_list_form = document.getElementById("list_form");
+    
+    // get now month
+    let month = new Date().getMonth() ;
+    //  genre
+    let i = 0;
+    function genreMonth() {
+        for( i = 0 ; i <= 5 ; i++)
+        {
+            // get previous month
+            let genring_day = new Date();
+            genring_day.setMonth(month - i);
+            let genring_month = genring_day.getMonth() + 1;
+
+            // get first and last day  of month
+            y = genring_day.getFullYear(), m = genring_day.getMonth();
+            let firstDay = new Date(y, m, 1);
+            let lastDay = new Date(y, m + 1, 0);
+
+            // add to html
+            ul_list_month.innerHTML += `<li class="btn btn-primary rounded-pill m-1 "> <input hidden type="submit" form="formMonth${genring_month}" > ${genring_month }/${ genring_day.getFullYear()}</li>` ;
+            ul_list_form.innerHTML += `
+            <form id="formMonth${genring_month}" action="" method="POST">
+	            <input type="hidden" name="fromDate${genring_month}" type="date" value="${firstDay}" />
+	            <input type="hidden" name="toDate${genring_month}" type="date" value="${lastDay}" />
+            </form>
+            `
+        }
+    }
+    genreMonth();
 </script>
 
 </html>
