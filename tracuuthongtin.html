@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tra cứu thông tin </title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
@@ -15,41 +16,60 @@
 </head>
 
 <body >
-    <nav class="navbar w-100  navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4" style="z-index:10">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png" width="30" height="30" alt="S-PBL" />
-            <b> S-PBL</b>
+          <img
+            src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png"
+            width="30"
+            height="30"
+            alt="S-PBL"
+          />
+          <b> S-PBL</b>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarToggler"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/tracuu_chitiet.html">Trang Chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/tracuu.html">Tra Cứu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/list_packet.html">Gói gửi xe</a>
-                </li>
-            </ul>
-            <form class="
-            form-inline
-            my-2 my-lg-0
-            flex-grow-1
-            d-flex
-            justify-content-start justify-content-lg-end
-          ">
-                <a class="rounded-circle" height="40px" width="40px" href="/user_info.html">
-                    <i class="fas fa-user"></i>
-                </a>
-            </form>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="/tracuu_chitiet.html">Trang Chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tracuu.html">Tra Cứu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/list_packet.html">Gói gửi xe</a>
+            </li>
+          </ul>
+          <form
+            class="
+              form-inline
+              my-2 my-lg-0
+              flex-grow-1
+              d-flex
+              justify-content-start justify-content-lg-end
+            "
+          >
+            <a
+              class="rounded-circle"
+              height="40px"
+              width="40px"
+              href="/user_info.html"
+            >
+              <i class="fas fa-user"></i>
+            </a>
+          </form>
         </div>
-    </nav>
-    <div class="container  my-4 my-md-5 px-md-5  px-2">
+      </nav>
+    <div class="container bg-transparent overflow-hidden">
         <div class="row list gy-5">
             <div class="col-12 mb-3 mb-sm-5">
                 <h3 class="text-center text-wrap title m-auto">Tra cứu thông tin lịch sử gửi xe</h3>
@@ -133,13 +153,13 @@
               </div>
             </div>
         </div>
-        <div class="row list mt-5 mx-2  bg-history">
+        <div class="row list d-flex justify-content-center align-items-center my-5 bg-history "  >
             <div class="col-12 mb-3 mb-sm-5">
                 <h3 class="text-center text-wrap title m-auto">
                     Lịch sử thời gian gửi xe
                 </h3>
             </div>
-            <div class="col-12 table-responsive">
+            <div class="col-12 table-responsive d-flex justify-content-center align-items-center ">
                 <table class="table  table-borderless table-hover">
                     <thead class="table text-white text-center">
                         <tr>
