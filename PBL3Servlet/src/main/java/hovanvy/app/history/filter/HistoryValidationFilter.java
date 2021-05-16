@@ -22,7 +22,7 @@ import hovanvy.common.validator.DateValidator.DateValidationResult;
  *
  */
 
-@WebFilter(urlPatterns = {"/history/details"})
+@WebFilter(urlPatterns = {"/history"})
 public class HistoryValidationFilter implements Filter{
 
 	@Override
@@ -37,17 +37,19 @@ public class HistoryValidationFilter implements Filter{
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		
-		String fromDate = (String) request.getParameter("fromDate");
-        String toDate = (String) request.getParameter("toDate");
+		if (request.getMethod().equals("POST")) {
+			String fromDate = (String) request.getParameter("fromDate");
+	        String toDate = (String) request.getParameter("toDate");
+			
+	        DateValidationResult result1 = DateValidator.isValid().apply(toDate);
+	        DateValidationResult result2 = DateValidator.isValid().apply(fromDate);
+	        
+	        if (result1.equals(DATE_FORMAT_NOT_VALID) || result2.equals(DATE_FORMAT_NOT_VALID)) {
+	        	response.sendError(500);
+	        	return;
+	        }
+		}
 		
-        DateValidationResult result1 = DateValidator.isValid().apply(toDate);
-        DateValidationResult result2 = DateValidator.isValid().apply(fromDate);
-        
-        if (result1.equals(DATE_FORMAT_NOT_VALID) || result2.equals(DATE_FORMAT_NOT_VALID)) {
-        	response.sendError(500);
-        	return;
-        }
-        
         chain.doFilter(req, res);
 	}
 
