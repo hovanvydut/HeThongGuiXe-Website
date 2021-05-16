@@ -210,6 +210,12 @@
                                  id="btnEdit" onclick="edit(this)">
                               Chỉnh sửa <i class="far fa-edit text-white"></i>
                               </button>
+                              <a
+                              	href="${ pageContext.request.contextPath }/customers/reset-password"
+                                 class="btn px-3 btn-custom my-3 rounded-pill text-white"
+                                 id="btnResetPwd">
+                              Reset password <i class="fas fa-lock-open text-white"></i>
+                              </a>
                               <button type="button"
                                  class="btn px-3 btn-custom my-3 rounded-pill text-white d-none"
                                  id="btnCancel" onclick="cancel()">
@@ -296,6 +302,7 @@
       const btnEdit = document.getElementById('btnEdit');
       const btnCancel = document.getElementById('btnCancel');
       const btnSave = document.getElementById('btnSave');
+      const btnResetPwd = document.getElementById('btnResetPwd');
       const form = document.getElementById('form');
       
       function edit() {
@@ -309,6 +316,7 @@
       	inputFullname.classList.add('enableEdit');
       	
       	btnEdit.classList.add('d-none');
+      	btnResetPwd.classList.add('d-none');
       	btnSave.classList.remove('d-none');
       	btnCancel.classList.remove('d-none');
       	
@@ -325,6 +333,7 @@
     	  inputFullname.classList.remove('enableEdit');
     	  
     	  	btnEdit.classList.remove('d-none');
+    	  	btnResetPwd.classList.remove('d-none');
     	  	btnSave.classList.add('d-none');
           	btnCancel.classList.add('d-none');
           	form.classList.remove('was-validated')

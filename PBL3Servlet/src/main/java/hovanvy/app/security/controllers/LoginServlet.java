@@ -59,8 +59,7 @@ public class LoginServlet extends HttpServlet {
             
             // encode password
             password = PasswordEncoder.encode(password);
-            System.out.println(userInDB.getPassword());
-            System.out.println(password);
+
             if (!userInDB.getPassword().equals(password)) {
                 throw new UsernameNotFoundException(MessageEnum.USERNAME_PASSWORD_WRONG.get());
             }

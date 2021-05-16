@@ -56,7 +56,12 @@ public class Customer {
     }
 
     public void setFullname(String fullname) {
-        this.fullname = fullname.trim().replaceAll("\\s+", " ");
+    	if (fullname == null) {
+    		this.fullname = fullname;
+    	} else {
+    		this.fullname = fullname.trim().replaceAll("\\s+", " ");
+    	}
+        
     }
 
     public String getStudent_id() {

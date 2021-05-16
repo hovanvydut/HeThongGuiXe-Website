@@ -158,6 +158,28 @@ public class CustomerValidatorTest {
 		assertEquals(SUCCESS, result);
 	}
 	
+	@DisplayName("Test invalid password")
+	@ParameterizedTest(name = "#{index} - Run test with password = {0}")
+	@MethodSource("invalidPasswordProvider")
+	public void testInvalidPassword(String password) {
+		Customer customer = new Customer();
+		customer.setPassword(password);
+		
+		CustomerValidationResult result = isPasswordValid().apply(customer);
+		assertEquals(PASSWORD_NOT_VALID, result);
+	}
+	
+	@DisplayName("Test valid password")
+	@ParameterizedTest(name = "#{index} - Run test with password = {0}")
+	@MethodSource("validPasswordProvider")
+	public void testValidPassword(String password) {
+		Customer customer = new Customer();
+		customer.setPassword(password);
+		
+		CustomerValidationResult result = isPasswordValid().apply(customer);
+		assertEquals(SUCCESS, result);
+	}
+	
 	
 	@AfterEach
 	public void tearDown() {
@@ -170,7 +192,8 @@ public class CustomerValidatorTest {
 				"az",
 				"       ",
 				"abcdef123!",
-				"123456789012345678901"
+				"123456789012345678901",
+				null
 				);
 	}
 	
@@ -187,7 +210,8 @@ public class CustomerValidatorTest {
 	
 	static Stream<String> invalidFullnameProvider() {
 		return Stream.of(
-				"An 1"
+				"An 1",
+				null
 				);
 	}
 	
@@ -201,6 +225,27 @@ public class CustomerValidatorTest {
 				"aa b    ",
 				"   a      b   ",
 				"Hồ Văn Vy"
+				);
+	}
+	
+	static Stream<String> invalidPasswordProvider() {
+		return Stream.of(
+				"123",
+				"12345",
+				"1234567890 12345678901",
+				null,
+				"   "
+				);
+	}
+	
+	static Stream<String> validPasswordProvider() {
+		return Stream.of(
+				"123456",
+				"1234567890",
+				"12345678901234567890",
+				"      " ,
+				"          ",
+				"                    "
 				);
 	}
 }
