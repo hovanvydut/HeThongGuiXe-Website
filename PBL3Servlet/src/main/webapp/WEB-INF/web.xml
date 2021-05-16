@@ -6,6 +6,22 @@
 	<welcome-file-list>
 		<welcome-file>templates/pages/home/home.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<!-- REST API -->
+	<servlet>
+		<servlet-name>Email REST Service</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>hovanvy.rest.email.controllers</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Email REST Service</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
 
 	<jsp-config>
 		<jsp-property-group>
@@ -38,4 +54,6 @@
 		<exception-type>java.io.Exception</exception-type>
 		<location>/error</location>
 	</error-page>
+
+	
 </web-app>
