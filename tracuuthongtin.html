@@ -206,7 +206,7 @@
             </div>
         </div>
     </div>
-    <ul id="list_form" hidden >
+    <ul id="list_form" class="visually-hidden" >
                             
     </ul>
 </body>
@@ -269,19 +269,24 @@
             // get first and last day  of month
             y = genring_day.getFullYear(), m = genring_day.getMonth();
             let firstDay = new Date(y, m, 1);
+            let firstDayStr = firstDay.getFullYear() + "-" + (  firstDay.getMonth() + 1 ) + "-" +firstDay.getDate();
             let lastDay = new Date(y, m + 1, 0);
-
+            let lastDayStr = lastDay.getFullYear() + "-" + (  lastDay.getMonth() + 1 ) + "-" +lastDay.getDate();
             // add to html
-            ul_list_month.innerHTML += `<li class="btn btn-primary rounded-pill m-1 "> <input hidden type="submit" form="formMonth${genring_month}" > ${genring_month }/${ genring_day.getFullYear()}</li>` ;
+            ul_list_month.innerHTML += `<button type="submit" form="formMonth${genring_month}"  class="btn btn-primary rounded-pill m-1 ">  ${genring_month }/${ genring_day.getFullYear()} </button>` ;
             ul_list_form.innerHTML += `
             <form id="formMonth${genring_month}" action="" method="POST">
-	            <input type="hidden" name="fromDate${genring_month}" type="date" value="${firstDay}" />
-	            <input type="hidden" name="toDate${genring_month}" type="date" value="${lastDay}" />
+	            <input type="hidden" name="fromDate${genring_month}" type="date" value="${firstDayStr}" />
+	            <input type="hidden" name="toDate${genring_month}" type="date" value="${lastDayStr}" />
             </form>
             `
         }
     }
+    
     genreMonth();
+    document.getElementById("formMonth3").addEventListener(onsubmit => {
+        console.log("e")
+    })
 </script>
 
 </html>
