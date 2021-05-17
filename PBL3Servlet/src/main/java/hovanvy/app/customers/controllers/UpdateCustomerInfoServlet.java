@@ -34,15 +34,15 @@ public class UpdateCustomerInfoServlet extends HttpServlet{
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		
-		if ((email != null) && email.isBlank()) {
+		if ((email != null) && email.trim().isEmpty()) {
 			email = null;
 		}
 		
-		if ((phone != null) && phone.isBlank()) {
+		if ((phone != null) && phone.trim().isEmpty()) {
 			phone = null;
 		}
 		
-		if (fullname == null || fullname.isBlank()) {
+		if (fullname == null || fullname.trim().isEmpty()) {
 			fullname = loggedInCustomer.getFullname();
 		}
 		

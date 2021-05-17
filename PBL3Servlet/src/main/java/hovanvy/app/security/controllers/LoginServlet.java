@@ -90,11 +90,11 @@ public class LoginServlet extends HttpServlet {
     }
     
     private static boolean isValidFrom(String from) {
-        return (from != null) && (!from.isBlank()) && (!from.contains("/login")) && (!from.contains("/logout"));
+        return (from != null) && (!from.trim().isEmpty()) && (!from.contains("/login")) && (!from.contains("/logout"));
     }
     
     private static String processFromString(String from) {
-        if ((from != null) && (!from.isBlank())) {
+        if ((from != null) && (!from.trim().isEmpty())) {
             if (from.contains("?")) {
                 from += "&loginSuccessfulMsg=true";
             } else {
