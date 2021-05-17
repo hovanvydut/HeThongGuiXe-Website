@@ -63,6 +63,11 @@ button:focus {
   background-color: var(--success) !important;
   border-color: var(--success) !important;
 }
+.btn-success-change {
+  background-color: #ffffff !important;
+  border-color: var(--success) !important;
+  color:  var(--success) !important;
+}
 .btn-danger {
   background-color: var(--danger) !important;
   border-color: var(--danger) !important;
@@ -76,7 +81,11 @@ button:focus {
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
 }
-
+.btn-primary-change {
+  background-color: #ffffff !important;
+  border-color: var(--primary) !important;
+  color:  var(--primary) !important;
+}
 /* css */
 
 /* hover title  */
