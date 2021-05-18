@@ -33,7 +33,7 @@ public class SignupServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-		
+		request.setCharacterEncoding("UTF-8");
 
         Customer customer = CustomerUtil.getLoggedInUser(request);
         
@@ -59,6 +59,7 @@ public class SignupServlet extends HttpServlet {
 			
 			// sign up customer
 			this.customerService.save(customer);
+			System.out.println("Register success");
 			
 		} catch (CustomerExistingException e) {
 			request.setAttribute("customer", customer);

@@ -43,6 +43,7 @@ public class SecurityFilter implements Filter{
         }
         
         if (loggedInUser.isEnabled() == false) {
+        	System.out.println("account disable");
         	response.sendRedirect(request.getContextPath() + "/home?enable=false");
         	return;
         }

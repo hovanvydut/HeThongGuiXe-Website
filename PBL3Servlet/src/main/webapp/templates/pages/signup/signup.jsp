@@ -5,54 +5,15 @@
         <title>Đăng kí</title>
         <%@include file="/templates/fragments/header.jspf"%>
     </head>
-    <style>
-        .header {
-            font-size: 3vw;
-            color: var(--main-color);
-        }
-        .registered-packet .header {
-            font-size: 2vw;
-        }
-        .registered-packet {
-            background: #007991; /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #78ffd6, #007991); /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            border-top-left-radius: 15px !important;
-            border-bottom-left-radius: 15px !important;
-        }
-        .btn-custom {
-            background-color: var(--main-color);
-            font-size: 125%;
-        }
-        .btn-custom-2 {
-            border: 1px solid var(--main-color-2);
-        }
-        .fa-gift {
-            font-size: 9vw;
-        }
-        @media (max-width: 768px) {
-            .registered-packet {
-                border-radius: 15px !important;
-            }
-            .fa-gift {
-                font-size: 18vw;
-            }
-            .header {
-                font-size: 5vw;
-            }
-            .registered-packet .header {
-                font-size: 5vw;
-            }
-        }
-    </style>
+    
     <body>
-        <div class="container my-5 d-flex justify-content-center align-items-center px-0">
-            <div class="row w-100 h-100 border position-relative mx-3" style="border-radius: 15px;">
+        <div class="container full-screen my-5 my-md-0">
+            <div class="row w-100 border position-relative mx-3" style="border-radius: 15px;">
                 <a class="navbar-brand d-flex align-items-center position-absolute" href="#">
-                    <img src="${pageContext.request.contextPath}/static/img/logo.png" width="30" height="30" alt="S-PBL" />
-                    <small class="text-white"> S-PBL</small>
+                    <img src="${pageContext.request.contextPath}/static/img/logo.png" width="30" height="30" />
+                    <small class="text-white"> Steam</small>
                 </a>
-                <div class="registered-packet col-md-6 col-xl-4 p-4 border-end rounded-0 d-flex flex-column align-items-center justify-content-center">
+                <div class="registered-packet col-md-6 col-xl-4 p-4 border-end d-flex flex-column align-items-center justify-content-center">
                     <i class="fas fa-gift text-white"></i>
                     <div class="header my-2 border-0 bg-transparent text-white">
                         XIN CHÀO,
@@ -62,15 +23,15 @@
                     </p>
                 </div>
                 <div class="col-md-6 col-xl-8">
-                    <div class="card pt-4 border-0">
+                    <div class="card pt-2 border-0">
                         <div class="card-header header border-0 bg-white m-auto">
                             Đăng kí
                         </div>
                         <div class="">
                             <form id="form" class="needs-validation" novalidate action="${pageContext.request.contextPath}/sign-up" method="POST">
-                                <div class="row mb-3">
+                                <div class="row mb-1">
                                     <div class="col-10 form-floating offset-1 mb-3 px-0">
-                                        <input name="fullname" pattern="^[a-zA-Z]+(\s[a-zA-Z]+)*$" type="text" class="form-control bg-white" id="inputFullname" value="${ customer.fullname }" required />
+                                        <input name="fullname" pattern="^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+(\s[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+)*$" type="text" class="form-control bg-white" id="inputFullname" value="${ customer.fullname }" required />
                                         <div id="inputFullnameFeedback" class="invalid-feedback">
                                             Tên không hợp lệ !
                                         </div>
@@ -78,7 +39,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
+                                <div class="row mb-1">
                                     <div class="col-10 form-floating offset-1 mb-3 px-0">
                                         <input
                                             name="username"
@@ -98,14 +59,14 @@
                                         <label for="inputUsername">Tên tài khoản (*)</label>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-1">
                                     <div class="col-10 form-floating offset-1 mb-3 px-0">
                                         <input name="password" type="password" class="form-control bg-white" id="inputPwd" required minlength="6" maxlength="20" required />
                                         <div id="inputPasswordFeedback" class="invalid-feedback">Mật khẩu không hợp lệ !</div>
                                         <label for="inputPwd">Mật Khẩu (*)</label>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-1">
                                     <div class="col-10 form-floating offset-1 mb-3 px-0">
                                         <input name="email" type="email" class="form-control bg-white" id="inputEmail" value="${ customer.email }" />
                                         <div id="inputEmailFeedback" class="invalid-feedback">
@@ -114,7 +75,7 @@
                                         <label for="inputEmail">Email</label>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-1">
                                     <div class="col-10 form-floating offset-1 mb-3 px-0">
                                         <input name="phone" type="text" class="form-control bg-white" id="inputPhonenumber" value="${ customer.phone }" pattern="^((\+84|84|0)[35789])\d{8}$" minlength="10" maxlength="12" />
                                         <div id="inputPhonenumberFeedback" class="invalid-feedback">
@@ -123,7 +84,7 @@
                                         <label for="inputPhonenumber">Số điện thoại</label>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-1">
                                     <div class="action col-10 offset-1 d-flex flex-wrap justify-content-around">
                                         <div class="mb-3 w-100">
                                             <div class="text-center p-t-12">
@@ -131,7 +92,7 @@
                                                 <br />
                                                 <small class="txt1">
                                                     Chuyển sang
-                                                    <a class="txt2" href="${ pageContext.request.contextPath }/login">
+                                                    <a class="text-theme" href="${ pageContext.request.contextPath }/login">
                                                         Đăng nhập
                                                     </a>
                                                 </small>

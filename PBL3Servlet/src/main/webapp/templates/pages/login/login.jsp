@@ -6,71 +6,17 @@
         <title>Login</title>
         <%@include file="/templates/fragments/header.jspf"%>
     </head>
-    <style>
-        .header {
-        font-size: 3vw;
-        color: var(--main-color);
-        }
-        .registered-packet .header {
-        font-size: 2vw;
-        }
-        .registered-packet {
-        background: #007991; /* fallback for old browsers */
-        background: -webkit-linear-gradient(
-        to right,
-        #78ffd6,
-        #007991
-        ); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(
-        to right,
-        #78ffd6,
-        #007991
-        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        border-top-left-radius: 15px !important;
-        border-bottom-left-radius: 15px !important;
-        }
-        .btn-custom {
-        background-color: var(--main-color);
-        font-size: 125%;
-        }
-        .btn-custom-2 {
-        border: 1px solid var(--main-color-2);
-        }
-        .fa-gift {
-        font-size: 9vw;
-        }
-        @media (max-width: 768px) {
-        .registered-packet {
-        border-radius: 15px !important;
-        }
-        .fa-gift {
-        font-size: 18vw;
-        }
-        .header {
-        font-size: 5vw;
-        }
-        .registered-packet .header {
-        font-size: 5vw;
-        }
-        }
-    </style>
+    
     <body>
         <div
-            class="
-            container
-            my-5
-            d-flex
-            justify-content-center
-            align-items-center
-            px-0
-            ">
-            <div class="row w-100 h-100 border position-relative mx-3"
+            class="container full-screen my-5 my-md-0">
+            <div class="row w-100 border position-relative mx-3"
                 style="border-radius: 15px">
                 <a class=" navbar-brand d-flex align-items-center position-absolute"
                     href="#"> <img
                     src="${pageContext.request.contextPath}/static/img/logo.png"
-                    width="30" height="30" alt="S-PBL" /> <b
-                    class="text-white"> S-PBL</b>
+                    width="30" height="30" /> <b
+                    class="text-white"> Steam</b>
                 </a>
                 <div
                     class="
@@ -78,7 +24,6 @@
                     col-md-6 col-xl-4
                     p-4
                     border-end
-                    rounded-0
                     d-flex
                     flex-column
                     align-items-center
@@ -141,7 +86,7 @@
                                         <div class="mb-3 w-100">
                                             <div class="text-center p-t-12">
                                                 <small class="txt1">Bạn chưa có tài khoản ?</small> <br /> <small
-                                                    class="txt1"> Chuyển sang <a class="txt2"
+                                                    class="txt1"> Chuyển sang <a class="text-theme"
                                                     href="${ pageContext.request.contextPath }/sign-up"> Đăng kí </a></small>
                                             </div>
                                         </div>

@@ -243,48 +243,44 @@
 								var="parsedDateTimeStartDate" type="both" />
 							<fmt:parseDate value="${ currentPayment.end_date }" pattern="yyyy-MM-dd"
 								var="parsedDateTimeEndDate" type="both" />
-								
-      <div class="modal fade" id="detailPacket" tabindex="-1"
-         aria-labelledby="detailPacketLabel" aria-hidden="true">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title px-2 px-lg-0" id="detailPacketLabel">
-                     <i class="fab fa-accusoft"> </i> <span>${ currentPayment.description }</span>
-                  </h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                     aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <ul class="list-group my-3 px-2 px-lg-0">
-                     <li class="list-group-item mb-md-2 mb-1 rounded border-1">
-                        <div>
-                           <i class="fas fa-money-check-alt"> Giá gói : </i> <span>${currentPayment.price } VND
-                           </span>
-                        </div>
-                     </li>
-                     <li class="list-group-item mb-md-2 mb-1 rounded border-1">
-                        <div>
-                           <i class="fas fa-info-circle"> Ngày bắt đầu : </i> <span><fmt:formatDate pattern="dd/MM/yyyy"
-										value="${ parsedDateTimeStartDate }" /></span>
-                        </div>
-                     </li>
-                     <li class="list-group-item mb-md-2 mb-1 rounded border-1">
-                        <div>
-                           <i class="fas fa-info-circle"> Ngày kết thúc : </i> <span>
-                           <fmt:formatDate pattern="dd/MM/yyyy"
-										value="${ parsedDateTimeEndDate }" /></span>
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary"
-                     data-bs-dismiss="modal">Close</button>
-               </div>
+	
+	<!-- Modal -->
+    <div class="modal fade" id="detailPacket" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered ">
+            <div class="modal-content packet  text-center position-relative">
+                <div class="modal-header border-0 text-center">
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center ">
+                    <p class=" rounded-circle bg-white position-absolute start-50 translate-middle" style="top: -50px;">
+                        <img class="bg-transparent shadow-sm rounded-circle p-3 " height="100px" src="${ pageContext.request.contextPath }/static/img/chuong.png"
+                            alt="" srcset="">
+                    </p>
+                    <h3 class="title mb-3"> Thông tin chi tiết </h3>
+                    <p class="font-weight-bold border-top pt-3 mb-0 packet-color packet-price">
+                       GIÁ GÓI :  ${currentPayment.price } VND
+                      </p>
+                      <div class="py-2 border-bottom">
+                        <p class="text-wrap">Ngày bắt đầu : <b> <fmt:formatDate pattern="dd/MM/yyyy"
+										value="${ parsedDateTimeStartDate }" /> </b></p>
+                        <p class="text-wrap">Ngày kết thúc : <b> <fmt:formatDate pattern="dd/MM/yyyy"
+										value="${ parsedDateTimeEndDate }" /> </b></p>
+                       
+                        <small class="fw-light fst-italic my-2">${ currentPayment.description }</small>
+                      </div>
+                  
+                </div>
+                <div class="modal-footer row border-0 justify-content-around">
+                    <button type="button" class="col-11 col-sm-7  btn btn-primary-change mx-0 rounded-pill"
+                        data-bs-dismiss="modal"> Thoát </button>
+                   
+                </div>
             </div>
-         </div>
-      </div>
+        </div>
+    </div>
+    
+      
       </c:if>
       <!-- Welcome Toast after login successfully -->
       <%@include file="/templates/fragments/welcome_login_toast.jspf"%>

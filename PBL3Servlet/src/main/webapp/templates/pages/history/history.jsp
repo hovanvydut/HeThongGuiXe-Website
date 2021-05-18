@@ -63,7 +63,7 @@
                                 </c:if>
                                 
                                 <div class="valid-feedback">
-                                    Looks good!
+                                    Thông tin hợp lệ!
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -79,7 +79,7 @@
                                 </c:if>
                                 
                                 <div class="valid-feedback">
-                                    Looks good!
+                                    Thông tin hợp lệ!
                                 </div>
                             </div>
 
@@ -120,7 +120,7 @@
               </div>
             </div>
         </div>
-        <div class="row list d-flex justify-content-center align-items-center my-5 bg-history "  >
+        <div class="row list d-flex justify-content-center align-items-center my-5 bg-table "  >
             <div class="col-12 mb-3 mb-sm-5">
                 <h3 class="text-center text-wrap title m-auto">
                     Lịch sử thời gian gửi xe
@@ -139,13 +139,13 @@
                     </thead>
                     <tbody class="text-center text-white">
                     
-                    	<c:forEach items="${history}" var="item">
+                    	<c:forEach items="${history}" var="item" varStatus="loop">
                     		<fmt:parseDate value="${ item.check_out_at }" pattern="yyyy-MM-dd'T'HH:mm"
                                 var="parsedDateTimeCheckOut" type="both" />
                             <fmt:parseDate value="${ item.check_in_at }" pattern="yyyy-MM-dd'T'HH:mm"
                                 var="parsedDateTimeCheckIn" type="both" />
 	                    	<tr>
-	                            <th scope="row">#${loop.index + 1}</th>
+	                            <th scope="row">${loop.index + 1}</th>
 	                            <td data-label="Giờ gửi xe">
 	                            	<fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${ parsedDateTimeCheckIn }" />
 	                            </td>

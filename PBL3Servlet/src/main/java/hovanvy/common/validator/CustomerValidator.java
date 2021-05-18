@@ -29,7 +29,7 @@ public interface CustomerValidator extends Function<Customer, CustomerValidation
 		return (customer) -> {
 			if (customer == null || customer.getFullname() == null) return FULLNAME_NOT_VALID;
 			
-			String vietnamese = "ÁÀÃẢẠĂẮẰẲẴẶÂẤẦẨẪẬĐÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒÕỎỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴ";
+			String vietnamese = "ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ";
 			Pattern pattern = Pattern.compile("^[a-zA-Z" + vietnamese + "]+(\\s[a-zA-Z" + vietnamese + "]+)*$",
 					Pattern.CANON_EQ | Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
 
