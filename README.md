@@ -3,6 +3,43 @@
 Welcome to our project 😎 \
 We're hoping you find anything interesting you in our repository.
 
+## How to deploy app to Heroku
+```sh
+git clone https://github.com/hovanvydut/PBL3-HeThongGuiXe-Website.git
+
+# copy folder PBL3-HeThongGuiXe-Website/PBL3Servlet to another folder that is not inside this repo
+
+cp -r /PBL3-HeThongGuiXe-Website/PBL3Servlet /home/anotherFolder
+
+cd /home/anotherFolder/PBL3Servlet
+
+# Login heroku
+heroku login
+
+# For existing repositories, simply add the heroku remote, 
+# [he-thong-gui-xe-v2] is name of heroku app
+heroku git:remote -a he-thong-gui-xe-v2
+
+# To build your application simply run:
+mvn package
+
+# And then run your app using the java command (please install maven, tomcat before, if not you can ignore this line):
+java -jar target/dependency/webapp-runner.jar target/*.war
+
+# if source code has been changed
+git init
+git add .
+git commit -m "Ready to deploy"
+
+# deploy 
+git push heroku main
+# or
+git push heroku main
+# or
+git push heroku your-branch
+
+```
+Now check url: https://he-thong-gui-xe-v2.herokuapp.com
 ## GLIMPSE THE PROJECT
 
 ***

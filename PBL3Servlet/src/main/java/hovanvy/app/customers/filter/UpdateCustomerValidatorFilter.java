@@ -52,12 +52,12 @@ public class UpdateCustomerValidatorFilter implements Filter {
 		
 		CustomerValidator validator = isFullnameValid();
 		
-		if (email != null && !email.isBlank()) {
+		if (email != null && !email.trim().isEmpty()) {
 			email = email.trim();
 			validator = validator.and(isEmailValid());
 		}
 		
-		if (phone != null && !phone.isBlank()) {
+		if (phone != null && !phone.trim().isEmpty()) {
 			phone = phone.trim();
 			validator = validator.and(isPhoneValid());
 		}
