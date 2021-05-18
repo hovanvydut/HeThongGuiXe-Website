@@ -16,60 +16,72 @@
 </head>
 
 <body >
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4" style="z-index:10">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <img
-            src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png"
-            width="30"
-            height="30"
-            alt="S-PBL"
-          />
-          <b> S-PBL</b>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarToggler"
-          aria-controls="navbarTogglerDemo03"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="/tracuu_chitiet.html">Trang Chủ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/tracuu.html">Tra Cứu</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/list_packet.html">Gói gửi xe</a>
-            </li>
-          </ul>
-          <form
-            class="
-              form-inline
-              my-2 my-lg-0
-              flex-grow-1
-              d-flex
-              justify-content-start justify-content-lg-end
-            "
-          >
-            <a
-              class="rounded-circle"
-              height="40px"
-              width="40px"
-              href="/user_info.html"
-            >
-              <i class="fas fa-user"></i>
-            </a>
-          </form>
+    <nav class="navbar sticky-top bg-white navbar-expand-lg navbar-light shadow-sm " style="z-index: 10;">
+        <div class="container-fluid">
+          <a class="navbar-brand text-dark d-flex align-items-center" href="#">
+            <img src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png" width="30" height="30" alt="S-PBL" />
+            <b>Steam</b>
+          </a>
+          <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navbarToggler"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarToggler">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end text-dark">
+              <li class="nav-item active">
+                <a class="nav-link text-center text-dark" href="/home.html">Trang Chủ</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link text-center text-dark" href="/tracuuthongtin.html">Tra cứu </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-center text-dark" href="/list_packet.html">Xem các gói</a>
+              </li>
+              <li class="my-2 my-lg-0 align-self-center mx-3 ">
+                <a href="/user_info.html" class=" d-flex ">
+                  <img class="mx-2 d-block d-lg-none" height="80px" src="../img/chicken.gif" alt="" srcset="">
+                  <b class="text-dark border-start  px-3 align-self-center"> Hồ Văn Vy </b>
+    
+                </a>
+              </li>
+              <li class="nav-item align-self-center d-block d-lg-none">
+                <button class=" d-flex  bg-transparent border-0"  data-bs-toggle="modal" data-bs-target="#logoutModal">
+                  <small class="text-dark  px-2 align-self-center"> Đăng xuất </small>
+                  <!-- <img class=" mx-2 " height="80px"  src="../img/bye.gif" alt=""
+                  srcset=""> -->
+                </button>
+              </li>
+            </ul>
+    
+          </div>
+    
         </div>
+    
       </nav>
-    <div class="container bg-transparent overflow-hidden">
+     
+      <!-- Button trigger modal -->
+      <button  class="bg-transparent border-0 d-none d-lg-block position-fixed bottom-0 end-0 m-1" data-bs-toggle="modal" data-bs-target="#logoutModal">
+        <img class="bg-transparent rounded-circle" height="70px" width="70px" src="../img/exit.png" alt="" srcset="">
+      </button>
+      <!-- Modal -->
+      <div class="modal fade"  id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+            <p>  <img class="bg-transparent" height="150px" src="../img/cry.gif" alt="" srcset=""></p>
+              Bạn thật sự muốn đăng xuất ?
+            </div>
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-success rounded-0" data-bs-dismiss="modal">Ở lại  </button>
+              <button type="button" class="btn btn-secondary rounded-0">Đăng xuất ngay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="container bg-transparent overflow-hidden mt-5">
         <div class="row list gy-5">
             <div class="col-12 mb-3 mb-sm-5">
                 <h3 class="text-center text-wrap title m-auto">Tra cứu thông tin lịch sử gửi xe</h3>

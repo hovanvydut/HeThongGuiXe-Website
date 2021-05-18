@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500;700&family=Roboto:wght@100;300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@500;600;700&family=Sigmar+One&display=swap');
+
 :root {
   --theme-color-1: #127595;
   --theme-color-2: #37b89a;
@@ -28,8 +30,10 @@ html{
 i {
   color: var(--main-color);
 }
+
 a {
   text-decoration: none !important;
+  color: #ffffff !important;
 }
 label {
   color: var(--main-color);
@@ -42,6 +46,9 @@ input {
 input:focus {
   box-shadow: none !important;
   border: 1px solid var(--main-color);
+}
+button {
+  z-index: 4;
 }
 button:focus {
   box-shadow: none !important;
@@ -88,6 +95,25 @@ button:focus {
 }
 /* css */
 
+.background {
+  background: rgb(35, 144, 136);
+  background: linear-gradient(90deg,
+          rgba(35, 144, 136, 1) 4%,
+          rgba(49, 180, 170, 1) 59%,
+          rgba(33, 212, 212, 1) 89%);
+}
+.home-title {
+  font-family: 'Sigmar One', cursive;
+  line-height: 65px;
+  font-size: 2em;
+}
+.home-content {
+  font-family: 'Jura', sans-serif;
+}
+.home-content li {
+  list-style-type: circle;
+  font-size: 1.2em;
+}
 /* hover title  */
 .title {
   position: relative;

@@ -17,71 +17,70 @@
   position: absolute;
   display: block;
   list-style: none;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   /* background: rgba(255, 255, 255, 0.2); */
-  background: rgb(87, 197, 216);
+  background: rgb(146, 213, 224);
   animation: animate 15s linear infinite;
   bottom: -150px;
-  
 }
 
 .circles li:nth-child(1){
   left: 25%;
-  width: 80px;
-  height: 80px;
+  width: 5px;
+  height: 15px;
   animation-delay: 0s;
 }
 
 
 .circles li:nth-child(2){
   left: 10%;
-  width: 20px;
-  height: 20px;
+  width: 13px;
+  height: 13px;
   animation-delay: 2s;
   animation-duration: 5s;
 }
 
 .circles li:nth-child(3){
   left: 70%;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 2px;
   animation-delay: 4s;
 }
 
 .circles li:nth-child(4){
   left: 40%;
-  width: 60px;
-  height: 60px;
+  width: 10px;
+  height: 10px;
   animation-delay: 0s;
-  animation-duration: 2s;
+  animation-duration: 6s;
 }
 
 .circles li:nth-child(5){
   left: 65%;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   animation-delay: 0s;
 }
 
 .circles li:nth-child(6){
   left: 75%;
-  width: 110px;
-  height: 110px;
+  width: 15px;
+  height: 10px;
   animation-delay: 3s;
 }
 
 .circles li:nth-child(7){
   left: 35%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 2s;
+  width: 10px;
+  height: 15px;
+  animation-delay: 4s;
 }
 
 .circles li:nth-child(8){
   left: 50%;
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 10px;
   animation-delay: 15s;
   animation-duration: 5s;
 }
@@ -96,8 +95,8 @@
 
 .circles li:nth-child(10){
   left: 85%;
-  width: 150px;
-  height: 150px;
+  width: 10px;
+  height: 15px;
   animation-delay: 0s;
   animation-duration: 5s;
 }
@@ -123,11 +122,11 @@
 
 
 /* shake animate  */
-.img-time {
+/* .img-time {
   animation-delay: 1s;
   animation: shake 2.4s;
   animation-iteration-count: infinite;
-}
+} */
 
 /* shake animate for button see packets */
 .see-packet {

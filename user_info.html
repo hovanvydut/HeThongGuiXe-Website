@@ -24,25 +24,10 @@
       font-size: 3vw;
       color: var(--main-color);
     }
-    .registered-packet .header {
+    .left-packet .header {
       font-size: 2vw;
     }
-    .registered-packet {
-      background: #007991; /* fallback for old browsers */
-      background: -webkit-linear-gradient(
-        to right,
-        #78ffd6,
-        #007991
-      ); /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(
-        to right,
-        #78ffd6,
-        #007991
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-      border-top-left-radius: 15px !important;
-      border-bottom-left-radius: 15px !important;
-    }
     .btn-custom {
       background-color: var(--main-color);
       font-size: 125%;
@@ -54,7 +39,7 @@
       font-size: 9vw;
     }
     @media (max-width: 768px) {
-      .registered-packet {
+      .left-packet {
         border-radius: 15px !important;
       }
       .fa-gift {
@@ -63,7 +48,7 @@
       .header {
         font-size: 5vw;
       }
-      .registered-packet .header {
+      .left-packet .header {
         font-size: 5vw;
       }
     }
@@ -73,7 +58,7 @@
       <div class="row border mx-3" style="border-radius: 15px">
         <div
           class="
-            registered-packet
+            left-packet background
             col-md-6 col-xl-4
             p-4
             border-end

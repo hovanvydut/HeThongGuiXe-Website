@@ -1,151 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Home</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
-      crossorigin="anonymous"
-    />
-  </head>
-  <style>
-    /* .img-money {
-      animation: shake 2s;
-      animation-iteration-count: infinite;
-    } */
-   
-  </style>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4" style="z-index:10">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img
-          src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png"
-          width="30"
-          height="30"
-          alt="S-PBL"
-        />
-        <b> S-PBL</b>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+</head>
+
+<body>
+
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark background" style="z-index: 10;">
+    <div class="container-fluid">
+      <a class="navbar-brand  d-flex align-items-center" href="#">
+        <img src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png" width="30" height="30" alt="" />
+        <b>Steam</b>
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarToggler"
-        aria-controls="navbarTogglerDemo03"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarToggler">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <div class="collapse navbar-collapse " id="navbarToggler">
+        <ul class="navbar-nav mr-auto w-100 justify-content-end text-light">
           <li class="nav-item active">
-            <a class="nav-link" href="/tracuu_chitiet.html">Trang Chủ</a>
+            <a class="nav-link text-center text-light" href="/home.html">Trang Chủ</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-center text-light" href="/tracuuthongtin.html">Tra cứu </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/tracuu.html">Tra Cứu</a>
+            <a class="nav-link text-center text-light" href="/list_packet.html">Xem các gói</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/list_packet.html">Gói gửi xe</a>
+          <li class="my-2 my-lg-0 align-self-center mx-3 ">
+            <a href="/user_info.html" class=" d-flex ">
+              <img class="mx-2 d-block d-lg-none" height="80px" src="../img/chicken.gif" alt="" srcset="">
+              <b class="text-light border-start  px-3 align-self-center"> Hồ Văn Vy </b>
+
+            </a>
+          </li>
+          <li class="nav-item align-self-center d-block d-lg-none border-bottom" >
+            <button class=" d-flex  bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#logoutModal">
+              <small class="text-dark  px-2 align-self-center"> Đăng xuất </small>
+              <!-- <img class=" mx-2 " height="80px"  src="../img/bye.gif" alt=""
+                srcset=""> -->
+            </button>
           </li>
         </ul>
-        <form
-          class="
-            form-inline
-            my-2 my-lg-0
-            flex-grow-1
-            d-flex
-            justify-content-start justify-content-lg-end
-          "
-        >
-          <a
-            class="rounded-circle"
-            height="40px"
-            width="40px"
-            href="/user_info.html"
-          >
-            <i class="fas fa-user"></i>
-          </a>
-        </form>
+
       </div>
-    </nav>
-    <div class="container bg-transparent overflow-hidden">
-      <div class="row bg-transparent my-5 mx-3">
-        <div
-          class="
-            col-12 col-md-6
+
+    </div>
+
+  </nav>
+
+  <!-- Button trigger modal -->
+  <button style="z-index: 2;" class="bg-transparent border-0 d-none d-lg-block position-fixed bottom-0 end-0 m-1" data-bs-toggle="modal"
+    data-bs-target="#logoutModal">
+    <img class="bg-transparent rounded-circle" height="70px" width="70px" src="../img/exit.png" alt="" srcset="">
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p> <img class="bg-transparent" height="150px" src="../img/cry.gif" alt="" srcset=""></p>
+          Bạn thật sự muốn đăng xuất ?
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-success rounded-0" data-bs-dismiss="modal">Ở lại </button>
+          <button type="button" class="btn btn-secondary rounded-0">Đăng xuất ngay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div
+    class="container-fluid background vh-100   d-flex justify-content-between align-items-center overflow-hidden">
+    <div class="row w-100 bg-transparent my-5 mx-3 g-5">
+      <div class="
+            col-12 col-md-9 col-lg-6
             d-flex
             flex-column
             justify-content-center
             align-items-start
-          "
-        >
-          <h1 class="my-3">HỆ THỐNG TRA CỨU LỊCH SỬ</h1>
-          <h2>& ĐĂNG KÍ GÓI GỬI XE</h2>
-          <ul class="my-3">
-            <li class="my-2">Tra cứu dễ dàng và nhanh chóng !</li>
-            <li class="my-2">Tiết kiệm thời gian thanh toán tại chỗ !</li>
-            <li class="my-2">Tiết kiệm chi phí với các gói chỉ từ 10K</li>
-          </ul>
-          <button class="btn btn-primary see-packet">Xem các gói ngay</button>
-          
-        </div>
-        <div
-          class="
-            col-12 col-md-6
-            d-flex
+            text-white
+            
+          ">
+        <h1 class="my-3 home-title text-left">HỆ THỐNG TRA CỨU LỊCH SỬ & ĐĂNG KÍ GÓI GỬI XE </h1>
+
+        <ul class="w-100 py-3 home-content" >
+          <li class="my-2 home-content fw-bolder">Tra cứu dễ dàng và nhanh chóng !</li>
+          <li class="my-2 home-content fw-bolder">Tiết kiệm thời gian thanh toán tại chỗ !</li>
+          <li class="my-2 home-content fw-bolder">Tiết kiệm chi phí với các gói chỉ từ 10K</li>
+        </ul>
+        <button class="btn btn-primary-change px-5 py-3 bg-transparent border-2 fs-5 home-title text-white see-packet rounded-pill ">
+          <a href="/list_packet.html">Xem các
+            gói ngay</a>
+        </button>
+
+      </div>
+      <div class="
+            col-12 col-lg-6
+            d-none d-lg-flex
             flex-column
             justify-content-center
-            align-items-center
-          "
-        >
-          <img class="img-money" src="./img/pig_save_money.png" alt="" />
-          <h2 class="">Tiết kiệm chi phí</h2>
-          <img class="img-time" src="./img/pig_save_time.png" alt="" />
-          <h2 class="mt-3">Tiết kiệm thời gian</h2>
+            align-items-center 
+          " style="z-index: 5;">
+          <img class="img-time h-100" style="object-fit: contain;" src="./img/homeimg.png" alt="" />
+        <!-- <img class="img-time w-100" style="object-fit: contain;" src="./img/home_bg.png" alt="" /> -->
+        <!-- <img class="img-time w-100" style="object-fit: contain;"
+          src="https://png.pngtree.com/element_our/png_detail/20181010/web-search-concept-search-engine-marketing-concept-flat-vector-png_133031.jpg"
+          alt="" /> -->
+          <!-- <img class="img-time w-100" style="object-fit: contain;" src="https://png.pngtree.com/png-vector/20190730/ourlarge/pngtree-search-illustration-concept-modern-flat-design-concept-of-web-page-png-image_1641146.jpg" alt="" /> -->
+         
+          <!-- <img class="img-time w-100" style="object-fit: contain;" src=" https://png.pngtree.com/png-vector/20190721/ourlarge/pngtree-analyze-market-illustration-concept-modern-flat-design-concept-of-web-png-image_1568022.jpg" alt="" />  -->
         </div>
-      </div>
     </div>
+  </div>
 
-    <div class="area">
-      <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-  </body>
-  <!-- jquery -->
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"
-  ></script>
-<!-- bootstrap js -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
-    crossorigin="anonymous"
-  ></script>
- 
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
 </html>
