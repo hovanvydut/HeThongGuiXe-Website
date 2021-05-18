@@ -48,7 +48,7 @@ input:focus {
   border: 1px solid var(--main-color);
 }
 button {
-  z-index: 4;
+  z-index: 10 !important;
 }
 button:focus {
   box-shadow: none !important;
