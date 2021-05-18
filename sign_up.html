@@ -19,67 +19,13 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <style>
-     .header {
-      font-size: 3vw;
-      color: var(--main-color);
-    }
-    .registered-packet .header {
-      font-size: 2vw;
-    }
-    .registered-packet {
-      background: #007991; /* fallback for old browsers */
-      background: -webkit-linear-gradient(
-        to right,
-        #78ffd6,
-        #007991
-      ); /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(
-        to right,
-        #78ffd6,
-        #007991
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-      border-top-left-radius: 15px !important;
-      border-bottom-left-radius: 15px !important;
-    }
-    .btn-custom {
-      background-color: var(--main-color);
-      font-size: 125%;
-    }
-    .btn-custom-2 {
-      border: 1px solid var(--main-color-2);
-    }
-    .fa-gift {
-      font-size: 9vw;
-    }
-    @media (max-width: 768px) {
-      .registered-packet {
-        border-radius: 15px !important;
-      }
-      .fa-gift {
-        font-size: 18vw;
-      }
-      .header {
-        font-size: 5vw;
-      }
-      .registered-packet .header {
-        font-size: 5vw;
-      }
-    }
-  </style>
   <body>
     <div
       class="
-        container
-        my-5
-        d-flex
-        justify-content-center
-        align-items-center
-        px-0
+      container full-screen my-3 my-md-0
       "
     >
-      <div class="row w-100 h-100 border position-relative mx-3" style="border-radius: 15px">
+      <div class="row w-100  border position-relative mx-3" style="border-radius: 15px">
         <a class="navbar-brand  d-flex align-items-center position-absolute" href="#">
           <img
             src="https://sgroupvn.org/_nuxt/img/sgr_logo-symbol.0ce37a9.png"
@@ -111,14 +57,14 @@
           </p>
         </div>
         <div class="col-md-6 col-xl-8 ">
-          <div class="card pt-4 border-0">
+          <div class="card pt-2 border-0">
             <div class="card-header header border-0 bg-white m-auto">
               Đăng kí
             </div>
             <div class="">
               <form id="form" class="needs-validation" novalidate>
-                <div class="row mb-3">
-                  <div class="col-10 form-floating offset-1 mb-3 px-0">
+                <div class="row mb-1">
+                  <div class="col-10 form-floating offset-1 mb-2 px-0">
                     <input
                       type="text"
                       class="form-control bg-white "
@@ -133,8 +79,8 @@
                     <label for="inputFullname">Họ tên</label>
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <div class="col-10 form-floating offset-1 mb-3 px-0">
+                <div class="row mb-1">
+                  <div class="col-10 form-floating offset-1 mb-2 px-0">
                     <input
                       type="text"
                       class="form-control bg-white"
@@ -151,8 +97,8 @@
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <div class="col-10 form-floating offset-1 mb-3 px-0">
+                <div class="row mb-1">
+                  <div class="col-10 form-floating offset-1 mb-2 px-0">
                     <input
                       type="text"
                       class="form-control bg-white"
@@ -168,8 +114,8 @@
                     <label for="inputUsername">Tên tài khoản</label>
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <div class="col-10 form-floating offset-1 mb-3 px-0">
+                <div class="row mb-1">
+                  <div class="col-10 form-floating offset-1 mb-2 px-0">
                     <input
                       type="email"
                       class="form-control bg-white"
@@ -183,8 +129,8 @@
                     <label for="inputEmail">Email</label>
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <div class="col-10 form-floating offset-1 mb-3 px-0">
+                <div class="row mb-1">
+                  <div class="col-10 form-floating offset-1 mb-2 px-0">
                     <input
                       type="text"
                       class="form-control bg-white"
@@ -202,7 +148,7 @@
                     <label for="inputPhonenumber">Số điện thoại</label>
                   </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-1">
                   <div
                     class="
                       action
@@ -215,11 +161,11 @@
                   >
                   <div class="mb-3 w-100">
                     <div class="text-center p-t-12">
-                      <small class="txt1">Bạn đã có tài khoản ?</small>
+                      <small class="">Bạn đã có tài khoản ?</small>
                       <br />
-                      <small class="txt1">
+                      <small class="">
                         Chuyển sang
-                        <a class="txt2" href="/login.html">
+                        <a class="text-theme" href="/login.html">
                           Đăng nhập
                         </a></small
                       >
@@ -230,9 +176,9 @@
                     btn
                     w-100
                     btn-custom
-                    my-3
                     rounded-pill
                     text-white
+                    mb-2
                   "
                   id="btnLogin"
                   type="submit"
