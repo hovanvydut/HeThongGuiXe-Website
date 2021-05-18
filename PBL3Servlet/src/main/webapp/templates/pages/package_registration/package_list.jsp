@@ -157,20 +157,20 @@
 							<tr>
 								<th scope="row">${loop.index + 1}</th>
 
-								<td><fmt:formatDate pattern="dd/MM/yyyy"
+								<td data-label="Ngày bắt đầu"><fmt:formatDate pattern="dd/MM/yyyy"
 										value="${ parsedDateTimeStartDate }" /></td>
 
-								<td><fmt:formatDate pattern="dd/MM/yyyy"
+								<td data-label="Ngày kết thúc"><fmt:formatDate pattern="dd/MM/yyyy"
 										value="${ parsedDateTimeEndDate }" /></td>
 
-								<td>${item.price}</td>
+								<td data-label="Giá gói">${item.price}</td>
 
 								<c:if test="${ item.paid_at != null }">
-									<td><i class="fas fa-check" style="color: #37b89a;"></i></td>
+									<td data-label="Đã thanh toán"><i class="fas fa-check" style="color: #37b89a;"></i></td>
 								</c:if>
 
 								<c:if test="${ item.paid_at == null }">
-									<td><i class="far fa-question-circle"
+									<td data-label="Đã thanh toán"><i class="far fa-question-circle"
 										style="color: orange;"></i></td>
 								</c:if>
 
@@ -182,51 +182,68 @@
 		</div>
 	</div>
 
-	<div id="confirmModal" class="modal fade" tabindex="-1">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Thông báo</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<p id="modalTitle"></p>
-				</div>
-				<div class="modal-footer">
-					<button onclick="submitForm(this)" id="submitBtn" type="button"
-						class="btn btn-primary">Đồng ý</button>
+	
+	
+	<!-- Confirm Modal -->
+    <div id="confirmModal" class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered ">
+            <div class="modal-content packet  text-center position-relative">
+                <div class="modal-header border-0 text-center">
 
-					<button type="button" class="btn btn-secondary"
-						data-bs-dismiss="modal">Không</button>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class=" rounded-circle bg-white position-absolute start-50 translate-middle" style="top: -50px;">
+                        <img class="bg-transparent shadow-sm rounded-circle p-3" height="100px" src="${ pageContext.request.contextPath }/static/img/notice1.svg"
+                            alt="" srcset="">
+                    </p>
+                    <h3 class="title my-3"> Xác nhận</h3>
+                    <p id="modalTitle" class="">
+                        Đăng kí gói : SV30                         
+                    </p>
+                    <small class="fw-light fst-italic my-2"> - Bấm đăng kí để xác nhận đăng kí hoặc hủy để hoàn tác đăng kí - </small>
+                </div>
+                <div class="modal-footer row border-0 justify-content-around">
+                    <button type="button" class="col-11 col-sm-5   btn btn-primary-change mx-0 rounded-pill"
+                    data-bs-dismiss="modal"> Hủy </button>
+                    <button onclick="submitForm(this)" id="submitBtn" type="button" class="col-11 col-sm-5   btn btn-success-change mx-0 rounded-pill"
+                        data-bs-dismiss="modal"> Đăng kí </button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notify Modal -->
+    <div id="notifyModal" class="modal fade" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered ">
+            <div class="modal-content packet  text-center position-relative">
+                <div class="modal-header border-0 text-center">
+
+                    <button onclick="closeNotifyModal(this)" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class=" rounded-circle bg-white position-absolute start-50 translate-middle" style="top: -50px;">
+                        <img class="bg-transparent shadow-sm rounded-circle p-3" height="100px" src="${ pageContext.request.contextPath }/static/img/chuong.png"
+                            alt="" srcset="">
+                    </p>
+                    <h3 class="title my-3"> Thông báo !</h3>
+                    <p class="">
+                        Bạn hiện đã đăng kí một gói vẫn đang trong thời hạn sử dụng.
+                    </p>
+                    <small class="fw-light fst-italic my-2"> - Bấm để chuyển xem chi tiết gói bạn đã đăng kí - </small>
+                </div>
+                <div class="modal-footer row border-0 justify-content-around">
+                    <a href="${ pageContext.request.contextPath }/customers/info" type="button" class="col-11 col-sm-7   btn btn-primary-change mx-0 rounded-pill"
+                        >Xem thông tin </a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-	<div id="notifyModal" class="modal fade" tabindex="-1">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Thông báo</h5>
-					<button onclick="closeNotifyModal(this)" type="button"
-						class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<p>Bạn hiện đang đăng kí một gói khác vẫn còn thời hạn</p>
-					<p>Truy cập trang thông tin cá nhân để biết thêm chi tiét</p>
-				</div>
-				<div class="modal-footer">
-					<a href="${ pageContext.request.contextPath }/customers/info"
-						type="button" class="btn btn-info">Thông tin cá nhân</a>
-					<button type="button" class="btn btn-secondary"
-						data-bs-dismiss="modal">Đóng</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	
 
 	<form id="registerForm"
 		action="${pageContext.request.contextPath}/parking-package/register"

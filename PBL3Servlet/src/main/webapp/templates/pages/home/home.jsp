@@ -8,61 +8,6 @@
         <title>Trang chủ</title>
         <%@include file="/templates/fragments/header.jspf" %>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/animate.css" />
-        <style>
-            /* .img-money {
-              animation: shake 2s;
-              animation-iteration-count: infinite;
-            } */
-            .img-time {
-                animation-delay: 1s;
-                animation: shake 2.4s;
-                animation-iteration-count: infinite;
-            }
-
-            .see-packet {
-                animation-delay: 1s;
-                animation: shake 1s;
-                animation-iteration-count: infinite;
-            }
-
-            @keyframes shake {
-                0% {
-                    transform: rotate(0);
-                }
-
-                15% {
-                    transform: rotate(5deg);
-                }
-
-                30% {
-                    transform: rotate(-5deg);
-                }
-
-                45% {
-                    transform: rotate(4deg);
-                }
-
-                60% {
-                    transform: rotate(-4deg);
-                }
-
-                75% {
-                    transform: rotate(2deg);
-                }
-
-                85% {
-                    transform: rotate(-2deg);
-                }
-
-                92% {
-                    transform: rotate(1deg);
-                }
-
-                100% {
-                    transform: rotate(0);
-                }
-            }
-        </style>
     </head>
 
 
@@ -70,54 +15,55 @@
     <body>
         <%@include file="/templates/fragments/navigation.jspf" %>
         
-        <div class="container bg-transparent overflow-hidden">
-            <div class="row bg-transparent my-5 mx-3">
-                <div class="
-                     col-12 col-md-6
-                     d-flex
-                     flex-column
-                     justify-content-center
-                     align-items-start
-                     ">
-                    <h1 class="my-3">HỆ THỐNG TRA CỨU LỊCH SỬ</h1>
-                    <h2>& ĐĂNG KÍ GÓI GỬI XE</h2>
-                    <ul class="my-3">
-                        <li class="my-2">Tra cứu dễ dàng và nhanh chóng !</li>
-                        <li class="my-2">Tiết kiệm thời gian thanh toán tại chỗ !</li>
-                        <li class="my-2">Tiết kiệm chi phí với các gói chỉ từ 10K</li>
-                    </ul>
-                    <a style="z-index:10;" href="${pageContext.request.contextPath}/parking-package/list" class="btn btn-primary see-packet">Xem các gói ngay</a>
+        <div
+    class="container-fluid background m-0 home-container d-flex justify-content-between align-items-center overflow-hidden" style="z-index: 10;">
+    <div class="row w-100 bg-transparent my-5 mx-0 mx-sm-5 gy-5  " >
+      <div class="
+            col-12 col-md-9 col-lg-6
+            d-flex
+            flex-column
+            justify-content-center
+            align-items-start
+            text-white
+          ">
+        <h1 class="my-3 home-title text-left">HỆ THỐNG TRA CỨU LỊCH SỬ & ĐĂNG KÍ GÓI GỬI XE </h1>
 
-                </div>
-                <div class="
-                     col-12 col-md-6
-                     d-flex
-                     flex-column
-                     justify-content-center
-                     align-items-center
-                     ">
-                    <img class="img-money" src="${pageContext.request.contextPath}/static/img/pig_save_money.png" alt="" />
-                    <h2 class="">Tiết kiệm chi phí</h2>
-                    <img class="img-time" src="${pageContext.request.contextPath}/static/img/pig_save_time.png" alt="" />
-                    <h2 class="mt-3">Tiết kiệm thời gian</h2>
-                </div>
-            </div>
-        </div>
+        <ul class="w-100 py-3 px-0 home-content" >
+          <li class="my-2 home-content fw-bolder"><i class="fas fa-check "></i> Tra cứu dễ dàng và nhanh chóng !</li>
+          <li class="my-2 home-content fw-bolder"><i class="fas fa-check "></i>Tiết kiệm thời gian thanh toán tại chỗ !</li>
+          <li class="my-2 home-content fw-bolder"><i class="fas fa-check "></i>Tiết kiệm chi phí với các gói chỉ từ 10K</li>
+        </ul>
+        <a href="${pageContext.request.contextPath}/parking-package/list" class="btn home-button  px-5 py-3 m-auto m-sm-2  border-2 fs-5 see-packet rounded-pill "> Xem các
+          gói ngay</a>
+       
 
-        <div class="area">
-            <ul class="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+      </div>
+      <div class="
+            col-12 col-lg-6
+            d-none d-lg-flex
+            flex-column
+            justify-content-center
+            align-items-center 
+          " style="z-index: 5;">
+          <img class="img-time h-100" style="object-fit: contain;" src="${pageContext.request.contextPath}/static/img/home_background.png" alt="" />
         </div>
+    </div>
+  </div>
+
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
 
         <!-- Welcome Toast after login successfully -->
         <%@include file="/templates/fragments/welcome_login_toast.jspf" %>

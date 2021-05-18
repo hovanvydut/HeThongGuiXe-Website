@@ -1,36 +1,70 @@
 <%@ page pageEncoding="UTF-8" %>
 
-<nav style="z-index: 10;" class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 px-4">
-    <a class="navbar-brand  d-flex align-items-center" href="${pageContext.request.contextPath}/home">
-        <img src="${pageContext.request.contextPath}/static/img/logo.png" width="30" height="30" alt="S-PBL" />
-        <b> S-PBL</b>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark background" style="z-index: 10;">
+    <div class="container-fluid px-5">
+    
+      <a  class="navbar-brand  d-flex align-items-center" href="${pageContext.request.contextPath}/home">
+        <img src="${pageContext.request.contextPath}/static/img/logo.png" width="30" height="30" alt="" />
+        <b>Steam</b>
+      </a>
+      
+      <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarToggler">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="${pageContext.request.contextPath}/home">Trang Chủ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/history">Tra Cứu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/parking-package/list">Gói gửi xe</a>
-            </li>
+      </button>
+      
+      <div class="collapse navbar-collapse " id="navbarToggler">
+        <ul class="navbar-nav mr-auto w-100 justify-content-end text-light">
+          <li class="nav-item active">
+            <a class="nav-link text-center text-light" href="${pageContext.request.contextPath}/home">Trang Chủ</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-center text-light" href="${pageContext.request.contextPath}/history">Tra cứu </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center text-light" href="${pageContext.request.contextPath}/parking-package/list">Xem các gói</a>
+          </li>
+          <li class="my-2 my-lg-0 align-self-center mx-3 ">
+            <a href="${pageContext.request.contextPath}/customers/info" class=" d-flex ">
+              <img class="mx-2 d-block d-lg-none" height="80px" src="${pageContext.request.contextPath}/static/img/chicken.gif" alt="" srcset="">
+              <b class="text-light border-start  px-3 align-self-center"> Hồ Văn Vy </b>
+
+            </a>
+          </li>
+          <li class="nav-item  align-self-center d-block d-lg-none " >
+            <button class=" d-flex  bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#logoutModal">
+              <small class="text-white  px-2 align-self-center"> Đăng xuất </small>
+            </button>
+          </li>
         </ul>
-        <form class="form-inline my-2 flex-grow-1 d-flex justify-content-start justify-content-lg-end">
-            <div class="btn-group dropdown justify-content-md-end" style="min-width: 10rem;">
-                <a type="button" class="dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                    <i class="fas fa-user"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/customers/info">User Info</a></li>
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout"><i class="fas fa-sign-out-alt"></i></a></li>
-                </ul>
-            </div>
-        </form>
+
+      </div>
+
     </div>
-</nav>
+
+  </nav>
+  
+  <!-- Button trigger modal -->
+  <button style="z-index: 2;" class="bg-transparent border-0 d-none d-lg-block position-fixed bottom-0 end-0 m-1" data-bs-toggle="modal"
+    data-bs-target="#logoutModal">
+    <img class="bg-transparent " height="55px" width="55px" src="${pageContext.request.contextPath}/static/img/logout4.png" alt="" srcset="">
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p> <img class="bg-transparent" height="150px" src="${pageContext.request.contextPath}/static/img/cry.gif" alt="" srcset=""></p>
+          Bạn thật sự muốn đăng xuất ?
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-success rounded-0" data-bs-dismiss="modal">Ở lại </button>
+          <a type="button" class="btn btn-secondary rounded-0" href="${pageContext.request.contextPath}/logout">Đăng xuất ngay</a>
+        </div>
+      </div>
+    </div>
+  </div>

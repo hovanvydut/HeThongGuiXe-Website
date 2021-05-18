@@ -16,6 +16,7 @@ import static hovanvy.common.validator.CustomerValidator.*;
 
 import hovanvy.common.enums.MessageEnum;
 import hovanvy.common.enums.PathJsp;
+import hovanvy.common.validator.CustomerValidator;
 import hovanvy.entity.Customer;
 
 
@@ -43,10 +44,21 @@ public class SignupValidatorFilter implements Filter {
 		// only apply this filter for POST method
 		if (request.getMethod().equals("POST")) {
 			// validate data here
+			request.setCharacterEncoding("UTF-8");
 			
 			Customer customer = parseCustomerFrom(request);
+			System.out.println(customer);
+			CustomerValidator validator = isFullnameValid().and(isUsernameValid()).and(isPasswordValid());
 			
-			CustomerValidationResult result = isEmailValid().and(isPhoneValid()).and(isFullnameValid()).and(isUsernameValid()).and(isPasswordValid()).apply(customer);
+			if (customer.getEmail() != null) {
+				validator = validator.and(isEmailValid());
+			}
+			
+			if (customer.getPhone() != null) {
+				validator = validator.and(isPhoneValid());
+			}
+			
+			CustomerValidationResult result = validator.apply(customer);
 			
 			if (result == CustomerValidationResult.SUCCESS) {
 				// if data is valid, then execute SignupServlet
@@ -54,6 +66,7 @@ public class SignupValidatorFilter implements Filter {
 				chain.doFilter(request, response);
 				return;
 			} else {
+				System.out.println(result);
 				// if data is not valid ==> show error in signup page
 				request.setAttribute("errorMessage", MessageEnum.DATA_INVALID.get());
 				request.getRequestDispatcher(PathJsp.SIGN_UP.getPath()).forward(request, response);
@@ -80,8 +93,19 @@ public class SignupValidatorFilter implements Filter {
 		Customer customer = new Customer();
 		customer.setFullname(fullname);
 		customer.setUsername(username);
-		customer.setEmail(email);
-		customer.setPhone(phone);
+		
+		if (email == null || email.equals("")) {
+			customer.setEmail(null);
+		} else {
+			customer.setEmail(email);
+		}
+		
+		if (phone == null || phone.equals("")) {
+			customer.setPhone(null);
+		} else {
+			customer.setPhone(phone);
+		}
+		;
 		customer.setPassword(password);
 		customer.setCard_id(null);
 		

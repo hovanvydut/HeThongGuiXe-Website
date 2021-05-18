@@ -63,6 +63,7 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 			customer.setPassword(encodedPassword);
 		}
 		
+		System.out.println("here");
 		// store in db
 		return this.customerDAO.save(customer);
 	}
