@@ -41,7 +41,7 @@ label {
 }
 input {
   border: 1px solid var(--main-color) !important;
-  font-size: 85% !important;
+  font-size: 80% !important;
 }
 input:focus {
   box-shadow: none !important;
@@ -119,6 +119,7 @@ button:focus {
 .home-content li i {
   color: #fba319 !important;
   padding-right: 2%;
+  font-size: 150%;
 }
 .home-container {
   height: calc( 100vh - 56px);
@@ -146,6 +147,7 @@ button:focus {
   font-size: 200%;
   margin: auto;
   overflow-x: hidden;
+  padding-top: 3%;
 }
 .title::before {
   content: '';
@@ -174,7 +176,7 @@ button:focus {
 
 /* form card */
 .form-card {
-  border-radius: 15px;
+  border-radius: 15px !important;
 }
 .form-header {
   width: fit-content;
@@ -200,7 +202,7 @@ button:focus {
   font-weight: 900;
 }
 /* history table */
-.bg-history {
+.bg-table {
   background: rgb(35, 144, 136);
   background: linear-gradient(90deg,
           rgba(35, 144, 136, 1) 4%,
@@ -210,7 +212,7 @@ button:focus {
   color: white;
   padding: 5%;
 }
-.bg-history i {
+.bg-table i {
   color: var(--main-color-2);
 }
 /* responsive table */
@@ -262,3 +264,68 @@ button:focus {
 }
 
 
+/* USER INFOR */
+.header {
+  font-size: 3vw;
+  color: var(--main-color);
+}
+.left-packet {
+  border-top-left-radius: 15px !important;
+  border-bottom-left-radius: 15px !important;
+}
+.left-packet .header {
+  font-size: 2vw;
+}
+
+.btn-custom {
+  background-color: var(--main-color);
+  font-size: 125%;
+}
+.btn-custom-2 {
+  border: 1px solid var(--main-color-2);
+}
+.fa-gift {
+  font-size: 9vw;
+}
+@media (max-width: 768px) {
+  .left-packet {
+    border-radius: 15px !important;
+  }
+  .fa-gift {
+    font-size: 18vw;
+  }
+  .header {
+    font-size: 5vw;
+  }
+  .left-packet .header {
+    font-size: 5vw;
+  }
+}
+/* list packet */
+.packet-name {
+  color: var(--main-color);
+  font-size: 150%;
+  font-weight: 300;
+}
+
+.packet-price {
+  color: var(--main-color-bolder);
+  font-size: 180%;
+  font-weight: 900;
+}
+
+/* full screen */
+.full-screen {
+  height: 100vh;
+  width: 100vw;
+  min-height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .full-screen {
+    height: fit-content;
+    min-height: 700px;
+  }
+}
