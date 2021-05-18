@@ -13,13 +13,6 @@ cp -r /PBL3-HeThongGuiXe-Website/PBL3Servlet /home/anotherFolder
 
 cd /home/anotherFolder/PBL3Servlet
 
-# Login heroku
-heroku login
-
-# For existing repositories, simply add the heroku remote, 
-# [he-thong-gui-xe-v2] is name of heroku app
-heroku git:remote -a he-thong-gui-xe-v2
-
 # To build your application simply run:
 mvn package
 
@@ -30,6 +23,13 @@ java -jar target/dependency/webapp-runner.jar target/*.war
 git init
 git add .
 git commit -m "Ready to deploy"
+
+# Login heroku
+heroku login
+
+# For existing repositories, simply add the heroku remote, 
+# [he-thong-gui-xe-v2] is name of heroku app
+heroku git:remote -a he-thong-gui-xe-v2
 
 # deploy 
 git push heroku main
