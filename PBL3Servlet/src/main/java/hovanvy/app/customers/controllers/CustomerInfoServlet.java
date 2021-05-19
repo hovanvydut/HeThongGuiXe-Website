@@ -56,6 +56,7 @@ public class CustomerInfoServlet extends HttpServlet{
 		} else {
 			request.setAttribute("currentPayment", null);
 		}
+		
         request.setAttribute("loggedInCustomer", loggedInCustomer);
         
         RequestDispatcher rd = request.getRequestDispatcher(PathJsp.CUSTOMER_INFO.getPath());

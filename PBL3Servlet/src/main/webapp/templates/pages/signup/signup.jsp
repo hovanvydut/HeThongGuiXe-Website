@@ -44,21 +44,43 @@
                                         <input
                                             name="username"
                                             type="text"
-                                            class="${errorMessage != null ? 'form-control is-invalid bg-white' : 'form-control bg-white'}"
+                                            class="${usernameExistingException != null ? 'form-control is-invalid bg-white' : 'form-control bg-white'}"
                                             id="inputUsername"
                                             value="${ customer.username }"
                                             pattern="^[a-zA-Z0-9]{3,20}$"
                                             required
                                         />
-                                        <c:if test="${errorMessage != null}">
-                                            <div id="inputUsernameFeedback" class="invalid-feedback">${errorMessage}</div>
+                                        <c:if test="${usernameExistingException != null}">
+                                            <div id="inputUsernameFeedback" class="invalid-feedback">${usernameExistingException}</div>
                                         </c:if>
-                                        <c:if test="${ empty errorMessage}">
+                                        <c:if test="${ usernameExistingException == null}">
                                             <div id="inputUsernameFeedback" class="invalid-feedback">Tên tài khoản không hợp lệ !</div>
                                         </c:if>
                                         <label for="inputUsername">Tên tài khoản (*)</label>
                                     </div>
                                 </div>
+                                
+                                <div class="row mb-1">
+                                    <div class="col-10 form-floating offset-1 mb-3 px-0">
+                                        <input
+                                            name="studentId"
+                                            type="text"
+                                            class="${studentIdExistingException != null ? 'form-control is-invalid bg-white' : 'form-control bg-white'}"
+                                            id="inputStudentId"
+                                            value="${ customer.student_id }"
+                                            pattern="^[0-9]{9}$"
+                                            required
+                                        />
+                                        <c:if test="${studentIdExistingException != null}">
+                                            <div id="inputStudentIdFeedback" class="invalid-feedback">${studentIdExistingException}</div>
+                                        </c:if>
+                                        <c:if test="${ empty studentIdExistingException}">
+                                            <div id="inputStudentIdFeedback" class="invalid-feedback">Mã số sinh viên không hợp lệ !</div>
+                                        </c:if>
+                                        <label for="inputStudentId">Mã số sinh viên (*)</label>
+                                    </div>
+                                </div>
+                                
                                 <div class="row mb-1">
                                     <div class="col-10 form-floating offset-1 mb-3 px-0">
                                         <input name="password" type="password" class="form-control bg-white" id="inputPwd" required minlength="6" maxlength="20" required />

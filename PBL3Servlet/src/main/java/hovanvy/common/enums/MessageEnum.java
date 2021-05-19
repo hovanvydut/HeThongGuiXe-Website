@@ -11,7 +11,8 @@ public enum MessageEnum {
     USERNAME_EXISTING("Tên tài khoản này đã tồn tại."),
     NULL_CUSTOMER("customer is null"),
     DATA_INVALID("Dữ liệu không hợp lệ"),
-    OLD_PASSWORD_NOT_MATCH("Mật khẩu cũ không khớp");
+    OLD_PASSWORD_NOT_MATCH("Mật khẩu cũ không khớp"),
+    STUDENT_ID_EXISTING("Mã sinh viên đã tồn tại");
     
     private String message;
     

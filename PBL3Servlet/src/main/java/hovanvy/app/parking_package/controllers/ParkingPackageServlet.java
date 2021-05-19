@@ -46,6 +46,7 @@ public class ParkingPackageServlet extends HttpServlet {
             System.out.println(payment);
         }
         
+        request.setAttribute("loggedInCustomer", loggedCustomer);
         request.setAttribute("parkingPackages", parkingPackages);
         request.setAttribute("payments", payments);
         response.setContentType("text/html");

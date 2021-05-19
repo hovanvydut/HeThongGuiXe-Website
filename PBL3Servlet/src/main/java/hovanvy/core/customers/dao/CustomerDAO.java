@@ -18,6 +18,8 @@ public interface CustomerDAO {
     
     Customer getCustomerByUsername(String username) throws UsernameNotFoundException;
     
+    Optional<Customer> getCustomerByStudentId(String studentId);
+    
     Customer save(Customer customer);
     
     void update(Customer customer);
