@@ -33,7 +33,7 @@
           <li class="my-2 home-content fw-bolder"><i class="fas fa-check "></i>Tiết kiệm thời gian thanh toán tại chỗ !</li>
           <li class="my-2 home-content fw-bolder"><i class="fas fa-check "></i>Tiết kiệm chi phí với các gói chỉ từ 10K</li>
         </ul>
-        <a href="${pageContext.request.contextPath}/parking-package/list" class="btn home-button  px-5 py-3 m-auto m-sm-2  border-2 fs-5 see-packet rounded-pill "> Xem các
+        <a href="${ pageContext.request.contextPath }/parking-package/list" class="btn home-button  px-5 py-3 m-auto m-sm-2  border-2 fs-5 see-packet rounded-pill "> Xem các
           gói ngay</a>
        
 

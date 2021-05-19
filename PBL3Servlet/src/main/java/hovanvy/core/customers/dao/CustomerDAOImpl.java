@@ -141,4 +141,34 @@ public class CustomerDAOImpl implements CustomerDAO {
         
 	}
 
+	@Override
+	public Optional<Customer> getCustomerByStudentId(String studentId) {
+		EntityManager em = EntityManagerUtil.getInstance().getEntityManager();
+        Customer customerInDB = null;
+
+        try {
+
+            em.getTransaction().begin();
+
+            CriteriaBuilder cb = em.getCriteriaBuilder();
+            CriteriaQuery<Customer> cq = cb.createQuery(Customer.class);
+            Root<Customer> root = cq.from(Customer.class);
+            
+            cq.select(root);
+            cq.where(cb.equal(root.get(Customer_.STUDENT_ID), studentId));
+            
+            TypedQuery<Customer> query = em.createQuery(cq);
+            customerInDB = query.getSingleResult();
+            
+            em.getTransaction().commit();
+
+        } catch (Exception ex) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+
+        return Optional.ofNullable(customerInDB);
+	}
+
 }

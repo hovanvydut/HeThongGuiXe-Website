@@ -42,10 +42,12 @@ public class SecurityFilter implements Filter{
             return;
         }
         
-        if (loggedInUser.isEnabled() == false) {
-        	System.out.println("account disable");
-        	response.sendRedirect(request.getContextPath() + "/home?enable=false");
-        	return;
+        // with users have enable = false, they only can visit /customers/* url
+        if (!request.getRequestURI().startsWith(request.getContextPath() + "/customers")) {
+        	if (loggedInUser.isEnabled() == false) {
+            	response.sendRedirect(request.getContextPath() + "/home?enable=false");
+            	return;
+            }
         }
         
         chain.doFilter(request, response);

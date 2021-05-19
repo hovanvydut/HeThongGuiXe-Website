@@ -12,7 +12,8 @@ public enum PathJsp {
     LOGIN("/templates/pages/login/login.jsp"),
     SIGN_UP("/templates/pages/signup/signup.jsp"),
     FORGOT_PASSWORD("/templates/pages/signup/forgot_password.jsp"),
-    RESET_PASSWORD("/templates/pages/signup/reset_password.jsp");
+    RESET_PASSWORD("/templates/pages/signup/reset_password.jsp"),
+    HOME("/templates/pages/home/home.jsp");
     
     private String path;
     

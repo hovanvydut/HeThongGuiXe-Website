@@ -32,6 +32,10 @@ public class ResetPasswordServlet extends HttpServlet{
 	@Override 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		
+		Customer loggedInCustomer = CustomerUtil.getLoggedInUser(request);
+		request.setAttribute("loggedInCustomer", loggedInCustomer);
+		
 		request.getRequestDispatcher(PathJsp.RESET_PASSWORD.getPath()).forward(request, response);
 	}
 	

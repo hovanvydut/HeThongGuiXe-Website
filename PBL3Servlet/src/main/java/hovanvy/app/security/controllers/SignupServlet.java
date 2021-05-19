@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import hovanvy.common.enums.PathJsp;
 import hovanvy.common.exceptions.CustomerExistingException;
+import hovanvy.common.exceptions.CustomerStudentIdExistingException;
+import hovanvy.common.exceptions.CustomerUsernameExistingException;
 import hovanvy.common.exceptions.NullCustomerException;
 import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.core.customers.services.CustomerDetailsService;
@@ -59,11 +61,15 @@ public class SignupServlet extends HttpServlet {
 			
 			// sign up customer
 			this.customerService.save(customer);
-			System.out.println("Register success");
 			
-		} catch (CustomerExistingException e) {
+		} catch (CustomerUsernameExistingException e) {
 			request.setAttribute("customer", customer);
-			request.setAttribute("errorMessage", e.getMessage());
+			request.setAttribute("usernameExistingException", e.getMessage());
+			dp.forward(request, response);
+			return;
+		} catch (CustomerStudentIdExistingException e) {
+			request.setAttribute("customer", customer);
+			request.setAttribute("studentIdExistingException", e.getMessage());
 			dp.forward(request, response);
 			return;
 		} catch (NullCustomerException e) {

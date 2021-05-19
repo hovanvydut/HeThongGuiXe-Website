@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark background" style="z-index: 10;">
     <div class="container-fluid px-5">
@@ -26,17 +26,28 @@
             <a class="nav-link text-center text-light" href="${pageContext.request.contextPath}/parking-package/list">Xem các gói</a>
           </li>
           <li class="my-2 my-lg-0 align-self-center mx-3 ">
-            <a href="${pageContext.request.contextPath}/customers/info" class=" d-flex ">
-              <img class="mx-2 d-block d-lg-none" height="80px" src="${pageContext.request.contextPath}/static/img/chicken.gif" alt="" srcset="">
-              <b class="text-light border-start  px-3 align-self-center"> Hồ Văn Vy </b>
-
-            </a>
+          	<c:if test="${ empty loggedInCustomer }">
+          		<a href="${pageContext.request.contextPath}/login" class=" d-flex ">
+	              <img class="mx-2 d-block d-lg-none" height="80px" src="${pageContext.request.contextPath}/static/img/chicken.gif" alt="" srcset="">
+	              <b class="text-light border-start  px-3 align-self-center"> Đăng nhập </b>
+            	</a>
+          	</c:if>
+          	<c:if test="${ not empty loggedInCustomer }">
+          		<a href="${pageContext.request.contextPath}/customers/info" class=" d-flex ">
+	              <img class="mx-2 d-block d-lg-none" height="80px" src="${pageContext.request.contextPath}/static/img/chicken.gif" alt="" srcset="">
+	              <b class="text-light border-start  px-3 align-self-center"> ${ loggedInCustomer.fullname } </b>
+            	</a>
+          	</c:if>
+            
           </li>
-          <li class="nav-item  align-self-center d-block d-lg-none " >
-            <button class=" d-flex  bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#logoutModal">
-              <small class="text-white  px-2 align-self-center"> Đăng xuất </small>
-            </button>
-          </li>
+          <c:if test="${ not empty loggedInCustomer }">
+          	<li class="nav-item  align-self-center d-block d-lg-none " >
+	            <button class=" d-flex  bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#logoutModal">
+	              <small class="text-white  px-2 align-self-center"> Đăng xuất </small>
+	            </button>
+          	</li>
+          </c:if>
+          
         </ul>
 
       </div>
@@ -46,10 +57,13 @@
   </nav>
   
   <!-- Button trigger modal -->
-  <button style="z-index: 2;" class="bg-transparent border-0 d-none d-lg-block position-fixed bottom-0 end-0 m-1" data-bs-toggle="modal"
+  <c:if test="${ not empty loggedInCustomer }">
+  	<button style="z-index: 2;" class="bg-transparent border-0 d-none d-lg-block position-fixed bottom-0 end-0 m-1" data-bs-toggle="modal"
     data-bs-target="#logoutModal">
-    <img class="bg-transparent " height="55px" width="55px" src="${pageContext.request.contextPath}/static/img/logout4.png" alt="" srcset="">
-  </button>
+    	<img class="bg-transparent " height="55px" width="55px" src="${pageContext.request.contextPath}/static/img/logout4.png" alt="" srcset="">
+  	</button>
+  </c:if>
+  
   <!-- Modal -->
   <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

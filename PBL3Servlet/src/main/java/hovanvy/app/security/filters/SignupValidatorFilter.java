@@ -48,7 +48,9 @@ public class SignupValidatorFilter implements Filter {
 			
 			Customer customer = parseCustomerFrom(request);
 			System.out.println(customer);
-			CustomerValidator validator = isFullnameValid().and(isUsernameValid()).and(isPasswordValid());
+			CustomerValidator validator = isFullnameValid()
+											.and(isUsernameValid())
+											.and(isPasswordValid());
 			
 			if (customer.getEmail() != null) {
 				validator = validator.and(isEmailValid());
@@ -89,10 +91,12 @@ public class SignupValidatorFilter implements Filter {
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		String password = request.getParameter("password");
+		String studentId = request.getParameter("studentId");
 		
 		Customer customer = new Customer();
 		customer.setFullname(fullname);
 		customer.setUsername(username);
+		customer.setStudent_id(studentId);
 		
 		if (email == null || email.equals("")) {
 			customer.setEmail(null);

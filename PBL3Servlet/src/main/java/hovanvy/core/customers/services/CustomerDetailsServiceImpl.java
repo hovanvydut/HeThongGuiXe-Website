@@ -2,6 +2,8 @@ package hovanvy.core.customers.services;
 
 import hovanvy.common.enums.MessageEnum;
 import hovanvy.common.exceptions.CustomerExistingException;
+import hovanvy.common.exceptions.CustomerStudentIdExistingException;
+import hovanvy.common.exceptions.CustomerUsernameExistingException;
 import hovanvy.common.exceptions.NullCustomerException;
 import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.common.userdetails.UserDetails;
@@ -11,7 +13,9 @@ import hovanvy.core.security.customeruserdetails.CustomerUserDetails;
 import hovanvy.entity.Customer;
 import hovanvy.util.PasswordEncoder;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -38,7 +42,9 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
     }
 
 	@Override
-	public Customer save(Customer customer) throws CustomerExistingException, NullCustomerException {
+	public Customer save(Customer customer) 
+			throws NullCustomerException, CustomerStudentIdExistingException, CustomerUsernameExistingException {
+		
 		// check customer null
 		if (customer == null) {
 			throw new NullCustomerException();
@@ -54,8 +60,16 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 		}
 		
 		if (customerInDb != null) {
-			throw new CustomerExistingException();
+			throw new CustomerUsernameExistingException();
 		}
+		
+		// check if studentId is exist
+		Optional<Customer> customerOpt = this.customerDAO.getCustomerByStudentId(customer.getStudent_id());
+		
+		if (customerOpt.isPresent()) {
+			throw new CustomerStudentIdExistingException();
+		}
+		
 		
 		// hash password
 		if (customer.getPassword() != null) {
@@ -63,7 +77,7 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 			customer.setPassword(encodedPassword);
 		}
 		
-		System.out.println("here");
+		customer.setCreated_at(LocalDateTime.now());
 		// store in db
 		return this.customerDAO.save(customer);
 	}
