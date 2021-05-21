@@ -3,7 +3,36 @@
 Welcome to our project 😎 \
 We're hoping you find anything interesting you in our repository.
 
-## How to deploy app to Heroku
+## 📌Config database
+
+```sh
+git clone https://github.com/hovanvydut/PBL3-HeThongGuiXe-Website.git
+
+cd PBL3-HeThongGuiXe-Website/
+
+# This project uses MS SQL Server
+# Change username, password, url of database in this directory:
+# PBL3Servlet/src/main/webapp/WEB-INF/classes/META-INF/persistence.xml
+# change javax.persistence.jdbc.[url|username|password] to compatible with yours
+```
+
+## 📌How to run app with docker
+
+```sh
+
+git clone https://github.com/hovanvydut/PBL3-HeThongGuiXe-Website.git
+
+cd PBL3-HeThongGuiXe-Website/PBL3Servlet/
+
+docker-compose up -d
+
+# then open localhost:4000 to see
+
+# To stop container:
+docker-compose down
+```
+
+## 📌How to deploy app to Heroku
 ```sh
 git clone https://github.com/hovanvydut/PBL3-HeThongGuiXe-Website.git
 
