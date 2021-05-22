@@ -1,8 +1,31 @@
 version: "3.9"
 
 services:
-    web:
-        container_name: web
+    webpbl3:
+        container_name: webpbl3
         build: .
         ports:
             - 4000:8080
+        restart: always
+        networks: 
+            - networkpbl3
+        depends_on: 
+            - mysqlpbl3
+
+    mysqlpbl3:
+        container_name: mysqlpbl3
+        image: mysql:8.0.25
+        environment: 
+            - MYSQL_ROOT_PASSWORD=123123
+            - MYSQL_DATABASE=pbl3
+        restart: always
+        command: 
+            - --default-authentication-plugin=mysql_native_password
+            - --lower_case_table_names=1
+        volumes: 
+            - ./src/main/resources/dump_mysql:/docker-entrypoint-initdb.d
+        networks: 
+            - networkpbl3
+networks: 
+    networkpbl3:
+        driver: bridge
