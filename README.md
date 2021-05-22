@@ -16,6 +16,26 @@ cd PBL3-HeThongGuiXe-Website/
 # change javax.persistence.jdbc.[url|username|password] to compatible with yours
 ```
 
+## 📌How to run app with docker and MySQL
+NOTE: This guide is using web servlet combine with mysql
+And in this branch (docker-with-internal-mysql), all 
+config database has already configured for you. Your work simple running this follow commands:
+```sh
+git clone https://github.com/hovanvydut/PBL3-HeThongGuiXe-Website.git
+
+cd PBL3-HeThongGuiXe-Website/PBL3Servlet/
+
+docker-compose up -d
+```
+
+And open brower at: localhost:4000 to see magic thing.
+
+You can use this username, password to login:\
+- username: 102190200 password: 102190200
+- username: 102190197 password: 102190197
+- username: user1 password: 123123
+- username: user2 password: 123123
+
 ## 📌How to run app with docker
 
 ```sh
