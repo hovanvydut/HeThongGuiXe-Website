@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +65,37 @@
       <li></li>
     </ul>
   </div>
+  
+  
+  <c:if test="${ param.enable == false }">
+  	<!-- Notify Modal -->
+    <div id="notifyModal" class="modal fade " tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered ">
+            <div class="modal-content packet  text-center position-relative">
+                <div class="modal-header border-0 text-center">
+
+                    <button onclick="closeNotifyModal(this)" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class=" rounded-circle bg-white position-absolute start-50 translate-middle" style="top: -50px;">
+                        <img class="bg-transparent shadow-sm rounded-circle p-3" height="100px" src="${ pageContext.request.contextPath }/static/img/chuong.png"
+                            alt="" srcset="">
+                    </p>
+                    <h3 class="title my-3"> Thông báo !</h3>
+                    <p class="">
+                        Tài khoản của bạn hiện tại chưa được kích hoạt!
+                    </p>
+                    <small class="fw-light fst-italic my-2"> - Vui lòng đem theo thẻ sinh viên tới quầy gửi xe để được kích hoạt - </small>
+                </div>
+                <div class="modal-footer row border-0 justify-content-around">
+                    <button type="button" class="col-11 col-sm-5   btn btn-primary-change mx-0 rounded-pill"
+                    data-bs-dismiss="modal"> Đóng </button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+  </c:if>
 
         <!-- Welcome Toast after login successfully -->
         <%@include file="/templates/fragments/welcome_login_toast.jspf" %>
@@ -71,6 +103,16 @@
     </body>
 
     <%@include file="/templates/fragments/script_bootstrap5.jspf" %>
-
+	<script>
+		if (document.getElementById('notifyModal') !== null) {
+			console.log("here");
+			var myModal = new bootstrap.Modal(document.getElementById('notifyModal'), {
+				  keyboard: false
+			})
+			
+			myModal.show();
+		}
+	
+	</script>
 </html>
 
