@@ -15,13 +15,13 @@ public class EmailSenderUtilTest {
 	@Test
 	@DisplayName("send email to 102190200@sv1.dut.udn.vn")
 	public void testSendEmail() {
-		EmailSenderUtil emailSender = EmailSenderUtil.getInstance();
-		
-		String result = emailSender.sendEmail("no-reply@gmail.com", "hovanvydut@gmail.com");
-		emailSender.sendEmail("no-reply@gmail.com", "102190200@sv1.dut.udn.vn");
-		emailSender.sendEmail("no-reply@gmail.com", "tranthiphuong2763@gmail.com");
-		
-		Assertions.assertEquals("DONE", result);
+//		EmailSenderUtil emailSender = EmailSenderUtil.getInstance();
+//		
+//		String result = emailSender.sendEmail("no-reply@gmail.com", "hovanvydut@gmail.com");
+//		emailSender.sendEmail("no-reply@gmail.com", "102190200@sv1.dut.udn.vn");
+//		emailSender.sendEmail("no-reply@gmail.com", "tranthiphuong2763@gmail.com");
+//		
+//		Assertions.assertEquals("DONE", result);
 	}
 	
 }

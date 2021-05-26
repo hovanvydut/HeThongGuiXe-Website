@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+    webpbl3:
+        container_name: webpbl3
+        build: .
+        ports:
+            - 4000:8080
+        networks: 
+            - networkpbl3
+        depends_on: 
+            - mysqlpbl3
+
+    mysqlpbl3:
+        container_name: mysqlpbl3
+        build: 
+            dockerfile: mysql.Dockerfile
+            context: .
+        networks: 
+            - networkpbl3
+
+networks: 
+    networkpbl3:
+        driver: bridge
