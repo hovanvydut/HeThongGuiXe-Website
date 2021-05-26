@@ -7,6 +7,12 @@
 		<welcome-file>templates/pages/home/home.jsp</welcome-file>
 	</welcome-file-list>
 	
+	<listener>
+        <listener-class>
+                 hovanvy.common.listener.MyServletContextListener
+        </listener-class>
+    </listener>
+	
 	<!-- REST API -->
 	<servlet>
 		<servlet-name>Email REST Service</servlet-name>

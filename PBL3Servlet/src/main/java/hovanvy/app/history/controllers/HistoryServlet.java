@@ -57,6 +57,7 @@ public class HistoryServlet extends HttpServlet {
         request.setAttribute("history", history);
         request.setAttribute("toDate", toDate);
         request.setAttribute("fromDate", fromDate);
+        request.setAttribute("loggedInCustomer", loggedInCustomer);
         
         RequestDispatcher dp = request.getRequestDispatcher(PathJsp.HISTORY.getPath());
         dp.forward(request, response);
