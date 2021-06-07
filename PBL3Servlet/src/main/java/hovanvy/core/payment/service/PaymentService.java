@@ -16,4 +16,6 @@ public interface PaymentService {
     List<Payment> getAllPayments(Customer customer);
     
     Optional<Payment> getCurrentPayment(Integer customerId) throws CustomerNotFoundException;
+    
+    List<Payment> getAllUnpaidPayment(Integer customerId) throws CustomerNotFoundException;
 }

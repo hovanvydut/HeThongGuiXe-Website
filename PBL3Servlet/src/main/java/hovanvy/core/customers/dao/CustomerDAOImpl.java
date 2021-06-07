@@ -3,6 +3,7 @@ package hovanvy.core.customers.dao;
 import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.entity.Customer;
 import hovanvy.entity.Customer_;
+import hovanvy.entity.Payment;
 import hovanvy.util.EntityManagerUtil;
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +11,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
+
+import org.glassfish.jersey.internal.inject.Custom;
 
 /**
  *

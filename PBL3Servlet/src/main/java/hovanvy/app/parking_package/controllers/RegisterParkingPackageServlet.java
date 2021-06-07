@@ -12,6 +12,7 @@ import hovanvy.entity.ParkingPackage;
 import hovanvy.entity.Payment;
 import hovanvy.util.CustomerUtil;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,11 +44,19 @@ public class RegisterParkingPackageServlet extends HttpServlet{
         Optional<Payment> currentPaymentOpt;
 		try {
 			currentPaymentOpt = this.paymentService.getCurrentPayment(loggedInUser.getID_customer());
+						
+			List<Payment> unpaidPayments = this.paymentService.getAllUnpaidPayment(loggedInUser.getID_customer());
+			
+			if (unpaidPayments != null && unpaidPayments.size() > 0) {
+				response.sendRedirect(request.getContextPath() + "/parking-package/list?unpaidPayment=true");
+				return;
+			}
 			
 			if (currentPaymentOpt.isPresent()) {
-				response.sendRedirect(request.getContextPath() + "/parking-package/list?currentPayment=true");
-	        	return;
-	        }
+			response.sendRedirect(request.getContextPath() + "/parking-package/list?currentPayment=true");
+        	return;
+        }
+
 			
 		} catch (CustomerNotFoundException e) {
 			response.sendError(500);
@@ -65,7 +74,7 @@ public class RegisterParkingPackageServlet extends HttpServlet{
             
         }
         
-        response.sendRedirect(request.getContextPath() + "/parking-package/list");
+        response.sendRedirect(request.getContextPath() + "/parking-package/list?registerSuccessful=true");
     }
     
 }
