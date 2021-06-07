@@ -229,7 +229,7 @@
                     </p>
                     <h3 class="title my-3"> Thông báo !</h3>
                     <p class="">
-                        Bạn hiện đã đăng kí một gói vẫn đang trong thời hạn sử dụng.
+                       ⏳ Bạn hiện đã đăng kí một gói vẫn đang trong thời hạn sử dụng.
                     </p>
                     <small class="fw-light fst-italic my-2"> - Bấm để chuyển xem chi tiết gói bạn đã đăng kí - </small>
                 </div>
@@ -237,6 +237,50 @@
                     <a href="${ pageContext.request.contextPath }/customers/info" type="button" class="col-11 col-sm-7   btn btn-primary-change mx-0 rounded-pill"
                         >Xem thông tin </a>
                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="notifyModalUnpaid" class="modal fade" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered ">
+            <div class="modal-content packet  text-center position-relative">
+                <div class="modal-header border-0 text-center">
+
+                    <button onclick="closeNotifyModal(this)" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class=" rounded-circle bg-white position-absolute start-50 translate-middle" style="top: -50px;">
+                        <img class="bg-transparent shadow-sm rounded-circle p-3" height="100px" src="${ pageContext.request.contextPath }/static/img/chuong.png"
+                            alt="" srcset="">
+                    </p>
+                    <h3 class="title my-3"> Thông báo !</h3>
+                    <p class="">
+                        💲Bạn hiện chưa thanh toán những gói đã đăng kí trước đó.
+                    </p>
+                    <small class="fw-light fst-italic my-2"> - Để đăng kí gói mới, bạn vui lòng thanh toán các gói chưa thanh toán. - </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="notifyModalSuccess" class="modal fade" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered ">
+            <div class="modal-content packet  text-center position-relative">
+                <div class="modal-header border-0 text-center">
+
+                    <button onclick="closeNotifyModal(this)" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class=" rounded-circle bg-white position-absolute start-50 translate-middle" style="top: -50px;">
+                        <img class="bg-transparent shadow-sm rounded-circle p-3" height="100px" src="${ pageContext.request.contextPath }/static/img/chuong.png"
+                            alt="" srcset="">
+                    </p>
+                    <h3 class="title my-3"> Thông báo !</h3>
+                    <p class="">
+                        🎉 Bạn đẵ đăng kí thành công!
+                    </p>
+                    <small class="fw-light fst-italic my-2"> - Bạn vui lòng thanh toán các gói đăng kí sớm nhất có thể nhé - </small>
                 </div>
             </div>
         </div>
@@ -309,4 +353,19 @@
 		modal.show();
 	</script>
 </c:if>
+
+<c:if test="${ param.unpaidPayment }">
+	<script>
+		let modal = new bootstrap.Modal(document.getElementById('notifyModalUnpaid'));
+		modal.show();
+	</script>
+</c:if>
+
+<c:if test="${ param.registerSuccessful }">
+	<script>
+		let modal = new bootstrap.Modal(document.getElementById('notifyModalSuccess'));
+		modal.show();
+	</script>
+</c:if>
+
 </html>

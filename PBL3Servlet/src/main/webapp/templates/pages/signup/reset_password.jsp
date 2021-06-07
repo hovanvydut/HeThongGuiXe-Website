@@ -21,8 +21,8 @@
 						
 						<!-- old pwd -->
                         <div class="mb-3 w-100">
-                            <label for="old_password" class="form-label">Mật khẩu cũ</label>
-                            <input name="oldPassword" type="password" class="${errorMessage != null ? 'bg-light rounded-pill form-control is-invalid' : 'bg-light rounded-pill form-control'}" id="old_password" placeholder="Old password" required minlength="1" maxlength="20" />
+                            <label for="old_password" class="form-label">Mật khẩu hiện tại</label>
+                            <input name="oldPassword" type="password" class="${errorMessage != null ? 'bg-light rounded-pill form-control is-invalid' : 'bg-light rounded-pill form-control'}" id="old_password" placeholder="Current password" required minlength="1" maxlength="20" />
                             <c:if test="${ not empty errorMessage }">
                             	<div id="passwordFeedback" class="invalid-feedback">
                                 	${ errorMessage }
@@ -30,7 +30,7 @@
                             </c:if>
                             <c:if test="">
                             	<div id="passwordFeedback" class="invalid-feedback">
-                                	Mật khẩu cũ không hợp lệ !
+                                	Mật khẩu hiện tại không hợp lệ !
                             	</div>
                             </c:if>
                         </div>
@@ -46,7 +46,7 @@
                         <!-- pwd confirm -->
                         <div class="mb-3 w-100">
                             <label for="password" class="form-label">Nhập lại mật khẩu</label>
-                            <input type="password" class="bg-light rounded-pill form-control" id="confirm_password" placeholder="Password" required minlength="6" maxlength="20" />
+                            <input type="password" class="bg-light rounded-pill form-control" id="confirm_password" placeholder="Confirm password" required minlength="6" maxlength="20" />
                             <div id="err" class="invalid-feedback">Mật khẩu không khớp !</div>
                         </div>
 
