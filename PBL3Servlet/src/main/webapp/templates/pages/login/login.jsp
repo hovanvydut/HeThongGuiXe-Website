@@ -53,12 +53,12 @@
                                             <div id="inputEmailFeedback" class="invalid-feedback">${errorMessage}</div>
                                         </c:if>
                                         <c:if test="${ errorMessage == null}">
-                                            <div id="inputEmailFeedback" class="invalid-feedback">Username không hợp lệ !</div>
+                                            <div id="inputEmailFeedback" class="invalid-feedback">Tên tài khoản không hợp lệ !</div>
                                         </c:if>
                                         <c:if test="${ param.enable == false }">
                                         	<small class="small">Tài khoản đang bị disable!</small>
                                         </c:if>
-                                        <label for="inputUsername">Username</label>
+                                        <label for="inputUsername">Tài khoản</label>
                                     </div>
                                 </div>
                                 <div class="row mb-3">

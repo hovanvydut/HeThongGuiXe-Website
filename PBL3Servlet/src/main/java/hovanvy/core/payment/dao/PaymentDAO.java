@@ -15,4 +15,6 @@ public interface PaymentDAO {
     List<Payment> getAllPayments(Integer customerId);
     
     Optional<Payment> getCurrentPayment(Customer customer);
+    
+    List<Payment> getAllUnpaidPayment(Customer customer);
 }

@@ -41,6 +41,15 @@ public class PaymentServiceImpl implements PaymentService {
 		
 		return this.paymentDAO.getCurrentPayment(customerOpt.get());
 	}
+
+	@Override
+	public List<Payment> getAllUnpaidPayment(Integer customerId) throws CustomerNotFoundException {
+		Optional<Customer> customerOpt = this.customerDAO.findById(customerId);
+		
+		Customer customer = customerOpt.orElseThrow(() -> new CustomerNotFoundException("Customer id = " + customerId + " not found"));
+		
+		return this.paymentDAO.getAllUnpaidPayment(customer);
+	}
     
     
 }

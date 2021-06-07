@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>User</title>
+      <title>Thông tin cá nhân</title>
       <%@include file="/templates/fragments/header.jspf"%>
    </head>
    
@@ -214,7 +214,7 @@
                               	href="${ pageContext.request.contextPath }/customers/reset-password"
                                  class="btn px-3 btn-custom my-3 rounded-pill text-white"
                                  id="btnResetPwd">
-                              Reset password <i class="fas fa-lock-open text-white"></i>
+                              Đổi mật khẩu <i class="fas fa-lock-open text-white"></i>
                               </a>
                               <button type="button"
                                  class="btn px-3 btn-custom my-3 rounded-pill text-white d-none"

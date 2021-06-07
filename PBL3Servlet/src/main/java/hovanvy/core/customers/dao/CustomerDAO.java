@@ -2,6 +2,8 @@ package hovanvy.core.customers.dao;
 
 import hovanvy.common.exceptions.UsernameNotFoundException;
 import hovanvy.entity.Customer;
+import hovanvy.entity.Payment;
+
 import java.util.List;
 import java.util.Optional;
 
