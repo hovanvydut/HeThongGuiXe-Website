@@ -1,7 +1,10 @@
+
 # 🍕 PBL3 - HE THONG GUI XE [WEBSITE]
 
-Welcome to our project 😎 \
+🎉 Welcome to our project 😎 \
 We're hoping you find anything interesting you in our repository.
+
+## 🐟 See another version of this project at `docker-with-internal-mysql` & `docker_with_azure_db` branch
 
 ## How to deploy app to Heroku
 ```sh
@@ -43,16 +46,33 @@ Now check url: https://he-thong-gui-xe-v2.herokuapp.com
 ## GLIMPSE THE PROJECT
 
 ***
-[1]: https://res.cloudinary.com/dgext7ewd/image/upload/v1617588331/unnamed_wpavzb.jpg
 
-- Page A
-![Page A][1]
+- Home page
+![Home page][1]
 
-- Page B
-![Page B][1]]
+- Login page
+![Login page][2]
 
-- Page C
-![Page C][1]
+- Sign up page
+![Sign up page][3]
+
+- Parking History Page
+![Parking History Page][4]
+
+- Register Package Page
+![Register Package Page][5]
+
+- Reset Password
+![Reset Password][6]
+
+- Reset Password
+![Reset Password][6]
+
+- Info User
+![Info User][7]
+
+And see more details at <ipv4-ec2-aws>
+
 
 ## DEMO ONLINE
 
@@ -95,4 +115,10 @@ Something ...
 ## 👀 Where to find us
 
 ***
-
+[1]:  https://res.cloudinary.com/dgext7ewd/image/upload/v1623249409/PBL-3/README%20github/website/undefined_euhbcy.png
+[2]:  https://res.cloudinary.com/dgext7ewd/image/upload/v1623249438/PBL-3/README%20github/website/undefined_dg6cip.png
+[3]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249602/PBL-3/README%20github/website/undefined_uuz0fq.png
+[4]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249994/PBL-3/README%20github/website/screencapture-54-169-120-247-4000-history-2021-06-09-21_46_21_qakbxm.png
+[5]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249773/PBL-3/README%20github/website/screencapture-54-169-120-247-4000-parking-package-list-2021-06-09-21_42_16_d3l6va.png
+[6]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249869/PBL-3/README%20github/website/screencapture-54-169-120-247-4000-customers-reset-password-2021-06-09-21_44_17_ezvejb.png
+[7]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249848/PBL-3/README%20github/website/screencapture-54-169-120-247-4000-customers-info-2021-06-09-21_43_58_aafbo8.png
