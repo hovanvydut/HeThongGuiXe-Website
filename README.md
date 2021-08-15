@@ -68,27 +68,35 @@ git push heroku main
 git push heroku your-branch
 
 ```
-Now check url: https://he-thong-gui-xe-v2.herokuapp.com
+
 ## GLIMPSE THE PROJECT
 
 ***
-[1]: https://res.cloudinary.com/dgext7ewd/image/upload/v1617588331/unnamed_wpavzb.jpg
+- Home page
+![Home page][1]
 
-- Page A
-![Page A][1]
+- Login page
+![Login page][2]
 
-- Page B
-![Page B][1]]
+- Sign up page
+![Sign up page][3]
 
-- Page C
-![Page C][1]
+- Parking History Page
+![Parking History Page][4]
 
-## DEMO ONLINE
+- Register Package Page
+![Register Package Page][5]
 
-***
+- Reset Password
+![Reset Password][6]
 
-- 👉 [Admin page](https://www.google.com/)
-- 👉 [Client page](https://www.google.com/)
+- Reset Password
+![Reset Password][6]
+
+- Info User
+![Info User][7]
+
+And see more details at <ipv4-ec2-aws>
 
 ## ⚙️ INSTALLATION
 
@@ -104,18 +112,17 @@ Something ...
 
 ## 🪐 Technology
 
-**Web App**: Java Servlet & JSP \
+**Web App**: Java Servlet & JSP, HTML, CSS, JS \
 **Desktop App**: Winform \
 **Database**: MySQL \
 **Tools**: Git, Trello, Slack
+**Deploy**: Docker, AWS (EC2)
 
 ## 👨‍🔧 CONTRIBUTORS
 
 ***
-* Nguyen Huy Tuong - 102190200
 * Ho Van Vy - 102190200
 * Tran Thi Phuong - 102190200
-* Le Hoang Ngoc Han - 102190200
 
 ## 🎖 LICENSE
 
@@ -125,3 +132,10 @@ Something ...
 
 ***
 
+[1]:  https://res.cloudinary.com/dgext7ewd/image/upload/v1623249409/PBL-3/README%20github/website/undefined_euhbcy.png
+[2]:  https://res.cloudinary.com/dgext7ewd/image/upload/v1623249438/PBL-3/README%20github/website/undefined_dg6cip.png
+[3]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249602/PBL-3/README%20github/website/undefined_uuz0fq.png
+[4]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249994/PBL-3/README%20github/website/screencapture-54-169-120-247-4000-history-2021-06-09-21_46_21_qakbxm.png
+[5]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249773/PBL-3/README%20github/website/screencapture-54-169-120-247-4000-parking-package-list-2021-06-09-21_42_16_d3l6va.png
+[6]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249869/PBL-3/README%20github/website/screencapture-54-169-120-247-4000-customers-reset-password-2021-06-09-21_44_17_ezvejb.png
+[7]: https://res.cloudinary.com/dgext7ewd/image/upload/v1623249848/PBL-3/README%20github/website/screencapture-54-169-120-247-4000-customers-info-2021-06-09-21_43_58_aafbo8.png
